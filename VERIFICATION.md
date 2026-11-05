@@ -17,3 +17,7 @@ Limits: no fall damage is unavailable. High jump is experimental; its pointer ch
 ## Arrow pickup fix — v0.1.1
 
 The single-arrow entry previously spawned the flying projectile NormalArrow. It now resolves to the collectible Obj_ArrowNormal_A_01. The corrected actor was created in the running game, and the user confirmed it worked. Regression checks cover that alias and unchanged ordinary item IDs. The 5- and 10-arrow bundles were added separately; their quantities were checked against the game’s ArrowBundle_x5/ArrowBundle_x10 PouchContentParam records (BundleActorNum 5/10). Bundle pickups have not yet been tested live.
+
+
+## Map categories — v0.4.0
+Release build and 30 logic/native-callback checks passed. New checks cover multi-category selection, search/category/layer intersection, empty-selection persistence, and preservation of existing preferences. Native WPF review covers 69,299 points, 354 filters, category search, clearing stale altitude, cluster-bounded rendering, and all four tabs at four sizes and 125% offscreen rasterization. Actual mouse-driven Hide all and the Apple category produced the expected zero/1,086 Surface points. Final checks.json reports measured marker-build time separately from overall layout time; cached drawings are reused for live player updates. Gameplay teleport/spawn reports above are historical and were not rerun for this UI/data update.

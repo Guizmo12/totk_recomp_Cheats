@@ -34,6 +34,11 @@ internal class Program {
  Test("travel accepts finite arbitrary coordinates beyond the old distance cap",()=>Assert(TravelCoordinates.TryParse("50000.5","1200","-45000",out var x,out var y,out var z)&&x==50000.5f&&y==1200&&z==-45000));
  Test("travel refuses NaN, infinity, missing altitude and out-of-range coordinates",()=>{foreach(var value in new[]{"NaN","Infinity","", "100001","-100001"})Assert(!TravelCoordinates.TryParse("10",value,"20",out _,out _,out _));});
  Test("HUD coordinate conversion flips north and includes the altitude datum",()=>{var w=TravelCoordinates.FromHud(700,2795,226);Assert(w.X==700&&w.Y==331&&w.Z==-2795);var hud=TravelCoordinates.ToHud(w.X,w.Y,w.Z);Assert(hud==(700,2795,226));});
+ var pins=new[]{new MapLocation("Apple","Resource: Apple","Surface",1,2,3),new MapLocation("Test Well","Well","Surface",4,5,6),new MapLocation("Test Hinox","Hinox","Depths",7,8,9)};
+ Test("map multi-select categories combine without leaking unchecked categories",()=>{var filtered=MapFilters.Apply(pins,new HashSet<string>{"Well","Hinox"},"").ToList();Assert(filtered.Count==2&&filtered.All(p=>p.Kind!="Resource: Apple"));});
+ Test("map search intersects category and layer filters",()=>{Assert(MapFilters.Apply(pins,new HashSet<string>{"Well","Hinox"},"test","Surface").Single().Kind=="Well");Assert(!MapFilters.Apply(pins,new HashSet<string>{"Well"},"Apple").Any());});
+ Test("map hide all retains empty selection after settings round trip",()=>{var preferences=new Settings{MapCategories=[]};var reloaded=JsonSerializer.Deserialize<Settings>(JsonSerializer.Serialize(preferences))!;Assert(reloaded.MapCategories!=null&&reloaded.MapCategories.Count==0&&!MapFilters.Apply(pins,reloaded.MapCategories,"").Any());});
+ Test("map category preferences preserve favorites hotkeys and saved places",()=>{var preferences=new Settings{MapCategories=["Well","Hinox"],Favorites=["apple"],Hotkeys=new(){{"health","Ctrl+Alt+1"}},Places=[new("Home",1,2,3,[])]};var reloaded=JsonSerializer.Deserialize<Settings>(JsonSerializer.Serialize(preferences))!;Assert(reloaded.MapCategories!.SetEquals(preferences.MapCategories)&&reloaded.Favorites.Contains("apple")&&reloaded.Hotkeys["health"]=="Ctrl+Alt+1"&&reloaded.Places.Single().Name=="Home");});
  Console.WriteLine($"{passed} checks passed. Fake-memory checks validate logic, not live gameplay.");return 0;
  }
 }

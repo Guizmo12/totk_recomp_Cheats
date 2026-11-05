@@ -37,6 +37,7 @@ public sealed class Settings {
  public bool ReturnToGame{get;set;}=true;
  public string SpawnHotkey{get;set;}="Ctrl+Alt+S";
  public List<SavedPlace> Places{get;set;}=[];
+ public HashSet<string>? MapCategories{get;set;}
  public static string FilePath=>Path.Combine(AppContext.BaseDirectory,"user-settings.json");
  public static Settings Load(){try{return JsonSerializer.Deserialize<Settings>(File.ReadAllText(FilePath))??new();}catch{return new();}}
  public void Save(){var temp=FilePath+".tmp";File.WriteAllText(temp,JsonSerializer.Serialize(this,new JsonSerializerOptions{WriteIndented=true}));File.Move(temp,FilePath,true);}

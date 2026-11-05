@@ -20,3 +20,7 @@ Direction artistique et décor : HYRULE_COMPANION_CODEX_PACK fourni par l’util
 
 ## Interactive map 0.3.0
 Basemap artwork © Nintendo, sourced from vguzman812/totk-coordinates-map (MIT notice in MAP-RESOURCE-LICENSE.txt). Published landmark coordinates and game text: objmap-totk.zeldamods.org game_files. Native map renderer and UI written for this application; Zelda Dungeon supplied the visual reference. See TRAVEL.md.
+
+
+## Expanded map 0.4.0
+Factual point names, coordinates and category coverage: Zelda Dungeon, https://www.zeldadungeon.net/tears-of-the-kingdom-interactive-map/ (published Surface/Sky/Depths markers.json, objects.json and wiki map categories/supplemental markers; snapshot 2026-11-05). Dataset normalized for this offline application; source digests and per-category counts are included in Resources/Maps/manifest.json. Original game names/data © Nintendo. No website source code, guide descriptions, login state or website icons are copied. Previously verified travel-gate coordinates retain their original zeldamods-derived landing positions. Earlier visual-reference-only attribution describes version 0.3.0.

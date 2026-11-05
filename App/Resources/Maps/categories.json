@@ -1,0 +1,1772 @@
+[
+  {
+    "Kind": "Ascend Point",
+    "Group": "Activities",
+    "Count": 16
+  },
+  {
+    "Kind": "Cherry Tree",
+    "Group": "Activities",
+    "Count": 8
+  },
+  {
+    "Kind": "Hudson Sign",
+    "Group": "Activities",
+    "Count": 81
+  },
+  {
+    "Kind": "Minigame",
+    "Group": "Activities",
+    "Count": 19
+  },
+  {
+    "Kind": "Other point",
+    "Group": "Activities",
+    "Count": 275
+  },
+  {
+    "Kind": "Dungeon Boss",
+    "Group": "Bosses",
+    "Count": 12
+  },
+  {
+    "Kind": "Flux Construct",
+    "Group": "Bosses",
+    "Count": 35
+  },
+  {
+    "Kind": "Frox",
+    "Group": "Bosses",
+    "Count": 40
+  },
+  {
+    "Kind": "Gleeok",
+    "Group": "Bosses",
+    "Count": 14
+  },
+  {
+    "Kind": "Gloom Spawn",
+    "Group": "Bosses",
+    "Count": 49
+  },
+  {
+    "Kind": "Hinox",
+    "Group": "Bosses",
+    "Count": 69
+  },
+  {
+    "Kind": "Lynel",
+    "Group": "Bosses",
+    "Count": 34
+  },
+  {
+    "Kind": "Molduga",
+    "Group": "Bosses",
+    "Count": 4
+  },
+  {
+    "Kind": "Stone Talus",
+    "Group": "Bosses",
+    "Count": 87
+  },
+  {
+    "Kind": "Armor",
+    "Group": "Collectibles",
+    "Count": 85
+  },
+  {
+    "Kind": "Korok Seed",
+    "Group": "Collectibles",
+    "Count": 900
+  },
+  {
+    "Kind": "Large Zonaite Deposit",
+    "Group": "Collectibles",
+    "Count": 98
+  },
+  {
+    "Kind": "Old Map",
+    "Group": "Collectibles",
+    "Count": 31
+  },
+  {
+    "Kind": "Sage's Will",
+    "Group": "Collectibles",
+    "Count": 20
+  },
+  {
+    "Kind": "Treasure Chest",
+    "Group": "Collectibles",
+    "Count": 1161
+  },
+  {
+    "Kind": "Unique Weapon",
+    "Group": "Collectibles",
+    "Count": 6
+  },
+  {
+    "Kind": "Yiga Schematic",
+    "Group": "Collectibles",
+    "Count": 34
+  },
+  {
+    "Kind": "Resource: Accented Pigeon",
+    "Group": "Compendium \u00b7 Birds",
+    "Count": 117
+  },
+  {
+    "Kind": "Resource: Blue Sparrow",
+    "Group": "Compendium \u00b7 Birds",
+    "Count": 84
+  },
+  {
+    "Kind": "Resource: Blue-Winged Heron",
+    "Group": "Compendium \u00b7 Birds",
+    "Count": 77
+  },
+  {
+    "Kind": "Resource: Bright-Chested Duck",
+    "Group": "Compendium \u00b7 Birds",
+    "Count": 72
+  },
+  {
+    "Kind": "Resource: Cloud Seagull",
+    "Group": "Compendium \u00b7 Birds",
+    "Count": 97
+  },
+  {
+    "Kind": "Resource: Common Sparrow",
+    "Group": "Compendium \u00b7 Birds",
+    "Count": 196
+  },
+  {
+    "Kind": "Resource: Cucco",
+    "Group": "Compendium \u00b7 Birds",
+    "Count": 43
+  },
+  {
+    "Kind": "Resource: Eldin Ostrich",
+    "Group": "Compendium \u00b7 Birds",
+    "Count": 1
+  },
+  {
+    "Kind": "Resource: Forest Ostrich",
+    "Group": "Compendium \u00b7 Birds",
+    "Count": 40
+  },
+  {
+    "Kind": "Resource: Golden Sparrow",
+    "Group": "Compendium \u00b7 Birds",
+    "Count": 80
+  },
+  {
+    "Kind": "Resource: Hotfeather Pigeon",
+    "Group": "Compendium \u00b7 Birds",
+    "Count": 3
+  },
+  {
+    "Kind": "Resource: Islander Hawk",
+    "Group": "Compendium \u00b7 Birds",
+    "Count": 54
+  },
+  {
+    "Kind": "Resource: Mountain Crow",
+    "Group": "Compendium \u00b7 Birds",
+    "Count": 170
+  },
+  {
+    "Kind": "Resource: Pink Heron",
+    "Group": "Compendium \u00b7 Birds",
+    "Count": 67
+  },
+  {
+    "Kind": "Resource: Rainbow Pigeon",
+    "Group": "Compendium \u00b7 Birds",
+    "Count": 37
+  },
+  {
+    "Kind": "Resource: Rainbow Sparrow",
+    "Group": "Compendium \u00b7 Birds",
+    "Count": 55
+  },
+  {
+    "Kind": "Resource: Red Sparrow",
+    "Group": "Compendium \u00b7 Birds",
+    "Count": 37
+  },
+  {
+    "Kind": "Resource: Sand Sparrow",
+    "Group": "Compendium \u00b7 Birds",
+    "Count": 3
+  },
+  {
+    "Kind": "Resource: Seagull",
+    "Group": "Compendium \u00b7 Birds",
+    "Count": 88
+  },
+  {
+    "Kind": "Resource: White Pigeon",
+    "Group": "Compendium \u00b7 Birds",
+    "Count": 14
+  },
+  {
+    "Kind": "Resource: Wood Pigeon",
+    "Group": "Compendium \u00b7 Birds",
+    "Count": 64
+  },
+  {
+    "Kind": "Resource: Ancient Arowana",
+    "Group": "Compendium \u00b7 Fish",
+    "Count": 118
+  },
+  {
+    "Kind": "Resource: Armored Carp",
+    "Group": "Compendium \u00b7 Fish",
+    "Count": 38
+  },
+  {
+    "Kind": "Resource: Armored Porgy",
+    "Group": "Compendium \u00b7 Fish",
+    "Count": 135
+  },
+  {
+    "Kind": "Resource: Bright-Eyed Crab",
+    "Group": "Compendium \u00b7 Fish",
+    "Count": 66
+  },
+  {
+    "Kind": "Resource: Chillfin Trout",
+    "Group": "Compendium \u00b7 Fish",
+    "Count": 40
+  },
+  {
+    "Kind": "Resource: Glowing Cave Fish",
+    "Group": "Compendium \u00b7 Fish",
+    "Count": 74
+  },
+  {
+    "Kind": "Resource: Hearty Bass",
+    "Group": "Compendium \u00b7 Fish",
+    "Count": 13
+  },
+  {
+    "Kind": "Resource: Hearty Salmon",
+    "Group": "Compendium \u00b7 Fish",
+    "Count": 11
+  },
+  {
+    "Kind": "Resource: Hyrule Bass",
+    "Group": "Compendium \u00b7 Fish",
+    "Count": 395
+  },
+  {
+    "Kind": "Resource: Ironshell Crab",
+    "Group": "Compendium \u00b7 Fish",
+    "Count": 19
+  },
+  {
+    "Kind": "Resource: Mighty Carp",
+    "Group": "Compendium \u00b7 Fish",
+    "Count": 50
+  },
+  {
+    "Kind": "Resource: Mighty Porgy",
+    "Group": "Compendium \u00b7 Fish",
+    "Count": 135
+  },
+  {
+    "Kind": "Resource: Razorclaw Crab",
+    "Group": "Compendium \u00b7 Fish",
+    "Count": 24
+  },
+  {
+    "Kind": "Resource: Sanke Carp",
+    "Group": "Compendium \u00b7 Fish",
+    "Count": 6
+  },
+  {
+    "Kind": "Resource: Sizzlefin Trout",
+    "Group": "Compendium \u00b7 Fish",
+    "Count": 12
+  },
+  {
+    "Kind": "Resource: Sneaky River Snail",
+    "Group": "Compendium \u00b7 Fish",
+    "Count": 38
+  },
+  {
+    "Kind": "Resource: Staminoka Bass",
+    "Group": "Compendium \u00b7 Fish",
+    "Count": 81
+  },
+  {
+    "Kind": "Resource: Stealthfin Trout",
+    "Group": "Compendium \u00b7 Fish",
+    "Count": 5
+  },
+  {
+    "Kind": "Resource: Voltfin Trout",
+    "Group": "Compendium \u00b7 Fish",
+    "Count": 5
+  },
+  {
+    "Kind": "Resource: Baked Apple",
+    "Group": "Compendium \u00b7 Food",
+    "Count": 3
+  },
+  {
+    "Kind": "Resource: Baked Palm Fruit",
+    "Group": "Compendium \u00b7 Food",
+    "Count": 16
+  },
+  {
+    "Kind": "Resource: Frozen Bird Thigh",
+    "Group": "Compendium \u00b7 Food",
+    "Count": 1
+  },
+  {
+    "Kind": "Resource: Frozen Porgy",
+    "Group": "Compendium \u00b7 Food",
+    "Count": 2
+  },
+  {
+    "Kind": "Resource: Hard-Boiled Egg",
+    "Group": "Compendium \u00b7 Food",
+    "Count": 3
+  },
+  {
+    "Kind": "Resource: Icy Gourmet Meat",
+    "Group": "Compendium \u00b7 Food",
+    "Count": 2
+  },
+  {
+    "Kind": "Resource: Icy Prime Meat",
+    "Group": "Compendium \u00b7 Food",
+    "Count": 4
+  },
+  {
+    "Kind": "Resource: Roasted Bass",
+    "Group": "Compendium \u00b7 Food",
+    "Count": 21
+  },
+  {
+    "Kind": "Resource: Roasted Bird Thigh",
+    "Group": "Compendium \u00b7 Food",
+    "Count": 1
+  },
+  {
+    "Kind": "Resource: Roasted Cave Fish",
+    "Group": "Compendium \u00b7 Food",
+    "Count": 1
+  },
+  {
+    "Kind": "Resource: Roasted Porgy",
+    "Group": "Compendium \u00b7 Food",
+    "Count": 9
+  },
+  {
+    "Kind": "Resource: Seared Gourmet Steak",
+    "Group": "Compendium \u00b7 Food",
+    "Count": 2
+  },
+  {
+    "Kind": "Resource: Seared Prime Steak",
+    "Group": "Compendium \u00b7 Food",
+    "Count": 2
+  },
+  {
+    "Kind": "Resource: Seared Steak",
+    "Group": "Compendium \u00b7 Food",
+    "Count": 9
+  },
+  {
+    "Kind": "Resource: Toasted Hearty Truffle",
+    "Group": "Compendium \u00b7 Food",
+    "Count": 10
+  },
+  {
+    "Kind": "Resource: Toasty Hylian Shroom",
+    "Group": "Compendium \u00b7 Food",
+    "Count": 14
+  },
+  {
+    "Kind": "Resource: Toasty Skyshroom",
+    "Group": "Compendium \u00b7 Food",
+    "Count": 1
+  },
+  {
+    "Kind": "Resource: Toasty Sunshroom",
+    "Group": "Compendium \u00b7 Food",
+    "Count": 3
+  },
+  {
+    "Kind": "Resource: Apple",
+    "Group": "Compendium \u00b7 Fruits",
+    "Count": 1300
+  },
+  {
+    "Kind": "Resource: Dazzlefruit",
+    "Group": "Compendium \u00b7 Fruits",
+    "Count": 703
+  },
+  {
+    "Kind": "Resource: Fire Fruit",
+    "Group": "Compendium \u00b7 Fruits",
+    "Count": 919
+  },
+  {
+    "Kind": "Resource: Fleet-Lotus Seeds",
+    "Group": "Compendium \u00b7 Fruits",
+    "Count": 151
+  },
+  {
+    "Kind": "Resource: Golden Apple",
+    "Group": "Compendium \u00b7 Fruits",
+    "Count": 97
+  },
+  {
+    "Kind": "Resource: Hydromelon",
+    "Group": "Compendium \u00b7 Fruits",
+    "Count": 432
+  },
+  {
+    "Kind": "Resource: Hylian Tomato",
+    "Group": "Compendium \u00b7 Fruits",
+    "Count": 422
+  },
+  {
+    "Kind": "Resource: Ice Fruit",
+    "Group": "Compendium \u00b7 Fruits",
+    "Count": 505
+  },
+  {
+    "Kind": "Resource: Mighty Bananas",
+    "Group": "Compendium \u00b7 Fruits",
+    "Count": 360
+  },
+  {
+    "Kind": "Resource: Palm Fruit",
+    "Group": "Compendium \u00b7 Fruits",
+    "Count": 417
+  },
+  {
+    "Kind": "Resource: Shock Fruit",
+    "Group": "Compendium \u00b7 Fruits",
+    "Count": 711
+  },
+  {
+    "Kind": "Resource: Spicy Pepper",
+    "Group": "Compendium \u00b7 Fruits",
+    "Count": 957
+  },
+  {
+    "Kind": "Resource: Splash Fruit",
+    "Group": "Compendium \u00b7 Fruits",
+    "Count": 704
+  },
+  {
+    "Kind": "Resource: Voltfruit",
+    "Group": "Compendium \u00b7 Fruits",
+    "Count": 488
+  },
+  {
+    "Kind": "Resource: Wildberry",
+    "Group": "Compendium \u00b7 Fruits",
+    "Count": 796
+  },
+  {
+    "Kind": "Resource: Bladed Rhino Beetle",
+    "Group": "Compendium \u00b7 Insects",
+    "Count": 31
+  },
+  {
+    "Kind": "Resource: Cold Darner",
+    "Group": "Compendium \u00b7 Insects",
+    "Count": 58
+  },
+  {
+    "Kind": "Resource: Deep Firefly",
+    "Group": "Compendium \u00b7 Insects",
+    "Count": 388
+  },
+  {
+    "Kind": "Resource: Electric Darner",
+    "Group": "Compendium \u00b7 Insects",
+    "Count": 19
+  },
+  {
+    "Kind": "Resource: Energetic Rhino Beetle",
+    "Group": "Compendium \u00b7 Insects",
+    "Count": 20
+  },
+  {
+    "Kind": "Resource: Fairy",
+    "Group": "Compendium \u00b7 Insects",
+    "Count": 103
+  },
+  {
+    "Kind": "Resource: Fireproof Lizard",
+    "Group": "Compendium \u00b7 Insects",
+    "Count": 79
+  },
+  {
+    "Kind": "Resource: Hearty Lizard",
+    "Group": "Compendium \u00b7 Insects",
+    "Count": 3
+  },
+  {
+    "Kind": "Resource: Hightail Lizard",
+    "Group": "Compendium \u00b7 Insects",
+    "Count": 125
+  },
+  {
+    "Kind": "Resource: Hot-Footed Frog",
+    "Group": "Compendium \u00b7 Insects",
+    "Count": 193
+  },
+  {
+    "Kind": "Resource: Restless Cricket",
+    "Group": "Compendium \u00b7 Insects",
+    "Count": 150
+  },
+  {
+    "Kind": "Resource: Rugged Rhino Beetle",
+    "Group": "Compendium \u00b7 Insects",
+    "Count": 18
+  },
+  {
+    "Kind": "Resource: Smotherwing Butterfly",
+    "Group": "Compendium \u00b7 Insects",
+    "Count": 16
+  },
+  {
+    "Kind": "Resource: Sticky Frog",
+    "Group": "Compendium \u00b7 Insects",
+    "Count": 31
+  },
+  {
+    "Kind": "Resource: Sticky Lizard",
+    "Group": "Compendium \u00b7 Insects",
+    "Count": 26
+  },
+  {
+    "Kind": "Resource: Summerwing Butterfly",
+    "Group": "Compendium \u00b7 Insects",
+    "Count": 34
+  },
+  {
+    "Kind": "Resource: Sunset Firefly",
+    "Group": "Compendium \u00b7 Insects",
+    "Count": 312
+  },
+  {
+    "Kind": "Resource: Thunderwing Butterfly",
+    "Group": "Compendium \u00b7 Insects",
+    "Count": 29
+  },
+  {
+    "Kind": "Resource: Tireless Frog",
+    "Group": "Compendium \u00b7 Insects",
+    "Count": 14
+  },
+  {
+    "Kind": "Resource: Warm Darner",
+    "Group": "Compendium \u00b7 Insects",
+    "Count": 62
+  },
+  {
+    "Kind": "Resource: Winterwing Butterfly",
+    "Group": "Compendium \u00b7 Insects",
+    "Count": 60
+  },
+  {
+    "Kind": "Resource: Blupee",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 97
+  },
+  {
+    "Kind": "Resource: Bubbulfrog",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 147
+  },
+  {
+    "Kind": "Resource: Bushy-Tailed Squirrel",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 81
+  },
+  {
+    "Kind": "Resource: Cold-Footed Wolf",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 37
+  },
+  {
+    "Kind": "Resource: Donkey",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 27
+  },
+  {
+    "Kind": "Resource: Giant Horse",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 1
+  },
+  {
+    "Kind": "Resource: Giant White Stallion",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 1
+  },
+  {
+    "Kind": "Resource: Golden Horse",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 2
+  },
+  {
+    "Kind": "Resource: Grassland Fox",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 39
+  },
+  {
+    "Kind": "Resource: Grizzlemaw Bear",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 11
+  },
+  {
+    "Kind": "Resource: Hateno Cow",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 14
+  },
+  {
+    "Kind": "Resource: Highland Sheep",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 21
+  },
+  {
+    "Kind": "Resource: Honeyvore Bear",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 6
+  },
+  {
+    "Kind": "Resource: Horse",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 43
+  },
+  {
+    "Kind": "Resource: Hylian Retriever",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 31
+  },
+  {
+    "Kind": "Resource: Maraudo Wolf",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 24
+  },
+  {
+    "Kind": "Resource: Mountain Buck",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 51
+  },
+  {
+    "Kind": "Resource: Mountain Doe",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 104
+  },
+  {
+    "Kind": "Resource: Mountain Goat",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 63
+  },
+  {
+    "Kind": "Resource: Patricia",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 3
+  },
+  {
+    "Kind": "Resource: Red-Tusked Boar",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 11
+  },
+  {
+    "Kind": "Resource: Sand Seal",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 30
+  },
+  {
+    "Kind": "Resource: Snowcoat Fox",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 31
+  },
+  {
+    "Kind": "Resource: Stalhorse",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 4
+  },
+  {
+    "Kind": "Resource: Tabantha Moose",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 51
+  },
+  {
+    "Kind": "Resource: Wasteland Coyote",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 30
+  },
+  {
+    "Kind": "Resource: Water Buffalo",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 23
+  },
+  {
+    "Kind": "Resource: White Goat",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 29
+  },
+  {
+    "Kind": "Resource: White Horse",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 1
+  },
+  {
+    "Kind": "Resource: Woodland Boar",
+    "Group": "Compendium \u00b7 Land Animals",
+    "Count": 38
+  },
+  {
+    "Kind": "Resource: Aerocuda Eyeball",
+    "Group": "Compendium \u00b7 Monster Parts",
+    "Count": 3
+  },
+  {
+    "Kind": "Resource: Aerocuda Wing",
+    "Group": "Compendium \u00b7 Monster Parts",
+    "Count": 3
+  },
+  {
+    "Kind": "Resource: Chuchu Jelly",
+    "Group": "Compendium \u00b7 Monster Parts",
+    "Count": 3
+  },
+  {
+    "Kind": "Resource: Gibdo Bone",
+    "Group": "Compendium \u00b7 Monster Parts",
+    "Count": 5
+  },
+  {
+    "Kind": "Resource: Gibdo Guts",
+    "Group": "Compendium \u00b7 Monster Parts",
+    "Count": 5
+  },
+  {
+    "Kind": "Resource: Gibdo Wing",
+    "Group": "Compendium \u00b7 Monster Parts",
+    "Count": 5
+  },
+  {
+    "Kind": "Resource: Lizalfos Tail",
+    "Group": "Compendium \u00b7 Monster Parts",
+    "Count": 3
+  },
+  {
+    "Kind": "Resource: Octo Balloon",
+    "Group": "Compendium \u00b7 Monster Parts",
+    "Count": 3
+  },
+  {
+    "Kind": "Resource: Octorok Eyeball",
+    "Group": "Compendium \u00b7 Monster Parts",
+    "Count": 1
+  },
+  {
+    "Kind": "Resource: Red Chuchu Jelly",
+    "Group": "Compendium \u00b7 Monster Parts",
+    "Count": 9
+  },
+  {
+    "Kind": "Resource: Soldier Construct Horn",
+    "Group": "Compendium \u00b7 Monster Parts",
+    "Count": 8
+  },
+  {
+    "Kind": "Resource: White Chuchu Jelly",
+    "Group": "Compendium \u00b7 Monster Parts",
+    "Count": 9
+  },
+  {
+    "Kind": "Resource: Yellow Chuchu Jelly",
+    "Group": "Compendium \u00b7 Monster Parts",
+    "Count": 10
+  },
+  {
+    "Kind": "Resource: Aerocuda",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 307
+  },
+  {
+    "Kind": "Resource: Battle Talus",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 24
+  },
+  {
+    "Kind": "Resource: Black Bokoblin",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 857
+  },
+  {
+    "Kind": "Resource: Black Boss Bokoblin",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 41
+  },
+  {
+    "Kind": "Resource: Black Hinox",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 17
+  },
+  {
+    "Kind": "Resource: Black Horriblin",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 59
+  },
+  {
+    "Kind": "Resource: Black Lizalfos",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 104
+  },
+  {
+    "Kind": "Resource: Black Moblin",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 143
+  },
+  {
+    "Kind": "Resource: Blizzrobe",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 7
+  },
+  {
+    "Kind": "Resource: Blue Bokoblin",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 1530
+  },
+  {
+    "Kind": "Resource: Blue Boss Bokoblin",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 49
+  },
+  {
+    "Kind": "Resource: Blue Hinox",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 15
+  },
+  {
+    "Kind": "Resource: Blue Horriblin",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 66
+  },
+  {
+    "Kind": "Resource: Blue Lizalfos",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 170
+  },
+  {
+    "Kind": "Resource: Blue Moblin",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 129
+  },
+  {
+    "Kind": "Resource: Blue-White Frox",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 13
+  },
+  {
+    "Kind": "Resource: Bokoblin",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 712
+  },
+  {
+    "Kind": "Resource: Boss Bokoblin",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 20
+  },
+  {
+    "Kind": "Resource: Captain Construct I",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 18
+  },
+  {
+    "Kind": "Resource: Captain Construct II",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 11
+  },
+  {
+    "Kind": "Resource: Captain Construct III",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 9
+  },
+  {
+    "Kind": "Resource: Chuchu",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 119
+  },
+  {
+    "Kind": "Resource: Electric Chuchu",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 166
+  },
+  {
+    "Kind": "Resource: Electric Keese",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 99
+  },
+  {
+    "Kind": "Resource: Electric Lizalfos",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 76
+  },
+  {
+    "Kind": "Resource: Electric Wizzrobe",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 19
+  },
+  {
+    "Kind": "Resource: Evermean",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 363
+  },
+  {
+    "Kind": "Resource: Fire Chuchu",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 70
+  },
+  {
+    "Kind": "Resource: Fire Keese",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 49
+  },
+  {
+    "Kind": "Resource: Fire Like",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 23
+  },
+  {
+    "Kind": "Resource: Fire Wizzrobe",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 17
+  },
+  {
+    "Kind": "Resource: Fire-Breath Lizalfos",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 125
+  },
+  {
+    "Kind": "Resource: Flame Gleeok",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 4
+  },
+  {
+    "Kind": "Resource: Flux Construct I",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 7
+  },
+  {
+    "Kind": "Resource: Flux Construct II",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 13
+  },
+  {
+    "Kind": "Resource: Flux Construct III",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 15
+  },
+  {
+    "Kind": "Resource: Forest Octorok",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 63
+  },
+  {
+    "Kind": "Resource: Frost Gleeok",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 3
+  },
+  {
+    "Kind": "Resource: Frost Pebblit",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 62
+  },
+  {
+    "Kind": "Resource: Frost Talus",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 9
+  },
+  {
+    "Kind": "Resource: Frox",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 12
+  },
+  {
+    "Kind": "Resource: Gibdo",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 203
+  },
+  {
+    "Kind": "Resource: Hinox",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 17
+  },
+  {
+    "Kind": "Resource: Horriblin",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 83
+  },
+  {
+    "Kind": "Resource: Ice Chuchu",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 114
+  },
+  {
+    "Kind": "Resource: Ice Keese",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 104
+  },
+  {
+    "Kind": "Resource: Ice Like",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 39
+  },
+  {
+    "Kind": "Resource: Ice Wizzrobe",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 8
+  },
+  {
+    "Kind": "Resource: Ice-Breath Lizalfos",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 138
+  },
+  {
+    "Kind": "Resource: Igneo Pebblit",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 50
+  },
+  {
+    "Kind": "Resource: Igneo Talus",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 9
+  },
+  {
+    "Kind": "Resource: Keese",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 178
+  },
+  {
+    "Kind": "Resource: King Gleeok",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 4
+  },
+  {
+    "Kind": "Resource: Like Like",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 51
+  },
+  {
+    "Kind": "Resource: Little Frox",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 52
+  },
+  {
+    "Kind": "Resource: Lizalfos",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 277
+  },
+  {
+    "Kind": "Resource: Master Kohga",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 4
+  },
+  {
+    "Kind": "Resource: Meteo Wizzrobe",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 8
+  },
+  {
+    "Kind": "Resource: Moblin",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 117
+  },
+  {
+    "Kind": "Resource: Molduga",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 4
+  },
+  {
+    "Kind": "Resource: Moth Gibdo",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 33
+  },
+  {
+    "Kind": "Resource: Obsidian Frox",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 15
+  },
+  {
+    "Kind": "Resource: Rock Like",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 43
+  },
+  {
+    "Kind": "Resource: Rock Octorok",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 35
+  },
+  {
+    "Kind": "Resource: Shock Like",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 36
+  },
+  {
+    "Kind": "Resource: Silver Bokoblin",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 114
+  },
+  {
+    "Kind": "Resource: Silver Boss Bokoblin",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 1
+  },
+  {
+    "Kind": "Resource: Silver Horriblin",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 6
+  },
+  {
+    "Kind": "Resource: Silver Lizalfos",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 24
+  },
+  {
+    "Kind": "Resource: Silver Moblin",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 24
+  },
+  {
+    "Kind": "Resource: Snow Octorok",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 10
+  },
+  {
+    "Kind": "Resource: Soldier Construct I",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 95
+  },
+  {
+    "Kind": "Resource: Soldier Construct II",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 94
+  },
+  {
+    "Kind": "Resource: Soldier Construct III",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 58
+  },
+  {
+    "Kind": "Resource: Stalkoblin",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 91
+  },
+  {
+    "Kind": "Resource: Stalmoblin",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 17
+  },
+  {
+    "Kind": "Resource: Stalnox",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 20
+  },
+  {
+    "Kind": "Resource: Stone Pebblit",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 134
+  },
+  {
+    "Kind": "Resource: Stone Talus",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 9
+  },
+  {
+    "Kind": "Resource: Stone Talus (Luminous)",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 22
+  },
+  {
+    "Kind": "Resource: Stone Talus (Rare)",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 14
+  },
+  {
+    "Kind": "Resource: Thunder Gleeok",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 3
+  },
+  {
+    "Kind": "Resource: Thunder Wizzrobe",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 13
+  },
+  {
+    "Kind": "Resource: Treasure Octorok",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 27
+  },
+  {
+    "Kind": "Resource: Water Octorok",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 55
+  },
+  {
+    "Kind": "Resource: Yiga Blademaster",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 25
+  },
+  {
+    "Kind": "Resource: Yiga Footsoldier",
+    "Group": "Compendium \u00b7 Monsters",
+    "Count": 127
+  },
+  {
+    "Kind": "Resource: Big Hearty Truffle",
+    "Group": "Compendium \u00b7 Mushrooms",
+    "Count": 21
+  },
+  {
+    "Kind": "Resource: Brightcap",
+    "Group": "Compendium \u00b7 Mushrooms",
+    "Count": 680
+  },
+  {
+    "Kind": "Resource: Chillshroom",
+    "Group": "Compendium \u00b7 Mushrooms",
+    "Count": 467
+  },
+  {
+    "Kind": "Resource: Endura Shroom",
+    "Group": "Compendium \u00b7 Mushrooms",
+    "Count": 15
+  },
+  {
+    "Kind": "Resource: Hearty Truffle",
+    "Group": "Compendium \u00b7 Mushrooms",
+    "Count": 78
+  },
+  {
+    "Kind": "Resource: Hylian Shroom",
+    "Group": "Compendium \u00b7 Mushrooms",
+    "Count": 723
+  },
+  {
+    "Kind": "Resource: Ironshroom",
+    "Group": "Compendium \u00b7 Mushrooms",
+    "Count": 281
+  },
+  {
+    "Kind": "Resource: Puffshroom",
+    "Group": "Compendium \u00b7 Mushrooms",
+    "Count": 5655
+  },
+  {
+    "Kind": "Resource: Razorshroom",
+    "Group": "Compendium \u00b7 Mushrooms",
+    "Count": 236
+  },
+  {
+    "Kind": "Resource: Rushroom",
+    "Group": "Compendium \u00b7 Mushrooms",
+    "Count": 1160
+  },
+  {
+    "Kind": "Resource: Silent Shroom",
+    "Group": "Compendium \u00b7 Mushrooms",
+    "Count": 677
+  },
+  {
+    "Kind": "Resource: Skyshroom",
+    "Group": "Compendium \u00b7 Mushrooms",
+    "Count": 371
+  },
+  {
+    "Kind": "Resource: Stamella Shroom",
+    "Group": "Compendium \u00b7 Mushrooms",
+    "Count": 550
+  },
+  {
+    "Kind": "Resource: Sunshroom",
+    "Group": "Compendium \u00b7 Mushrooms",
+    "Count": 382
+  },
+  {
+    "Kind": "Resource: Zapshroom",
+    "Group": "Compendium \u00b7 Mushrooms",
+    "Count": 119
+  },
+  {
+    "Kind": "Resource: Diamond",
+    "Group": "Compendium \u00b7 Ore",
+    "Count": 4
+  },
+  {
+    "Kind": "Resource: Flint",
+    "Group": "Compendium \u00b7 Ore",
+    "Count": 73
+  },
+  {
+    "Kind": "Resource: Large Zonaite",
+    "Group": "Compendium \u00b7 Ore",
+    "Count": 1
+  },
+  {
+    "Kind": "Resource: Luminous Stone Deposit",
+    "Group": "Compendium \u00b7 Ore",
+    "Count": 219
+  },
+  {
+    "Kind": "Resource: Opal",
+    "Group": "Compendium \u00b7 Ore",
+    "Count": 2
+  },
+  {
+    "Kind": "Resource: Ore Deposit",
+    "Group": "Compendium \u00b7 Ore",
+    "Count": 729
+  },
+  {
+    "Kind": "Resource: Rare Ore Deposit",
+    "Group": "Compendium \u00b7 Ore",
+    "Count": 190
+  },
+  {
+    "Kind": "Resource: Ruby",
+    "Group": "Compendium \u00b7 Ore",
+    "Count": 6
+  },
+  {
+    "Kind": "Resource: Sapphire",
+    "Group": "Compendium \u00b7 Ore",
+    "Count": 5
+  },
+  {
+    "Kind": "Resource: Topaz",
+    "Group": "Compendium \u00b7 Ore",
+    "Count": 3
+  },
+  {
+    "Kind": "Resource: Zonaite",
+    "Group": "Compendium \u00b7 Ore",
+    "Count": 107
+  },
+  {
+    "Kind": "Resource: Zonaite Deposit",
+    "Group": "Compendium \u00b7 Ore",
+    "Count": 5437
+  },
+  {
+    "Kind": "Resource: Colgera",
+    "Group": "Compendium \u00b7 Other",
+    "Count": 4
+  },
+  {
+    "Kind": "Resource: Demon King Ganondorf",
+    "Group": "Compendium \u00b7 Other",
+    "Count": 1
+  },
+  {
+    "Kind": "Resource: Demon King Ganondorf (2nd Form)",
+    "Group": "Compendium \u00b7 Other",
+    "Count": 1
+  },
+  {
+    "Kind": "Resource: Marbled Gohma",
+    "Group": "Compendium \u00b7 Other",
+    "Count": 4
+  },
+  {
+    "Kind": "Resource: Moragia",
+    "Group": "Compendium \u00b7 Other",
+    "Count": 1
+  },
+  {
+    "Kind": "Resource: Mucktorok",
+    "Group": "Compendium \u00b7 Other",
+    "Count": 4
+  },
+  {
+    "Kind": "Resource: Phantom Ganon",
+    "Group": "Compendium \u00b7 Other",
+    "Count": 10
+  },
+  {
+    "Kind": "Resource: Queen Gibdo",
+    "Group": "Compendium \u00b7 Other",
+    "Count": 4
+  },
+  {
+    "Kind": "Resource: Seized Construct",
+    "Group": "Compendium \u00b7 Other",
+    "Count": 2
+  },
+  {
+    "Kind": "Resource: Sludge Like",
+    "Group": "Compendium \u00b7 Other",
+    "Count": 1
+  },
+  {
+    "Kind": "Resource: Acorn",
+    "Group": "Compendium \u00b7 Other Ingredients",
+    "Count": 74
+  },
+  {
+    "Kind": "Resource: Bird Egg",
+    "Group": "Compendium \u00b7 Other Ingredients",
+    "Count": 667
+  },
+  {
+    "Kind": "Resource: Cane Sugar",
+    "Group": "Compendium \u00b7 Other Ingredients",
+    "Count": 9
+  },
+  {
+    "Kind": "Resource: Chickaloo Tree Nut",
+    "Group": "Compendium \u00b7 Other Ingredients",
+    "Count": 67
+  },
+  {
+    "Kind": "Resource: Fresh Milk",
+    "Group": "Compendium \u00b7 Other Ingredients",
+    "Count": 7
+  },
+  {
+    "Kind": "Resource: Goat Butter",
+    "Group": "Compendium \u00b7 Other Ingredients",
+    "Count": 19
+  },
+  {
+    "Kind": "Resource: Goron Spice",
+    "Group": "Compendium \u00b7 Other Ingredients",
+    "Count": 3
+  },
+  {
+    "Kind": "Resource: Hateno Cheese",
+    "Group": "Compendium \u00b7 Other Ingredients",
+    "Count": 17
+  },
+  {
+    "Kind": "Resource: Hylian Rice",
+    "Group": "Compendium \u00b7 Other Ingredients",
+    "Count": 18
+  },
+  {
+    "Kind": "Resource: Monster Extract",
+    "Group": "Compendium \u00b7 Other Ingredients",
+    "Count": 3
+  },
+  {
+    "Kind": "Resource: Oil Jar",
+    "Group": "Compendium \u00b7 Other Ingredients",
+    "Count": 27
+  },
+  {
+    "Kind": "Resource: Raw Meat",
+    "Group": "Compendium \u00b7 Other Ingredients",
+    "Count": 56
+  },
+  {
+    "Kind": "Resource: Raw Prime Meat",
+    "Group": "Compendium \u00b7 Other Ingredients",
+    "Count": 19
+  },
+  {
+    "Kind": "Resource: Rock Salt",
+    "Group": "Compendium \u00b7 Other Ingredients",
+    "Count": 8
+  },
+  {
+    "Kind": "Resource: Tabantha Wheat",
+    "Group": "Compendium \u00b7 Other Ingredients",
+    "Count": 8
+  },
+  {
+    "Kind": "Resource: Large Zonai Charge",
+    "Group": "Compendium \u00b7 Other Materials",
+    "Count": 51
+  },
+  {
+    "Kind": "Resource: Zonai Charge",
+    "Group": "Compendium \u00b7 Other Materials",
+    "Count": 157
+  },
+  {
+    "Kind": "Resource: Armoranth",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 234
+  },
+  {
+    "Kind": "Resource: Big Hearty Radish",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 10
+  },
+  {
+    "Kind": "Resource: Blue Nightshade",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 247
+  },
+  {
+    "Kind": "Resource: Bomb Flower",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 6769
+  },
+  {
+    "Kind": "Resource: Brightbloom Seed",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 3558
+  },
+  {
+    "Kind": "Resource: Cool Safflina",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 307
+  },
+  {
+    "Kind": "Resource: Courser Bee Honey",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 59
+  },
+  {
+    "Kind": "Resource: Electric Safflina",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 85
+  },
+  {
+    "Kind": "Resource: Endura Carrot",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 26
+  },
+  {
+    "Kind": "Resource: Fortified Pumpkin",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 35
+  },
+  {
+    "Kind": "Resource: Giant Brightbloom Seed",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 567
+  },
+  {
+    "Kind": "Resource: Hearty Radish",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 21
+  },
+  {
+    "Kind": "Resource: Hylian Pine Cone",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 821
+  },
+  {
+    "Kind": "Resource: Hyrule Herb",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 723
+  },
+  {
+    "Kind": "Resource: Korok Frond",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 23
+  },
+  {
+    "Kind": "Resource: Mighty Thistle",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 137
+  },
+  {
+    "Kind": "Resource: Muddle Bud",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 6206
+  },
+  {
+    "Kind": "Resource: Silent Princess",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 125
+  },
+  {
+    "Kind": "Resource: Stambulb",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 314
+  },
+  {
+    "Kind": "Resource: Sun Pumpkin",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 22
+  },
+  {
+    "Kind": "Resource: Sundelion",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 339
+  },
+  {
+    "Kind": "Resource: Swift Carrot",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 61
+  },
+  {
+    "Kind": "Resource: Swift Violet",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 1036
+  },
+  {
+    "Kind": "Resource: Warm Safflina",
+    "Group": "Compendium \u00b7 Plants",
+    "Count": 120
+  },
+  {
+    "Kind": "Cave",
+    "Group": "Locations",
+    "Count": 197
+  },
+  {
+    "Kind": "Chasm",
+    "Group": "Locations",
+    "Count": 72
+  },
+  {
+    "Kind": "Location",
+    "Group": "Locations",
+    "Count": 845
+  },
+  {
+    "Kind": "Village",
+    "Group": "Locations",
+    "Count": 18
+  },
+  {
+    "Kind": "Well",
+    "Group": "Locations",
+    "Count": 58
+  },
+  {
+    "Kind": "Dragon's Tear",
+    "Group": "Quests",
+    "Count": 12
+  },
+  {
+    "Kind": "Main Quest",
+    "Group": "Quests",
+    "Count": 24
+  },
+  {
+    "Kind": "Quest Objective",
+    "Group": "Quests",
+    "Count": 37
+  },
+  {
+    "Kind": "Shrine Quest",
+    "Group": "Quests",
+    "Count": 31
+  },
+  {
+    "Kind": "Side Adventure",
+    "Group": "Quests",
+    "Count": 54
+  },
+  {
+    "Kind": "Side Quest",
+    "Group": "Quests",
+    "Count": 132
+  },
+  {
+    "Kind": "Stone Tablet",
+    "Group": "Quests",
+    "Count": 12
+  },
+  {
+    "Kind": "Armor Shop",
+    "Group": "Services",
+    "Count": 6
+  },
+  {
+    "Kind": "Bargainer Statue",
+    "Group": "Services",
+    "Count": 7
+  },
+  {
+    "Kind": "Cooking Pot",
+    "Group": "Services",
+    "Count": 167
+  },
+  {
+    "Kind": "Device Dispenser",
+    "Group": "Services",
+    "Count": 30
+  },
+  {
+    "Kind": "General Store",
+    "Group": "Services",
+    "Count": 29
+  },
+  {
+    "Kind": "Goddess Statue",
+    "Group": "Services",
+    "Count": 18
+  },
+  {
+    "Kind": "Great Fairy",
+    "Group": "Services",
+    "Count": 5
+  },
+  {
+    "Kind": "Inn",
+    "Group": "Services",
+    "Count": 10
+  },
+  {
+    "Kind": "Koltin Balloon",
+    "Group": "Services",
+    "Count": 8
+  },
+  {
+    "Kind": "Other Shops",
+    "Group": "Services",
+    "Count": 20
+  },
+  {
+    "Kind": "Stable",
+    "Group": "Services",
+    "Count": 16
+  },
+  {
+    "Kind": "Dungeon",
+    "Group": "Travel gates",
+    "Count": 6
+  },
+  {
+    "Kind": "Lightroot",
+    "Group": "Travel gates",
+    "Count": 120
+  },
+  {
+    "Kind": "Other Travel Gate",
+    "Group": "Travel gates",
+    "Count": 2
+  },
+  {
+    "Kind": "Shrine",
+    "Group": "Travel gates",
+    "Count": 152
+  },
+  {
+    "Kind": "Tech Lab",
+    "Group": "Travel gates",
+    "Count": 1
+  },
+  {
+    "Kind": "Tower",
+    "Group": "Travel gates",
+    "Count": 15
+  },
+  {
+    "Kind": "Saved",
+    "Group": "Your places",
+    "Count": 0
+  }
+]

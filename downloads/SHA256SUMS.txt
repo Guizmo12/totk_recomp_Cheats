@@ -1,3 +1,4 @@
 287081395954cc910e5dc2c25209b00c7042eb5651cf25cbde1dba1234617cd9  HyruleCompanion-v0.2.0.zip
 dbdf5cbe2bbe2f03c1de95291bceac07fc2de0f10144c6d45fcf4688bf0b0497  HyruleCompanion-v0.2.1.zip
 4daa1754d3b03335ef7f7e63b4dc4a4506146e3bd1ef79bc3928c70a4360f7ad  HyruleCompanion-v0.3.0.zip
+6b020796fb123ef894c49c49bf3a66e60e9c2a5c9aafd61c82ec461243838ef6  HyruleCompanion-v0.4.0.zip

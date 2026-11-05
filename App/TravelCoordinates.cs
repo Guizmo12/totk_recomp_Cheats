@@ -1,6 +1,13 @@
 using System.Globalization;
 namespace HyruleCompanion;
 public record MapLocation(string Name,string Kind,string Layer,float X,float Y,float Z);
+public record MapCategory(string Kind,string Group,int Count);
+public static class MapFilters {
+ public static IEnumerable<MapLocation> Apply(IEnumerable<MapLocation> points,IReadOnlySet<string> enabled,string query,string? layer=null){
+  var terms=query.Trim().Split(' ',StringSplitOptions.RemoveEmptyEntries);
+  return points.Where(p=>enabled.Contains(p.Kind)&&(layer==null||p.Layer==layer)&&terms.All(t=>(p.Name+" "+p.Kind+" "+p.Layer).Contains(t,StringComparison.OrdinalIgnoreCase)));
+ }
+}
 public static class TravelCoordinates {
  public static (float X,float Y,float Z) FromHud(float east,float north,float height)=>(east,height+105,-north);
  public static (float East,float North,float Height) ToHud(float x,float y,float z)=>(x,-z,y-105);
