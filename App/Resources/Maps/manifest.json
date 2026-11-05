@@ -412,5 +412,17 @@
       "snapshot": "zd-surface.json",
       "sha256": "097fe055884b6eb077ca0e17159969a5e60b5fec4a0a98b1056b60769ed7faa6"
     }
-  ]
+  ],
+  "mainFilterCategories": 49,
+  "mainFilterGroups": [
+    "Travel Gates",
+    "Quests",
+    "Collectibles",
+    "Locations",
+    "Services",
+    "Other",
+    "Bosses"
+  ],
+  "compendiumVisibleByDefault": false,
+  "referenceScalePixelsPerCoordinateAtZoomZero": 0.046875
 }

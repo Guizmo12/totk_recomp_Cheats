@@ -1,8 +1,19 @@
 using System.Globalization;
 namespace HyruleCompanion;
-public record MapLocation(string Name,string Kind,string Layer,float X,float Y,float Z);
-public record MapCategory(string Kind,string Group,int Count);
+public record MapLocation(string Name,string Kind,string Layer,float X,float Y,float Z,int MinZoom=0);
+public record MapCategory(string Kind,string Group,int Count){public string DisplayName=>Kind switch{"Tower"=>"Skyview Tower","Shrine"=>"Shrine of Light",_=>Kind.Replace("Resource: ","")};}
 public static class MapFilters {
+ public static readonly IReadOnlyDictionary<string,string[]> MainGroups=new Dictionary<string,string[]>{
+  ["Travel Gates"]=["Tower","Shrine","Lightroot","Tech Lab","Dungeon","Other Travel Gate"],
+  ["Quests"]=["Main Quest","Side Adventure","Shrine Quest","Side Quest","Quest Objective","Dragon's Tear","Stone Tablet"],
+  ["Collectibles"]=["Korok Seed","Treasure Chest","Sage's Will","Old Map","Armor","Unique Weapon","Yiga Schematic","Large Zonaite Deposit"],
+  ["Locations"]=["Village","Chasm","Cave","Well"],
+  ["Services"]=["Stable","Inn","General Store","Armor Shop","Bargainer Statue","Koltin Balloon","Other Shops","Great Fairy","Device Dispenser","Goddess Statue","Cooking Pot"],
+  ["Other"]=["Hudson Sign","Minigame","Cherry Tree","Ascend Point"],
+  ["Bosses"]=["Flux Construct","Hinox","Stone Talus","Frox","Gleeok","Lynel","Molduga","Gloom Spawn","Dungeon Boss"]
+ };
+ public static bool IsPrimary(string kind)=>MainGroups.Values.Any(kinds=>kinds.Contains(kind));
+ public static bool VisibleAtScale(MapLocation pin,double pixelsPerMeter)=>pin.MinZoom<=0||pixelsPerMeter+1e-8>=.046875*Math.Pow(2,pin.MinZoom);
  public static IEnumerable<MapLocation> Apply(IEnumerable<MapLocation> points,IReadOnlySet<string> enabled,string query,string? layer=null){
   var terms=query.Trim().Split(' ',StringSplitOptions.RemoveEmptyEntries);
   return points.Where(p=>enabled.Contains(p.Kind)&&(layer==null||p.Layer==layer)&&terms.All(t=>(p.Name+" "+p.Kind+" "+p.Layer).Contains(t,StringComparison.OrdinalIgnoreCase)));

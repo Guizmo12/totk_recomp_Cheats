@@ -1,30 +1,31 @@
-# Interactive Travel — version 0.4.0
+# Interactive Travel — version 0.4.1
 
-The native offline map covers Surface, Sky and Depths. It now includes **69,299 points in 354 selectable categories**, drawn from Zelda Dungeon’s published main markers, wiki categories, supplemental markers and compendium locations (snapshot: November 5, 2026). The count includes 51 main categories, 302 compendium types, and the saved-places filter; categories without source points are not fabricated. Repeated locations represent separate physical objects or entrances. 900 Korok puzzle locations can award 1,000 seeds.
+The normal map filter panel matches Zelda Dungeon’s **49 main categories in seven groups**:
 
-## Filters
+- **Travel Gates:** Skyview Tower, Shrine of Light, Lightroot, Tech Lab, Dungeon, Other Travel Gate.
+- **Quests:** Main Quest, Side Adventure, Shrine Quest, Side Quest, Quest Objective, Dragon’s Tear, Stone Tablet.
+- **Collectibles:** Korok Seed, Treasure Chest, Sage’s Will, Old Map, Armor, Unique Weapon, Yiga Schematic, Large Zonaite Deposit.
+- **Locations:** Village, Chasm, Cave, Well.
+- **Services:** Stable, Inn, General Store, Armor Shop, Bargainer Statue, Koltin Balloon, Other Shops, Great Fairy, Device Dispenser, Goddess Statue, Cooking Pot.
+- **Other:** Hudson Sign, Minigame, Cherry Tree, Ascend Point.
+- **Bosses:** Flux Construct, Hinox, Stone Talus, Frox, Gleeok, Lynel, Molduga, Gloom Spawn, Dungeon Boss.
 
-Open **Filters**. Combine any checkboxes; use the filter search to find names such as Korok, quest, well, apple or Lynel. Expand a group to show or hide its categories. Counts refer to the selected map layer. Choices save automatically with existing preferences, favorites, hotkeys and saved places.
+Your saved places remain in a separate personal group. **All** enables the main categories. **None** clears the map filters. Use the category checkboxes together, search within the panel, or show/hide an entire group. Counts refer to the selected layer. Choices save automatically. The main filter button counts the 49 reference categories, not individual resource types.
 
-- **Explore:** all main points of interest; resource/compendium markers off. This is the initial view.
-- **All:** every supported main and compendium category.
-- **None:** clear the selection, then choose individual categories.
-- **Travel:** travel gates and saved destinations.
+## A clearer map
 
-Groups include travel gates, quests, collectibles, locations, services, bosses, activities, saved places, and compendium materials, equipment, monsters and creatures. The destination search further narrows the enabled categories; the destination list follows the current layer. Filters can be closed to recover map space.
+The overview shows major destinations. Finer markers appear as you zoom in, using the reference dataset’s published minimum zoom levels. The scale conversion uses Zelda Dungeon’s published 564-pixel tiles over a 12,032-coordinate world. Major markers remain visible at Fit. Drag to pan; wheel or +/- zoom; Fit resets the view; Locate centers on Link. Numbered clusters split when clicked; a cluster never triggers teleporting. The higher maximum zoom allows chests and other fine detail to be reached.
 
-Drag to pan, use the wheel or +/- to zoom, and Fit to reset the view. Numbered clusters split as you zoom; clicking a cluster zooms in instead of teleporting. At maximum zoom, exact overlaps can be chosen through the destination list. Native vector markers use distinct colors and symbols. Marker drawings are cached between viewport/filter changes, including while Link’s position updates.
+**Compendium** is a separate, optional section for individual materials, equipment, monsters and creatures. It starts off and never appears as hundreds of entries in the main category list. Additional place/supplemental data are also kept in that optional section. The offline database retains 69,299 point records, so this simplification does not discard data. Personal places remain available.
 
 ## Teleporting
 
-Select an individual marker or destination-list entry to populate its position. Double-click an individual marker to teleport, or enable single-click teleport. A cluster never triggers travel. Published altitude is supplied when available; unmeasured points clear the previous altitude and require manual entry. Original travel-gate landing coordinates retain their previously tested clearance. Other points use their recorded object position; a map point is not a guaranteed safe landing platform.
+Click an individual marker or use the destination search/list to populate its coordinates. Double-click an individual marker to teleport, or enable single-click travel. Published altitude is supplied when available; unmeasured points clear the previous altitude and require manual entry. Changing coordinate format also works before altitude is entered. Original travel-gate coordinates retain their previously tested clearance. Other points use their recorded object position; they are not guaranteed landing platforms.
 
-Engine coordinates are X east, Z south and Y height. HUD coordinates are east, north and altitude: engine X = HUD X, engine Z = -HUD Y, engine Y = HUD Z + 105. The selector preserves the destination. Finite coordinates between -100,000 and +100,000 are accepted. Map coverage is X ±6,000 and Z ±5,000. Changing layers does not measure terrain or automatically choose an altitude.
+Engine coordinates: X east, Z south, Y height. HUD coordinates: east, north, altitude. Conversion: engine X = HUD X, engine Z = -HUD Y, engine Y = HUD Z + 105. Finite coordinates between ±100,000 are accepted; map coverage is X ±6,000 and Z ±5,000. A layer change does not measure terrain height. Save current or custom destinations as named places; Undo returns to the pre-trip position. Travel does not unlock gates or enter separate shrine interiors. Arbitrary-coordinate travel remains experimental.
 
-Save current or custom positions as named places. Undo last teleport returns to the pre-trip position. Travel works in the current overworld; it does not unlock gates or enter separate shrine interiors. Arbitrary coordinates and long-distance streaming remain experimental.
+## Verification and attribution
 
-## Verification and sources
+Version 0.4.1: Release build; 32 logic/native-callback checks, including the exact seven/49-category taxonomy and zoom thresholds; native WPF checks for separate compendium search, uncluttered overview, filter composition, altitude validation, coordinate formats and clustering; all four tabs at four sizes and 125% offscreen rasterization. No gameplay writes are needed for these checks. A real ~2.8 km trip and Undo were verified in version 0.3.0; that evidence is historical.
 
-Version 0.4.0: Release build; 30 logic/native-callback checks; category composition, search/layer intersection, empty selection and settings round trips; actual WPF filtering, altitude validation and clustering checks; all four screens at four window sizes plus 125% offscreen rasterization. Native mouse clicks also verified Hide all and a resource checkbox. No new gameplay writes were needed for this map/filter update. The real ~2.8 km trip and Undo were tested in version 0.3.0; that evidence is historical, not a claim of testing every new point.
-
-Map data: [Zelda Dungeon TOTK interactive map](https://www.zeldadungeon.net/tears-of-the-kingdom-interactive-map/) and its published wiki map categories. Only factual point names, categories and coordinates are retained; no guide prose, website code, account state or remote runtime is embedded. Basemap artwork and original game text © Nintendo. Basemaps from [vguzman812/totk-coordinates-map](https://github.com/vguzman812/totk-coordinates-map), with its MIT notice in MAP-RESOURCE-LICENSE.txt. Original travel-gate positions were cross-checked against the published zeldamods object map. The offline snapshot counts and source digests are in App/Resources/Maps/manifest.json in the source repository.
+Data: [Zelda Dungeon TOTK map](https://www.zeldadungeon.net/tears-of-the-kingdom-interactive-map/), published main markers, wiki categories, supplemental markers and compendium locations; snapshot November 5, 2026. Only factual point names, coordinates, categories and minimum zoom levels are retained. No website code, guide descriptions, login state or remote runtime is embedded. Game artwork/data © Nintendo. Basemaps from [vguzman812/totk-coordinates-map](https://github.com/vguzman812/totk-coordinates-map); its MIT notice is in MAP-RESOURCE-LICENSE.txt. Original travel-gate positions were cross-checked against zeldamods. Snapshot counts and source digests are in Resources/Maps/manifest.json in the source tree.

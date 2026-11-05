@@ -388,12 +388,13 @@
  <Grid Grid.Row="2"><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="310"/></Grid.ColumnDefinitions>
  <local:OrnateFrame Style="{StaticResource PanelFrame}" Padding="1" Margin="0,0,15,0"><Grid><local:HyruleMap x:Name="TravelMap" AutomationProperties.Name="Interactive Hyrule map"/>
  <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,40,0,0"><Button Content="+" Click="MapZoomIn" ToolTip="Zoom in" Padding="12,7"/><Button Content="−" Click="MapZoomOut" ToolTip="Zoom out" Padding="12,7" Margin="0,5,0,0"/><Button Content="⌖" Click="MapLocatePlayer" ToolTip="Center on Link" Padding="12,7" Margin="0,5,0,0"/><Button Content="Fit" Click="MapFit" ToolTip="Show the whole map" Padding="8,7" Margin="0,5,0,0"/></StackPanel>
- <Border x:Name="MapFilterDrawer" Visibility="Collapsed" Width="270" HorizontalAlignment="Right" Margin="8,40,8,45" Background="#F5081823" BorderBrush="{StaticResource GoldBrush}" BorderThickness="1" Padding="13" Panel.ZIndex="5">
- <Grid><Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
- <DockPanel><Button DockPanel.Dock="Right" Content="×" Click="ToggleMapFilters" Padding="8,3" ToolTip="Close filters" AutomationProperties.Name="Close map filters"/><TextBlock Text="Map filters" FontFamily="Georgia" FontSize="20" Foreground="{StaticResource GoldBrush}" VerticalAlignment="Center"/></DockPanel>
- <StackPanel Grid.Row="1" Margin="0,10,0,8"><WrapPanel><Button Content="Explore" Tag="explore" Click="MapPresetClick" Padding="7,6" Margin="0,0,5,5" ToolTip="All main points; compendium resources off"/><Button Content="All" Tag="all" Click="MapPresetClick" Padding="9,6" Margin="0,0,5,5"/><Button Content="None" Tag="none" Click="MapPresetClick" Padding="9,6" Margin="0,0,5,5"/><Button Content="Travel" Tag="travel" Click="MapPresetClick" Padding="7,6" Margin="0,0,5,5"/></WrapPanel><TextBlock x:Name="MapFilterSummary" TextWrapping="Wrap" Style="{StaticResource Caption}" FontSize="10"/><TextBlock Text="Counts refer to this map layer. Clusters split as you zoom in." TextWrapping="Wrap" Style="{StaticResource Caption}" FontSize="10" Margin="0,6,0,0"/></StackPanel>
- <TextBox Grid.Row="2" x:Name="MapCategorySearch" TextChanged="MapCategorySearchChanged" ToolTip="Find a filter: armor, apple, quest…" AutomationProperties.Name="Search map filters" Margin="0,0,0,10" Padding="8,7"/>
- <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"><StackPanel x:Name="MapFilterGroups"/></ScrollViewer>
+ <Border x:Name="MapFilterDrawer" Visibility="Collapsed" Width="270" HorizontalAlignment="Right" Margin="8,40,8,45" Background="#FA081823" BorderBrush="{StaticResource GoldBrush}" BorderThickness="1" Padding="13" Panel.ZIndex="5">
+ <Grid><Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+ <DockPanel><Button DockPanel.Dock="Right" Content="×" Click="ToggleMapFilters" Padding="8,3" ToolTip="Close filters" AutomationProperties.Name="Close map filters"/><TextBlock x:Name="MapFilterHeading" Text="Filter markers" FontFamily="Georgia" FontSize="20" Foreground="{StaticResource GoldBrush}" VerticalAlignment="Center"/></DockPanel>
+ <StackPanel Grid.Row="1" Margin="0,10,0,8"><WrapPanel><Button Content="All" Tag="all" Click="MapPresetClick" Padding="11,6" Margin="0,0,6,7"/><Button Content="None" Tag="none" Click="MapPresetClick" Padding="11,6" Margin="0,0,6,7"/></WrapPanel><TextBlock x:Name="MapFilterSummary" TextWrapping="Wrap" Style="{StaticResource Caption}" FontSize="10"/></StackPanel>
+ <WrapPanel Grid.Row="2" Margin="0,0,0,7"><Button x:Name="MapMarkerMode" Content="Map markers" Tag="markers" Click="MapModeClick" FontSize="10" Padding="9,7" Margin="0,0,5,0"/><Button x:Name="MapCompendiumMode" Content="Compendium" Tag="compendium" Click="MapModeClick" FontSize="10" Padding="9,7" ToolTip="Optional individual materials, creatures and equipment"/></WrapPanel>
+ <Grid Grid.Row="3" Margin="0,0,0,10"><TextBox x:Name="MapCategorySearch" TextChanged="MapCategorySearchChanged" ToolTip="Search categories in the current filter section" AutomationProperties.Name="Search map filters" Padding="8,7"/><TextBlock Text="Find a category…" Margin="10,0" VerticalAlignment="Center" FontSize="11" Foreground="{StaticResource Muted}" IsHitTestVisible="False"><TextBlock.Style><Style TargetType="TextBlock"><Setter Property="Visibility" Value="Collapsed"/><Style.Triggers><DataTrigger Binding="{Binding Text,ElementName=MapCategorySearch}" Value=""><Setter Property="Visibility" Value="Visible"/></DataTrigger></Style.Triggers></Style></TextBlock.Style></TextBlock></Grid>
+ <ScrollViewer Grid.Row="4" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"><StackPanel x:Name="MapFilterGroups"/></ScrollViewer>
  </Grid></Border>
  <Border Background="#D9071923" VerticalAlignment="Bottom" Padding="10,7"><Grid><TextBlock x:Name="MapVisibleCount" HorizontalAlignment="Center" FontSize="10" Foreground="{StaticResource Muted}"/><TextBlock x:Name="MapPointerLabel" Text="Wheel to zoom • drag to explore" Foreground="{StaticResource GoldBrush}" FontSize="10"/><TextBlock Text="Basemap © Nintendo" FontSize="9" Foreground="{StaticResource Muted}" HorizontalAlignment="Right"/></Grid></Border>
  </Grid></local:OrnateFrame>
@@ -477,7 +478,7 @@
             <CheckBox x:Name="ReturnToGameCheck" Content="Return to the game when spawning" Click="ReturnToGameClick" Margin="0,17,0,0"/>
             <CheckBox x:Name="ReduceMotionCheck" Content="Reduce interface animations" Click="ReduceMotionClick" Margin="0,17,0,0"/>
             <Button Content="Save connection report" Click="ReportClick" HorizontalAlignment="Left" Margin="0,22,0,0"/>
-            <TextBlock Text="Hyrule Companion • 0.4 exploration edition" Foreground="{StaticResource GoldBrush}" FontSize="12" Margin="0,24,0,9"/>
+            <TextBlock Text="Hyrule Companion • 0.4.1 exploration edition" Foreground="{StaticResource GoldBrush}" FontSize="12" Margin="0,24,0,9"/>
             <TextBlock Text="Item names and icons: Marc Robledo’s TOTK save editor; names compiled by Echocolat, Exincracci, HylianLZ and Karlos007. Game assets belong to Nintendo. Cheat research: Eiffel2018 and the Switch cheats community. Source and license details are included with this app." Style="{StaticResource Caption}" FontSize="11"/>
            </StackPanel>
           </local:OrnateFrame>
@@ -498,7 +499,7 @@
       <Image Source="{StaticResource EyeImage}" Width="21" Height="19" Margin="0,0,10,0"/>
       <TextBlock x:Name="FooterStatus" Text="Ready to browse • cheats are off" TextTrimming="CharacterEllipsis" Foreground="{StaticResource Muted}" FontSize="11" VerticalAlignment="Center"/>
      </StackPanel>
-     <TextBlock Grid.Column="1" Margin="20,0,0,0" Text="TOTK 1.2.1  /  HYRULE COMPANION 0.4" Foreground="{StaticResource Muted}" FontSize="10" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+     <TextBlock Grid.Column="1" Margin="20,0,0,0" Text="TOTK 1.2.1  /  HYRULE COMPANION 0.4.1" Foreground="{StaticResource Muted}" FontSize="10" HorizontalAlignment="Right" VerticalAlignment="Center"/>
     </Grid>
    </Border>
   </Grid>

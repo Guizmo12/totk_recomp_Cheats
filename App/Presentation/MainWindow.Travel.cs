@@ -12,30 +12,36 @@ public partial class MainWindow {
  readonly HashSet<string> enabledMapCategories=[];
  readonly Dictionary<string,CheckBox> mapCategoryControls=[];
  readonly Dictionary<string,Expander> mapGroupControls=[];
- bool changingMapFilters;
+ bool changingMapFilters;bool compendiumMapFilters;
  readonly DispatcherTimer mapSearchTimer=new(){Interval=TimeSpan.FromMilliseconds(180)};
  T LoadMapResource<T>(string name){using var stream=Application.GetResourceStream(new Uri("/HyruleCompanion;component/Resources/Maps/"+name,UriKind.Relative)).Stream;return JsonSerializer.Deserialize<T>(stream,new JsonSerializerOptions{NumberHandling=System.Text.Json.Serialization.JsonNumberHandling.AllowNamedFloatingPointLiterals})!;}
  void InitializeTravelMap(){
-  landmarks=LoadMapResource<List<MapLocation>>("landmarks.json");mapCategories.AddRange(LoadMapResource<List<MapCategory>>("categories.json"));
-  enabledMapCategories.UnionWith(settings.MapCategories??mapCategories.Where(c=>!c.Kind.StartsWith("Resource: ",StringComparison.Ordinal)).Select(c=>c.Kind).ToHashSet());
-  BuildMapFilters();TravelMap.CategoryGroups=mapCategories.ToDictionary(c=>c.Kind,c=>c.Group);
+  landmarks=LoadMapResource<List<MapLocation>>("landmarks.json");
+  mapCategories.AddRange(LoadMapResource<List<MapCategory>>("categories.json").Select(c=>c with{Group=MapFilters.MainGroups.FirstOrDefault(g=>g.Value.Contains(c.Kind)).Key??(c.Kind=="Saved"?"Your places":c.Kind.StartsWith("Resource: ",StringComparison.Ordinal)?c.Group:"Additional map data")}));
+  if(settings.MapFilterLayoutVersion<1){settings.MapCategories=null;settings.MapFilterLayoutVersion=1;}
+  enabledMapCategories.UnionWith(settings.MapCategories??mapCategories.Where(c=>MapFilters.IsPrimary(c.Kind)||c.Kind=="Saved").Select(c=>c.Kind).ToHashSet());
+  settings.MapCategories=enabledMapCategories.ToHashSet();SaveSettings();
+  BuildMapFilters();UpdateMapFilterMode();TravelMap.CategoryGroups=mapCategories.ToDictionary(c=>c.Kind,c=>c.Group);
   TravelMap.DestinationPicked+=(place,doubleClick)=>PickMapDestination(place,doubleClick||MapClickTeleport.IsChecked==true);
   TravelMap.PointerMoved+=(x,z)=>MapPointerLabel.Text=$"X {x:0}   Z {z:0}";
   mapSearchTimer.Tick+=(_,_)=>{mapSearchTimer.Stop();RefreshTravelMap();};
   mapTimer.Tick+=(_,_)=>{UpdateTravelReadiness();if(TravelPage.IsVisible)UpdateMapPlayer();};mapTimer.Start();SetMapLayer("Surface");
  }
  void BuildMapFilters(){
-  foreach(var group in mapCategories.GroupBy(c=>c.Group).OrderBy(g=>Array.IndexOf(new[]{"Travel gates","Quests","Collectibles","Locations","Services","Bosses","Activities","Your places"},g.Key) is var i&&i>=0?i:100).ThenBy(g=>g.Key)){
+  foreach(var group in mapCategories.GroupBy(c=>c.Group).OrderBy(g=>Array.IndexOf(new[]{"Travel Gates","Quests","Collectibles","Locations","Services","Other","Bosses","Your places"},g.Key) is var i&&i>=0?i:100).ThenBy(g=>g.Key)){
    var body=new StackPanel();var actions=new WrapPanel();
    foreach(var show in new[]{true,false}){var button=new Button{Content=show?"Show group":"Hide group",FontSize=10,Padding=new Thickness(7,4,7,4),Margin=new Thickness(0,0,5,7)};button.Click+=(_,_)=>{foreach(var cat in group){if(show)enabledMapCategories.Add(cat.Kind);else enabledMapCategories.Remove(cat.Kind);}ApplyMapFilters();};actions.Children.Add(button);}body.Children.Add(actions);
-   foreach(var cat in group){var box=new CheckBox{Tag=cat.Kind,IsChecked=enabledMapCategories.Contains(cat.Kind),FontSize=11,Foreground=System.Windows.Media.Brushes.White,Margin=new Thickness(1,5,1,5),ToolTip=cat.Kind+" · "+cat.Count.ToString("N0")+" across all layers"};box.Click+=(_,_)=>{if(changingMapFilters)return;if(box.IsChecked==true)enabledMapCategories.Add(cat.Kind);else enabledMapCategories.Remove(cat.Kind);ApplyMapFilters();};mapCategoryControls[cat.Kind]=box;body.Children.Add(box);}
-   var expander=new Expander{Header=group.Key,Content=body,Foreground=(System.Windows.Media.Brush)FindResource("GoldBrush"),FontSize=12,Margin=new Thickness(0,0,0,10),IsExpanded=group.Key is "Travel gates" or "Quests"};mapGroupControls[group.Key]=expander;MapFilterGroups.Children.Add(expander);
+   foreach(var cat in group.OrderBy(c=>MapFilters.MainGroups.TryGetValue(group.Key,out var order)?Array.IndexOf(order,c.Kind):0).ThenBy(c=>MapFilters.IsPrimary(c.Kind)?"":c.DisplayName)){var box=new CheckBox{Tag=cat.Kind,IsChecked=enabledMapCategories.Contains(cat.Kind),FontSize=11,Foreground=System.Windows.Media.Brushes.White,Margin=new Thickness(1,5,1,5),ToolTip=cat.Kind+" · "+cat.Count.ToString("N0")+" across all layers"};box.Click+=(_,_)=>{if(changingMapFilters)return;if(box.IsChecked==true)enabledMapCategories.Add(cat.Kind);else enabledMapCategories.Remove(cat.Kind);ApplyMapFilters();};mapCategoryControls[cat.Kind]=box;body.Children.Add(box);}
+   var expander=new Expander{Header=group.Key,Content=body,Foreground=(System.Windows.Media.Brush)FindResource("GoldBrush"),FontSize=12,Margin=new Thickness(0,0,0,3),IsExpanded=false};mapGroupControls[group.Key]=expander;MapFilterGroups.Children.Add(expander);
   }
  }
  void ApplyMapFilters(bool persist=true){changingMapFilters=true;try{foreach(var (kind,box) in mapCategoryControls)box.IsChecked=enabledMapCategories.Contains(kind);}finally{changingMapFilters=false;}if(persist){settings.MapCategories=enabledMapCategories.ToHashSet();SaveSettings();}RefreshTravelMap();}
  void ToggleMapFilters(object sender,RoutedEventArgs e){MapFilterDrawer.Visibility=MapFilterDrawer.IsVisible?Visibility.Collapsed:Visibility.Visible;Chrome.SetSelected(MapFiltersButton,MapFilterDrawer.Visibility==Visibility.Visible);}
- void MapPresetClick(object sender,RoutedEventArgs e){var preset=(string)((Button)sender).Tag;enabledMapCategories.Clear();enabledMapCategories.UnionWith(mapCategories.Where(c=>preset=="all"||preset=="explore"&&!c.Kind.StartsWith("Resource: ",StringComparison.Ordinal)||preset=="travel"&&(c.Group=="Travel gates"||c.Kind=="Saved")).Select(c=>c.Kind));ApplyMapFilters();}
- void MapCategorySearchChanged(object sender,TextChangedEventArgs e){if(!initialized)return;var query=MapCategorySearch.Text.Trim();foreach(var c in mapCategories)mapCategoryControls[c.Kind].Visibility=(c.Kind+" "+c.Group).Contains(query,StringComparison.OrdinalIgnoreCase)?Visibility.Visible:Visibility.Collapsed;foreach(var (name,group) in mapGroupControls){group.Visibility=mapCategories.Any(c=>c.Group==name&&mapCategoryControls[c.Kind].Visibility==Visibility.Visible)?Visibility.Visible:Visibility.Collapsed;group.IsExpanded=query.Length>0||name is "Travel gates" or "Quests";}}
+ bool InCurrentMapFilterSection(MapCategory c)=>compendiumMapFilters?!MapFilters.IsPrimary(c.Kind)&&c.Kind!="Saved":MapFilters.IsPrimary(c.Kind)||c.Kind=="Saved";
+ void MapPresetClick(object sender,RoutedEventArgs e){var show=(string)((Button)sender).Tag=="all";if(!show&&!compendiumMapFilters)enabledMapCategories.Clear();else foreach(var c in mapCategories.Where(InCurrentMapFilterSection)){if(show)enabledMapCategories.Add(c.Kind);else enabledMapCategories.Remove(c.Kind);}ApplyMapFilters();}
+ void MapModeClick(object sender,RoutedEventArgs e){compendiumMapFilters=(string)((Button)sender).Tag=="compendium";MapCategorySearch.Clear();UpdateMapFilterMode();}
+ void UpdateMapFilterMode(){MapFilterHeading.Text=compendiumMapFilters?"Hyrule Compendium":"Filter markers";Chrome.SetSelected(MapMarkerMode,!compendiumMapFilters);Chrome.SetSelected(MapCompendiumMode,compendiumMapFilters);MapCategorySearchChanged(this,new TextChangedEventArgs(TextBox.TextChangedEvent,UndoAction.None));RefreshTravelMap();}
+ void MapCategorySearchChanged(object sender,TextChangedEventArgs e){if(!initialized)return;var query=MapCategorySearch.Text.Trim();foreach(var c in mapCategories)mapCategoryControls[c.Kind].Visibility=InCurrentMapFilterSection(c)&&(c.DisplayName+" "+c.Group).Contains(query,StringComparison.OrdinalIgnoreCase)?Visibility.Visible:Visibility.Collapsed;foreach(var (name,group) in mapGroupControls){group.Visibility=mapCategories.Any(c=>c.Group==name&&mapCategoryControls[c.Kind].Visibility==Visibility.Visible)?Visibility.Visible:Visibility.Collapsed;group.IsExpanded=query.Length>0;}}
  void RefreshTravelMap(){
   if(!initialized||TravelMap==null)return;
   var saved=settings.Places.Select(p=>new MapLocation(p.Name,"Saved",p.Y < -100?"Depths":p.Y>750?"Sky":"Surface",p.X,p.Y,p.Z)).ToList();
@@ -43,10 +49,10 @@ public partial class MainWindow {
   TravelMap.Locations=all;TravelMap.InvalidateVisual();
   var visible=all.Where(p=>p.Layer==TravelMap.Layer).OrderBy(p=>p.Name).ToList();LandmarkList.ItemsSource=visible;
   var counts=landmarks.Concat(saved).Where(p=>p.Layer==TravelMap.Layer).GroupBy(p=>p.Kind).ToDictionary(g=>g.Key,g=>g.Count());
-  foreach(var c in mapCategories){var box=mapCategoryControls[c.Kind];box.Content=$"{c.Kind.Replace("Resource: ","")}  ·  {counts.GetValueOrDefault(c.Kind):N0}";box.Opacity=counts.GetValueOrDefault(c.Kind)>0?1:.5;}
-  MapFiltersButton.Content=$"Filters · {enabledMapCategories.Count}/{mapCategories.Count}";
-  MapFilterSummary.Text=$"{visible.Count:N0} matching points on {TravelMap.Layer} · {landmarks.Count:N0} total";
-  MapVisibleCount.Text=$"{visible.Count:N0} points";
+  foreach(var c in mapCategories){var box=mapCategoryControls[c.Kind];box.Content=$"{c.DisplayName}  ·  {counts.GetValueOrDefault(c.Kind):N0}";box.Opacity=counts.GetValueOrDefault(c.Kind)>0?1:.5;}
+  MapFiltersButton.Content=$"Filters · {enabledMapCategories.Count(MapFilters.IsPrimary)}/49";
+  MapFilterSummary.Text=compendiumMapFilters?"Optional resources and additional map data. Enable only the types you need.":"49 categories · choose what to explore. Zoom in to reveal finer markers.";
+  MapVisibleCount.Text=$"{visible.Count:N0} matches · zoom for detail";
  }
  void SetMapLayer(string layer){TravelMap.SetLayer(layer);foreach(var b in new[]{LayerSurface,LayerSky,LayerDepths})Chrome.SetSelected(b,Equals(b.Tag,layer));RefreshTravelMap();}
  void MapLayerClick(object sender,RoutedEventArgs e)=>SetMapLayer((string)((Button)sender).Tag);
@@ -66,7 +72,7 @@ public partial class MainWindow {
  async void CoordinateTravelClick(object sender,RoutedEventArgs e){if(!ReadTravelCoordinates(out var x,out var y,out var z)){ShowNotice("Enter valid X, Z and altitude before teleporting.");return;}if(memory==null||!advancedCompatible){ShowNotice("Connect to your supported game build before teleporting.");return;}try{var current=PlayerLocator.Read(memory);await TravelTo(current with{X=x,Y=y,Z=z},false);}catch(Exception ex){ShowNotice("Travel: "+ex.Message);}}
  void SaveDestinationClick(object sender,RoutedEventArgs e){if(!ReadTravelCoordinates(out var x,out var y,out var z)){ShowNotice("Enter all three destination coordinates first.");return;}var name=PlaceNameBox.Text.Trim();if(name.Length is <1 or >60){ShowNotice("Name this destination using 1–60 characters.");return;}settings.Places.Add(new(name,x,y,z,[1,0,0,0,1,0,0,0,1]));PlaceList.ItemsSource=settings.Places.ToList();PlaceNameBox.Clear();RefreshTravelMap();SaveSettings();ShowNotice("Saved destination "+name+".");}
  async Task RunTravelUiChecks(Dictionary<string,object> checks){
-  Navigate("travel");await LayoutReady();checks["mapLandmarks"]=landmarks.Count==69299;checks["allMarkerCategories"]=mapCategories.Count==354;checks["mapLayers"]=landmarks.Select(p=>p.Layer).Distinct().Count()==3;
+  Navigate("travel");await LayoutReady();checks["mapLandmarks"]=landmarks.Count==69299;checks["allMarkerCategories"]=mapCategories.Count==354;checks["referenceMainCategories"]=mapCategories.Count(c=>MapFilters.IsPrimary(c.Kind))==49;checks["referenceCategoryGroups"]=MapFilters.MainGroups.Count==7;checks["mapLayers"]=landmarks.Select(p=>p.Layer).Distinct().Count()==3;
   var oldFilters=enabledMapCategories.ToHashSet();enabledMapCategories.UnionWith(mapCategories.Select(c=>c.Kind));ApplyMapFilters(false);
   var known=landmarks.First(p=>p.Kind=="Tower");PickMapDestination(known,false);checks["landmarkAltitude"]=ReadTravelCoordinates(out var x,out var y,out var z)&&Math.Abs(y-known.Y)<.01&&Math.Abs(x-known.X)<.01&&Math.Abs(z-known.Z)<.01;
   var point=TravelMap.Project(-452,264);var back=TravelMap.Unproject(point);checks["mapCoordinateRoundTrip"]=Math.Abs(back.X+452)<.001&&Math.Abs(back.Z-264)<.001;
@@ -79,10 +85,10 @@ public partial class MainWindow {
   enabledMapCategories.UnionWith(mapCategories.Select(c=>c.Kind));ApplyMapFilters(false);
   PickMapDestination(new("Unmeasured","Point","Surface",100,float.NaN,200),false);checks["mapClearsStaleAltitude"]=TravelY.Text==""&&!ReadTravelCoordinates(out _,out _,out _);CoordinateSpace.SelectedIndex=1;checks["mapFormatSwitchWithoutAltitude"]=TravelY.Text==""&&TravelZ.Text=="-200";CoordinateSpace.SelectedIndex=0;checks["mapFormatSwitchBackWithoutAltitude"]=TravelY.Text==""&&TravelZ.Text=="200";
   checks["mapLayerFilters"]=LandmarkList.Items.Cast<MapLocation>().All(p=>p.Layer==TravelMap.Layer);
-  MapFilterDrawer.Visibility=Visibility.Visible;MapCategorySearch.Text="Korok";await LayoutReady();checks["mapFilterSearch"]=mapCategoryControls["Korok Seed"].IsVisible&&!mapCategoryControls["Tower"].IsVisible;SaveVisual("travel-filters-search");MapCategorySearch.Clear();MapFilterDrawer.Visibility=Visibility.Collapsed;
+  MapFilterDrawer.Visibility=Visibility.Visible;MapCategorySearch.Text="Korok";await LayoutReady();checks["mapFilterSearch"]=mapCategoryControls["Korok Seed"].IsVisible&&!mapCategoryControls["Tower"].IsVisible;SaveVisual("travel-filters-search");MapCategorySearch.Clear();checks["compendiumHiddenFromMainFilters"]=mapCategoryControls["Resource: Apple"].Visibility==Visibility.Collapsed;MapModeClick(new Button{Tag="compendium"},new());MapCategorySearch.Text="Apple";await LayoutReady();checks["separateCompendiumSearch"]=mapCategoryControls["Resource: Apple"].IsVisible&&!mapCategoryControls["Tower"].IsVisible;SaveVisual("travel-compendium");MapModeClick(new Button{Tag="markers"},new());MapFilterDrawer.Visibility=Visibility.Collapsed;
   var clock=System.Diagnostics.Stopwatch.StartNew();TravelMap.InvalidateVisual();await LayoutReady();clock.Stop();checks["mapFilterLayoutMilliseconds"]=clock.ElapsedMilliseconds;checks["mapMarkerBuildMilliseconds"]=TravelMap.LastMarkerBuildMilliseconds;checks["mapClusteringBoundsRenderWork"]=TravelMap.RenderedMarkerCount<1500;
   foreach(var layer in new[]{"Surface","Sky","Depths"}){SetMapLayer(layer);TravelMap.SetView(0,0,1.6);await LayoutReady();SaveVisual("travel-map-"+layer.ToLowerInvariant());}
-  SetMapLayer("Surface");PickMapDestination(known,false);TravelMap.SetView(0,0,1.6);enabledMapCategories.RemoveWhere(k=>k.StartsWith("Resource: ",StringComparison.Ordinal));ApplyMapFilters(false);MapFilterDrawer.Visibility=Visibility.Visible;await LayoutReady();SaveVisual("travel-filters");MapFilterDrawer.Visibility=Visibility.Collapsed;enabledMapCategories.Clear();enabledMapCategories.UnionWith(oldFilters);ApplyMapFilters(false);
+  SetMapLayer("Surface");PickMapDestination(known,false);TravelMap.SetView(0,0,1.6);enabledMapCategories.RemoveWhere(k=>!MapFilters.IsPrimary(k)&&k!="Saved");ApplyMapFilters(false);MapFilterDrawer.Visibility=Visibility.Visible;await LayoutReady();SaveVisual("travel-filters");checks["unclutteredOverview"]=TravelMap.RenderedMarkerCount<100;MapFilterDrawer.Visibility=Visibility.Collapsed;enabledMapCategories.Clear();enabledMapCategories.UnionWith(oldFilters);ApplyMapFilters(false);
  }
  async Task RunTravelLiveCheck(){
   var checks=new Dictionary<string,object>();PlayerPose? before=null;

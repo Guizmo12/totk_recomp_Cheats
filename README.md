@@ -6,7 +6,7 @@ A native Windows companion for **The Legend of Zelda: Tears of the Kingdom PC re
 
 ## Download and run
 
-[**Download Hyrule Companion v0.4.0 for Windows**](https://github.com/Guizmo12/totk_recomp_Cheats/raw/refs/heads/main/downloads/HyruleCompanion-v0.4.0.zip)
+[**Download Hyrule Companion v0.4.1 for Windows**](https://github.com/Guizmo12/totk_recomp_Cheats/raw/refs/heads/main/downloads/HyruleCompanion-v0.4.1.zip)
 
 1. Extract the ZIP into a writable folder. Keep the `assets` folder beside `HyruleCompanion.exe`.
 2. Install the [.NET 8 Desktop Runtime for Windows](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) if it is not already installed.
@@ -20,7 +20,7 @@ The supported game is **TOTK 1.2.1, recomp release 0.1.1+701bd62**. Native item 
 ## 0.2.1 — spawn browser corrections
 Armor, all prepared Food entries (meals and elixirs), and Crystallized Charge are excluded from the item browser and blocked by the spawn action. The original catalog and saved favorite IDs remain intact. Raw ingredients and arrow bundles remain available. There are 568 browser entries after these exclusions. Pagination was replaced with a continuous, row-virtualized scrolling grid; wheel input over the cards scrolls the results. Verification: 22 logic tests, full-list/end-of-list selection, exclusion checks, favorites, filters, and layout checks on all four tabs. No game-memory writes were required for these checks.
 
-## Interactive Travel 0.4.0
+## Interactive Travel 0.4.1
 
 ![Interactive Travel](docs/screenshots/travel.png)
 
@@ -30,7 +30,7 @@ Pan and zoom the map; select or double-click a point to teleport, or enable **Te
 
 - **Item browser:** 568 eligible browser entries with pictures; name/actor-ID search; category/type filters; favorites; recent selections; continuous scrolling; editable quantity and spawn distance.
 - **Cheats:** health, stamina, battery, equipped durability, arrows, rupees, movement speed and experimental high jump; individual switches and an exploration preset.
-- **Travel:** offline interactive Surface/Sky/Depths map, 69,299 searchable points, 354 persistent category filters, click-to-teleport, arbitrary coordinates in engine or HUD format, saved destinations, and Undo.
+- **Travel:** offline interactive Surface/Sky/Depths map, 49 main category filters, a separate optional compendium, zoom-dependent markers, click-to-teleport, arbitrary coordinates in engine or HUD format, saved destinations, and Undo.
 - **Settings:** game path, customizable shortcuts, always-on-top, return-to-game behavior, reduced interface animations and connection reports.
 
 Spawning accepts **1–25 pickups** at **1–10 meters** in front of Link. **Arrows ×5** and **Arrows ×10** are separate entries; quantity counts bundles. Inventory-only entries without a world actor remain searchable with spawning unavailable. A save backup is created before the first native spawn/travel action.
@@ -106,5 +106,5 @@ The visual edition was built and checked across all four screens at 1440×920, 1
 Independent companion for the [TOTK PC recomp](https://github.com/valentderah/totk-pc-recomp). Item catalog and icon credits, game research references and graphic-resource attribution are listed in [SOURCES.md](SOURCES.md). The included catalog components retain their [MIT license notice](CATALOG-LICENSE.txt). Original game artwork belongs to Nintendo. This project is not affiliated with Nintendo or Wand.
 
 
-## Expanded map 0.4.0
-Travel now contains 69,299 offline points and 354 filters, covering quests, Koroks, chests, caves, wells, shops, bosses, equipment, materials and creatures across all three layers. Combine searchable grouped checkboxes; use Explore, All, None or Travel presets. Dense markers cluster and split as you zoom. Filter preferences save automatically. Read TRAVEL.md for controls, attribution and altitude limitations. Version 0.4.0 passed 30 logic/native-callback checks and the native four-screen visual review. Gameplay write tests from previous releases remain historical.
+## Map filters 0.4.1
+The main filter panel follows Zelda Dungeon’s 49 categories and seven groups: Travel Gates, Quests, Collectibles, Locations, Services, Other and Bosses. Individual resources are in a separate optional Compendium section. All/None and grouped checkboxes control visibility; finer markers appear as you zoom in. Existing custom-coordinate travel, saved places and Undo remain available. Release build, 32 checks and the native four-screen review passed. See TRAVEL.md.
