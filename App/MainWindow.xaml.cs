@@ -28,10 +28,10 @@ public partial class MainWindow:Window {
  string renderedActive="";
  string category="All items",group="All types",pageName="items";
  bool favoritesOnly,initialized,closing;
- int page;const int PageSize=36;
+ int itemColumns=4;
  List<Item> filtered=[];Item? selected;
  public MainWindow(){
-  InitializeComponent();Chrome.ReduceMotion=settings.ReduceMotion;ReduceMotionCheck.IsChecked=settings.ReduceMotion;catalog=Catalog.Load();foreach(var item in catalog)item.Favorite=settings.Favorites.Contains(item.Id);
+  InitializeComponent();Chrome.ReduceMotion=settings.ReduceMotion;ReduceMotionCheck.IsChecked=settings.ReduceMotion;catalog=Catalog.Load().Where(x=>x.SpawnSupported).ToList();foreach(var item in catalog)item.Favorite=settings.Favorites.Contains(item.Id);
   AddCheat("health","Infinite health","Keep your current hearts full.","Player","\uE95E",1);
   AddCheat("stamina","Infinite stamina","Keep climbing, swimming and gliding.","Player","\uE945",2);
   AddCheat("battery","Infinite battery","Keep your Zonai creations powered.","Player","\uE83F",3);
@@ -43,14 +43,14 @@ public partial class MainWindow:Window {
   AddCheat("jump","High jump","Boost each jump. Hold Space or Xbox Y; adjust the height below.","World","\uE74A",8);
   cheats.First(c=>c.Id=="jump").Value=2;
   ShowCheats(cheats);HotkeyList.ItemsSource=cheats.Where(c=>c.Supported).ToList();
-  foreach(var c in new[]{"All items","Weapons","Bows","Shields","Armor","Materials","Food","Zonai devices","Arrows","Key items"}){
+  foreach(var c in new[]{"All items","Weapons","Bows","Shields","Materials","Zonai devices","Arrows","Key items"}){
    var b=new Button{Content=c,Tag=c,Style=(Style)FindResource("CategoryChip")};b.Click+=CategoryClick;CategoryChips.Children.Add(b);categoryButtons[c]=b;
   }
   GroupFilter.Items.Add("All types");GroupFilter.SelectedIndex=0;
   GamePathBox.Text=settings.GamePath;TopmostCheck.IsChecked=settings.AlwaysOnTop;Topmost=settings.AlwaysOnTop;ReturnToGameCheck.IsChecked=settings.ReturnToGame;SpawnShortcutBox.Text=settings.SpawnHotkey;
-  CatalogCaption.Text=$"{catalog.Count:N0} entries, including armor upgrades. Find your next favorite.";
+  CatalogCaption.Text=$"{catalog.Count:N0} entries. Search, select, and scroll to explore.";
   PlaceList.ItemsSource=settings.Places;
-  searchTimer.Tick+=(_,_)=>{searchTimer.Stop();page=0;RefreshItems();};
+  searchTimer.Tick+=(_,_)=>{searchTimer.Stop();RefreshItems();};
   gameTimer.Tick+=GameTick;
   PreviewKeyDown+=WindowKey;
   initialized=true;Navigate("items");RefreshItems();
@@ -68,29 +68,27 @@ public partial class MainWindow:Window {
  void HotkeyPressed(int id){if(id==99){DisableAll();return;}if(memory==null||!memory.Alive)return;Hotkeys.GetWindowThreadProcessId(Hotkeys.GetForegroundWindow(),out var pid);if(pid!=memory.Pid)return;if(id==90){SpawnClick(this,new());return;}if(id>=1&&id<=cheats.Count)Toggle(cheats[id-1]);}
  void NavigateClick(object sender,RoutedEventArgs e)=>Navigate((string)((Button)sender).Tag);
  void Navigate(string name){pageName=name;ItemsPage.Visibility=name=="items"?Visibility.Visible:Visibility.Collapsed;CheatsPage.Visibility=name=="cheats"?Visibility.Visible:Visibility.Collapsed;TravelPage.Visibility=name=="travel"?Visibility.Visible:Visibility.Collapsed;SettingsPage.Visibility=name=="settings"?Visibility.Visible:Visibility.Collapsed;foreach(var (b,id) in new[]{(NavItems,"items"),(NavCheats,"cheats"),(NavTravel,"travel"),(NavSettings,"settings")}){b.Background=id==name?(Brush)FindResource("ActionBrush"):Brushes.Transparent;b.BorderBrush=id==name?(Brush)FindResource("CyanBrush"):Brushes.Transparent;b.BorderThickness=new(1);b.Foreground=(Brush)FindResource(id==name?"TextBrush":"MutedBrush");Chrome.SetSelected(b,id==name);}Chrome.Reveal(name=="items"?ItemsPage:name=="cheats"?CheatsPage:name=="travel"?TravelPage:SettingsPage);}
- void CategoryClick(object sender,RoutedEventArgs e){category=(string)((Button)sender).Tag;group="All types";page=0;GroupFilter.Items.Clear();GroupFilter.Items.Add("All types");foreach(var g in catalog.Where(x=>category=="All items"||x.Category==category).Select(x=>x.Group).Where(x=>x!="").Distinct().Order())GroupFilter.Items.Add(g);GroupFilter.SelectedIndex=0;RefreshItems();}
+ void CategoryClick(object sender,RoutedEventArgs e){category=(string)((Button)sender).Tag;group="All types";GroupFilter.Items.Clear();GroupFilter.Items.Add("All types");foreach(var g in catalog.Where(x=>category=="All items"||x.Category==category).Select(x=>x.Group).Where(x=>x!="").Distinct().Order())GroupFilter.Items.Add(g);GroupFilter.SelectedIndex=0;RefreshItems();}
  void SearchChanged(object sender,TextChangedEventArgs e){if(SearchHint!=null)SearchHint.Visibility=string.IsNullOrEmpty(SearchBox.Text)?Visibility.Visible:Visibility.Collapsed;if(!initialized)return;searchTimer.Stop();searchTimer.Start();}
- void FilterChanged(object sender,SelectionChangedEventArgs e){if(!initialized)return;group=GroupFilter.SelectedItem?.ToString()??"All types";page=0;RefreshItems();}
- void FavoritesClick(object sender,RoutedEventArgs e){favoritesOnly=!favoritesOnly;page=0;RefreshItems();}
+ void FilterChanged(object sender,SelectionChangedEventArgs e){if(!initialized)return;group=GroupFilter.SelectedItem?.ToString()??"All types";RefreshItems();}
+ void FavoritesClick(object sender,RoutedEventArgs e){favoritesOnly=!favoritesOnly;RefreshItems();}
  void RefreshItems(){
   if(!initialized)return;
   var order=(SortBox.SelectedItem as ComboBoxItem)?.Content?.ToString()??"Name A–Z";
   filtered=Catalog.Filter(catalog,SearchBox.Text,category,group,favoritesOnly,order,settings.Recent).ToList();
-  var pages=Math.Max(1,(filtered.Count+PageSize-1)/PageSize);page=Math.Clamp(page,0,pages-1);ItemList.ItemsSource=filtered.Skip(page*PageSize).Take(PageSize).ToList();
+  RenderItemRows();
   EmptyResults.Visibility=filtered.Count==0?Visibility.Visible:Visibility.Collapsed;ResultCount.Text=$"{filtered.Count:N0} results";
-  PageLabel.Text=$"Page {page+1} of {pages}";PreviousButton.IsEnabled=page>0;NextButton.IsEnabled=page<pages-1;
+
   FavoritesButton.Content=favoritesOnly?"★ Favorites":"☆ Favorites";FavoritesButton.Foreground=(Brush)FindResource(favoritesOnly?"GoldBrush":"TextBrush");Chrome.SetSelected(FavoritesButton,favoritesOnly);
   foreach(var (c,b) in categoryButtons){Chrome.SetSelected(b,c==category);}
  }
- void ItemSelected(object sender,SelectionChangedEventArgs e){if(ItemList.SelectedItem is Item item)SelectItem(item);}
- void SelectItem(Item item){selected=item;DetailName.Text=item.Name;DetailCategory.Text=item.Category.ToUpperInvariant();DetailId.Text=SpawnCatalog.WorldActor(item.Id);DetailImage.Source=Artwork.Load(item.ImagePath,256);DetailFavorite.Content=item.Star;SpecialItemNote.Text=item.UnitsPerPickup>1?$"Each pickup contains {item.UnitsPerPickup} arrows. Quantity counts bundles.":item.Special?"Special item: world spawning may differ from obtaining it normally.":"";settings.Recent.Remove(item.Id);settings.Recent.Insert(0,item.Id);if(settings.Recent.Count>60)settings.Recent.RemoveAt(60);UpdateSpawnControl();SaveSettings();}
- void UpdateSpawnControl(){SpawnButton.IsEnabled=memory!=null&&advancedCompatible&&!spawning&&selected!=null&&worldActors.Contains(SpawnCatalog.WorldActor(selected.Id));SpawnStatus.Text=memory==null?"Connect to your game to check item spawning.":!advancedCompatible?"Item spawning is not compatible with this recomp build.":selected!=null&&!worldActors.Contains(SpawnCatalog.WorldActor(selected.Id))?"This entry has no world actor in your game. It cannot be dropped in front of Link.":spawning?"Creating your item…":"Experimental • spawns in front of Link. A save backup is created before first use.";SpawnButton.ToolTip=SpawnStatus.Text;}
+ void ItemSelected(object sender,SelectionChangedEventArgs e){if(e.AddedItems.OfType<Item>().FirstOrDefault() is Item item){foreach(var row in Descendants<ListBox>(ItemList).Where(row=>row!=e.OriginalSource))row.SelectedIndex=-1;SelectItem(item);e.Handled=true;}}
+ void SelectItem(Item item){if(selected!=null)selected.IsCurrent=false;selected=item;item.IsCurrent=true;DetailName.Text=item.Name;DetailCategory.Text=item.Category.ToUpperInvariant();DetailId.Text=SpawnCatalog.WorldActor(item.Id);DetailImage.Source=Artwork.Load(item.ImagePath,256);DetailFavorite.Content=item.Star;SpecialItemNote.Text=item.UnitsPerPickup>1?$"Each pickup contains {item.UnitsPerPickup} arrows. Quantity counts bundles.":item.Special?"Special item: world spawning may differ from obtaining it normally.":"";settings.Recent.Remove(item.Id);settings.Recent.Insert(0,item.Id);if(settings.Recent.Count>60)settings.Recent.RemoveAt(60);UpdateSpawnControl();SaveSettings();}
+ void UpdateSpawnControl(){SpawnButton.IsEnabled=memory!=null&&advancedCompatible&&!spawning&&selected!=null&&selected.SpawnSupported&&worldActors.Contains(SpawnCatalog.WorldActor(selected.Id));SpawnStatus.Text=memory==null?"Connect to your game to check item spawning.":!advancedCompatible?"Item spawning is not compatible with this recomp build.":selected!=null&&!worldActors.Contains(SpawnCatalog.WorldActor(selected.Id))?"This entry has no world actor in your game. It cannot be dropped in front of Link.":spawning?"Creating your item…":"Experimental • spawns in front of Link. A save backup is created before first use.";SpawnButton.ToolTip=SpawnStatus.Text;}
  void FavoriteClick(object sender,RoutedEventArgs e){var item=(Item)((Button)sender).Tag;Favorite(item);e.Handled=true;}
  void DetailFavoriteClick(object sender,RoutedEventArgs e){if(selected!=null)Favorite(selected);}
  void Favorite(Item item){item.Favorite=!item.Favorite;if(item.Favorite)settings.Favorites.Add(item.Id);else settings.Favorites.Remove(item.Id);if(selected==item)DetailFavorite.Content=item.Star;SaveSettings();if(favoritesOnly)RefreshItems();}
- void ClearFiltersClick(object sender,RoutedEventArgs e){SearchBox.Clear();category="All items";group="All types";favoritesOnly=false;GroupFilter.SelectedIndex=0;page=0;RefreshItems();}
- void PreviousClick(object sender,RoutedEventArgs e){page--;RefreshItems();}
- void NextClick(object sender,RoutedEventArgs e){page++;RefreshItems();}
+ void ClearFiltersClick(object sender,RoutedEventArgs e){SearchBox.Clear();category="All items";group="All types";favoritesOnly=false;GroupFilter.SelectedIndex=0;RefreshItems();}
  void CopyIdClick(object sender,RoutedEventArgs e){if(selected==null)return;try{Clipboard.SetText(SpawnCatalog.WorldActor(selected.Id));FooterStatus.Text="Copied "+SpawnCatalog.WorldActor(selected.Id);}catch{ShowNotice("The clipboard is busy. Try copying again.");}}
  void ConnectClick(object sender,RoutedEventArgs e){if(memory!=null)Disconnect();else Connect();}
  void Connect(){
@@ -147,6 +145,7 @@ public partial class MainWindow:Window {
  void BackupSaves(){var source=Path.Combine(Path.GetDirectoryName(settings.GamePath)!,"profile","save");var destination=Path.Combine(AppContext.BaseDirectory,"backups","before-first-spawn");var done=Path.Combine(destination,"backup-complete.txt");if(File.Exists(done))return;if(!Directory.Exists(source))throw new InvalidOperationException("Your save folder could not be found, so spawning was not enabled.");foreach(var file in Directory.EnumerateFiles(source,"*",SearchOption.AllDirectories)){var relative=Path.GetRelativePath(source,file);var target=Path.Combine(destination,relative);Directory.CreateDirectory(Path.GetDirectoryName(target)!);File.Copy(file,target,true);}File.WriteAllText(done,"Save files copied before the first native frame extension was attached.\nSource: "+source+"\nTime: "+DateTimeOffset.Now.ToString("O"));}
  async void SpawnClick(object sender,RoutedEventArgs e){
   if(memory==null||selected==null||!advancedCompatible||spawning)return;
+  if(!selected.SpawnSupported){ShowNotice("This item cannot be spawned as a collectible.");return;}
   if(!int.TryParse(QuantityBox.Text,out var quantity)||quantity<1||quantity>25||!double.TryParse(DistanceBox.Text,NumberStyles.Float,CultureInfo.InvariantCulture,out var distance)||!double.IsFinite(distance)||distance<1||distance>10){ShowNotice("Choose a quantity from 1 to 25 and a distance from 1 to 10 meters. Use a decimal point, for example 2.5.");return;}
   if(!worldActors.Contains(SpawnCatalog.WorldActor(selected.Id))){ShowNotice("The selected item has no world actor in this game.");return;}
   var game=memory;var item=selected;var worldActor=SpawnCatalog.WorldActor(item.Id);spawning=true;UpdateSpawnControl();var spawned=new List<object>();string? error=null;

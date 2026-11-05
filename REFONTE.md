@@ -1,4 +1,4 @@
-# Recette de la refonte — Hyrule Companion 0.2.0
+# Recette de la refonte — Hyrule Companion 0.2.1
 
 Refonte de l’application WPF existante, réalisée à partir des références Item browser et Cheats du pack fourni. Les quatre onglets conservent leurs contrôles natifs et leurs actions. Les images servent au décor et aux illustrations, jamais de remplacement de l’interface.
 
@@ -28,3 +28,7 @@ Favoris, lieux, raccourcis, chemin du jeu et préférences existantes conservés
 ## Consultation
 
 Les captures et le détail des assertions figurent dans `visual-review/`. Pour relancer les vérifications sans écrire dans le jeu : `HyruleCompanion.exe --visual-review --connect`. Fermer préalablement l’application. Ne pas combiner cette option avec les vérifications de gameplay.
+
+
+## 0.2.1 — spawn browser corrections
+Armor, all prepared Food entries (meals and elixirs), and Crystallized Charge are excluded from the item browser and blocked by the spawn action. The original catalog and saved favorite IDs remain intact. Raw ingredients and arrow bundles remain available. There are 568 browser entries after these exclusions. Pagination was replaced with a continuous, row-virtualized scrolling grid; wheel input over the cards scrolls the results. Verification: 22 logic tests, full-list/end-of-list selection, exclusion checks, favorites, filters, and layout checks on all four tabs. No game-memory writes were required for these checks.

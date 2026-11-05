@@ -7,7 +7,9 @@ namespace HyruleCompanion;
 public abstract class Bindable:INotifyPropertyChanged {public event PropertyChangedEventHandler? PropertyChanged;protected void Changed([CallerMemberName]string? p=null)=>PropertyChanged?.Invoke(this,new(p));}
 public sealed class Item:Bindable {
  public string Id{get;set;}=""; public string Name{get;set;}="";public string Category{get;set;}="";public string Group{get;set;}="";public string Image{get;set;}="";public bool Special{get;set;}
+ public bool SpawnSupported=>Category!="Armor"&&Category!="Food"&&Id!="Energy_Material_01";
  public string ImagePath=>Path.Combine(AppContext.BaseDirectory,Image);
+ bool isCurrent;public bool IsCurrent{get=>isCurrent;set{isCurrent=value;Changed();}}
  bool favorite;public bool Favorite{get=>favorite;set{favorite=value;Changed();Changed(nameof(Star));}}
  public string Star=>Favorite?"★":"☆";
  public string Subtitle=>string.IsNullOrEmpty(Group)?Category:Group;
@@ -44,7 +46,7 @@ public static class Catalog {
  public static List<Item> Load()=>JsonSerializer.Deserialize<List<Item>>(File.ReadAllText(Path.Combine(AppContext.BaseDirectory,"assets","catalog.json")))??[];
  public static IEnumerable<Item> Filter(IEnumerable<Item> source,string query,string category,string group,bool favorites,string order,IReadOnlyList<string> recent){
   var terms=query.Trim().Split(' ',StringSplitOptions.RemoveEmptyEntries);
-  var found=source.Where(x=>(category=="All items"||x.Category==category)&&(group=="All types"||x.Group==group)&&(!favorites||x.Favorite)&&terms.All(t=>(x.Name+" "+x.Id+" "+x.Group+" "+x.Category+" "+x.UnitsSearchTerms).Contains(t,StringComparison.OrdinalIgnoreCase)));
+  var found=source.Where(x=>x.SpawnSupported&&(category=="All items"||x.Category==category)&&(group=="All types"||x.Group==group)&&(!favorites||x.Favorite)&&terms.All(t=>(x.Name+" "+x.Id+" "+x.Group+" "+x.Category+" "+x.UnitsSearchTerms).Contains(t,StringComparison.OrdinalIgnoreCase)));
   return order switch {"Favorites first"=>found.OrderByDescending(x=>x.Favorite).ThenBy(x=>x.Name),"Recently selected"=>found.OrderBy(x=>recent.IndexOf(x.Id)<0?int.MaxValue:recent.IndexOf(x.Id)).ThenBy(x=>x.Name),_=>found.OrderBy(x=>x.Name)};
  }
  static int IndexOf<T>(this IReadOnlyList<T> list,T value){for(var i=0;i<list.Count;i++)if(EqualityComparer<T>.Default.Equals(list[i],value))return i;return -1;}

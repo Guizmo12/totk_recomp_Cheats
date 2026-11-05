@@ -28,6 +28,8 @@ internal class Program {
  Test("ordinary items keep their existing world actor",()=>Assert(SpawnCatalog.WorldActor("Item_Fruit_A")=="Item_Fruit_A"&&SpawnCatalog.WorldActor("Weapon_Sword_001")=="Weapon_Sword_001"));
  Test("arrow bundles retain their own world actor and pickup count",()=>Assert(SpawnCatalog.WorldActor("Obj_ArrowBundle_A_01")=="Obj_ArrowBundle_A_01"&&SpawnCatalog.UnitsInPickup("Obj_ArrowBundle_A_01")==5&&SpawnCatalog.UnitsInPickup("Obj_ArrowBundle_A_02")==10&&SpawnCatalog.UnitsInPickup("NormalArrow")==1));
  Test("five-arrow bundle can be found using 5x",()=>{var bundle=new Item{Id="Obj_ArrowBundle_A_01",Name="Arrows ×5",Category="Arrows",Group="Bundles"};Assert(Catalog.Filter([bundle],"5x arrows","All items","All types",false,"",[]).Single()==bundle&&bundle.UnitsBadge=="×5");});
+ Test("uncollectible armor, meals, elixirs and crystallized charges are excluded even when favorited",()=>{var blocked=new List<Item>{new(){Id="Armor_001_Head",Category="Armor",Favorite=true},new(){Id="Item_Cook_A_01",Category="Food",Group="Meals",Favorite=true},new(){Id="Item_Cook_C_17",Category="Food",Group="Elixirs",Favorite=true},new(){Id="Energy_Material_01",Category="Key items",Favorite=true}};Assert(blocked.All(x=>!x.SpawnSupported));Assert(!Catalog.Filter(blocked,"","All items","All types",true,"",[]).Any());});
+ Test("raw ingredients, weapons and arrow bundles remain spawn candidates",()=>Assert(new[]{new Item{Id="Item_Fruit_A",Category="Materials"},new Item{Id="Weapon_Sword_001",Category="Weapons"},new Item{Id="Obj_ArrowBundle_A_01",Category="Arrows"}}.All(x=>x.SpawnSupported)));
  Console.WriteLine($"{passed} checks passed. Fake-memory checks validate logic, not live gameplay.");return 0;
  }
 }
