@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+ <SolidColorBrush x:Key="Bg" Color="#06151B"/>
+ <SolidColorBrush x:Key="Panel" Color="#092B32"/>
+ <SolidColorBrush x:Key="Line" Color="#38565A"/>
+ <SolidColorBrush x:Key="Muted" Color="#A6BEB7"/>
+ <SolidColorBrush x:Key="Accent" Color="#48D6F9"/>
+ <SolidColorBrush x:Key="Gold" Color="#E9C477"/>
+ <SolidColorBrush x:Key="TextBrush" Color="#F6EDDC"/>
+ <SolidColorBrush x:Key="MutedBrush" Color="#A6BEB7"/>
+ <SolidColorBrush x:Key="GoldBrush" Color="#E9C477"/>
+ <SolidColorBrush x:Key="GoldMutedBrush" Color="#9F8754"/>
+ <SolidColorBrush x:Key="CyanBrush" Color="#48D6F9"/>
+ <SolidColorBrush x:Key="SuccessBrush" Color="#70EDA0"/>
+ <SolidColorBrush x:Key="WarningBrush" Color="#E5C276"/>
+ <SolidColorBrush x:Key="ErrorBrush" Color="#FFB4A0"/>
+ <SolidColorBrush x:Key="SoftLineBrush" Color="#34505A"/>
+ <LinearGradientBrush x:Key="GoldLineBrush" StartPoint="0,0" EndPoint="1,1">
+  <GradientStop Color="#F3D591"/>
+  <GradientStop Offset=".3" Color="#8B713D"/>
+  <GradientStop Offset=".65" Color="#D2B367"/>
+  <GradientStop Offset="1" Color="#F7D990"/>
+ </LinearGradientBrush>
+ <LinearGradientBrush x:Key="PanelBrush" StartPoint="0,0" EndPoint="1,1">
+  <GradientStop Color="#12343B"/>
+  <GradientStop Offset=".48" Color="#0A252E"/>
+  <GradientStop Offset="1" Color="#082029"/>
+ </LinearGradientBrush>
+ <LinearGradientBrush x:Key="CardBrush" StartPoint="0,0" EndPoint="1,1">
+  <GradientStop Color="#133B40"/>
+  <GradientStop Offset=".6" Color="#0B282E"/>
+  <GradientStop Offset="1" Color="#192F2E"/>
+ </LinearGradientBrush>
+ <LinearGradientBrush x:Key="ButtonBrush" StartPoint="0,0" EndPoint="0,1">
+  <GradientStop Color="#1C3C43"/>
+  <GradientStop Offset="1" Color="#0A232D"/>
+ </LinearGradientBrush>
+ <LinearGradientBrush x:Key="ButtonHoverBrush" StartPoint="0,0" EndPoint="1,1">
+  <GradientStop Color="#2A5360"/>
+  <GradientStop Offset="1" Color="#10303B"/>
+ </LinearGradientBrush>
+ <LinearGradientBrush x:Key="ActionBrush" StartPoint="0,0" EndPoint="0,1">
+  <GradientStop Color="#136886"/>
+  <GradientStop Offset=".5" Color="#0C4057"/>
+  <GradientStop Offset="1" Color="#092D42"/>
+ </LinearGradientBrush>
+ <RadialGradientBrush x:Key="WindowBrush" Center=".72,.36" GradientOrigin=".72,.36" RadiusX=".8" RadiusY=".8">
+  <GradientStop Color="#103E49"/>
+  <GradientStop Offset=".62" Color="#061C25"/>
+  <GradientStop Offset="1" Color="#040E17"/>
+ </RadialGradientBrush>
+ <RadialGradientBrush x:Key="ArtHaloBrush" RadiusX=".5" RadiusY=".5">
+  <GradientStop Color="#354D7971"/>
+  <GradientStop Offset=".6" Color="#182A6A70"/>
+  <GradientStop Offset="1" Color="#000A2430"/>
+ </RadialGradientBrush>
+ <FontFamily x:Key="DisplayFont">Georgia</FontFamily>
+ <FontFamily x:Key="UiFont">Segoe UI</FontFamily>
+ <sys:Double x:Key="ItemCardWidth">190</sys:Double>
+ <BitmapImage x:Key="HeroScene" UriSource="/HyruleCompanion;component/Resources/banner-scene.png" CacheOption="OnLoad"/>
+ <BitmapImage x:Key="PresetScene" UriSource="/HyruleCompanion;component/Resources/preset-scene.png" CacheOption="OnLoad"/>
+ <ImageBrush x:Key="SceneBrush" ImageSource="{StaticResource HeroScene}" Stretch="UniformToFill" AlignmentX="Center" AlignmentY="Top" Viewbox=".012,.12,.95,.77" ViewboxUnits="RelativeToBoundingBox"/>
+ <ImageBrush x:Key="PresetSceneBrush" ImageSource="{StaticResource PresetScene}" Stretch="UniformToFill" Viewbox=".18,.15,.8,.8" ViewboxUnits="RelativeToBoundingBox"/>
+ <DrawingBrush x:Key="AncientPatternBrush" TileMode="Tile" Viewport="0,0,160,100" ViewportUnits="Absolute" Opacity=".028">
+  <DrawingBrush.Drawing>
+   <GeometryDrawing Brush="Transparent">
+    <GeometryDrawing.Pen>
+     <Pen Brush="#62CDE2" Thickness=".8"/>
+    </GeometryDrawing.Pen>
+    <GeometryDrawing.Geometry>
+     <GeometryGroup>
+      <RectangleGeometry Rect="0,0,160,100"/>
+      <PathGeometry Figures="M0,50 C30,12 50,12 80,50 C110,88 130,88 160,50 M0,80 C30,42 50,42 80,80 C110,118 130,118 160,80 M0,20 C30,-18 50,-18 80,20 C110,58 130,58 160,20 M22,47 C45,25 60,45 45,55 C31,66 20,48 35,43 M102,45 C120,31 136,49 121,59 C105,69 97,53 111,47"/>
+     </GeometryGroup>
+    </GeometryDrawing.Geometry>
+   </GeometryDrawing>
+  </DrawingBrush.Drawing>
+ </DrawingBrush>
+</ResourceDictionary>

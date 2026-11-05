@@ -1,0 +1,24 @@
+# Generated build output
+**/bin/
+**/obj/
+artifacts/
+.vs/
+*.user
+*.suo
+*.pdb
+# Personal settings, saves and local diagnostic reports
+**/user-settings.json
+**/user-settings.json.tmp
+**/backups/
+**/profile/
+**/romfs/
+**/totk.exe
+**/*-report.json
+**/*-check.json
+**/app-error.txt
+**/visual-review/
+# Local tooling and OS files
+.env
+.env.*
+Thumbs.db
+.DS_Store

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:HyruleCompanion" x:Class="HyruleCompanion.App">
+ <Application.Resources>
+  <ResourceDictionary>
+   <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="Themes/Tokens.xaml"/>
+    <ResourceDictionary Source="Themes/Ornaments.xaml"/>
+    <ResourceDictionary Source="Themes/Controls.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+   <local:ThumbnailConverter x:Key="Thumbnail"/>
+   <local:NonEmptyVisibilityConverter x:Key="NonEmpty"/>
+   <local:CheatArtworkConverter x:Key="CheatArtwork"/>
+   <local:CheatNoteBrushConverter x:Key="CheatNoteBrush"/>
+  </ResourceDictionary>
+ </Application.Resources>
+</Application>
