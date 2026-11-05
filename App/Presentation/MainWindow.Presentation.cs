@@ -19,7 +19,7 @@ public partial class MainWindow {
  async Task RunVisualReview(){
   var dir=Path.Combine(AppContext.BaseDirectory,"visual-review");Directory.CreateDirectory(dir);var checks=new Dictionary<string,object>();var oldRecent=settings.Recent.ToList();var oldFavorites=settings.Favorites.ToHashSet();var oldSelected=selected;var oldWidth=Width;var oldHeight=Height;var motion=Chrome.ReduceMotion;Chrome.ReduceMotion=true;
   try{
-   checks["catalogCount"]=catalog.Count;checks["allCheatsInitiallyOff"]=cheats.All(x=>!x.Active);checks["connectionTruth"]=memory==null?ConnectionStatus.Text!="Connected • 1.2.1":memory.Alive;
+   await RunTravelUiChecks(checks);checks["catalogCount"]=catalog.Count;checks["allCheatsInitiallyOff"]=cheats.All(x=>!x.Active);checks["connectionTruth"]=memory==null?ConnectionStatus.Text!="Connected • 1.2.1":memory.Alive;
    SearchBox.Text="hylian shield";searchTimer.Stop();RefreshItems();checks["search"]=filtered.Any(x=>x.Id=="Weapon_Shield_030");SearchBox.Clear();searchTimer.Stop();RefreshItems();
    var favorite=catalog.First();var before=favorite.Favorite;Favorite(favorite);checks["favoritesToggle"]=favorite.Favorite!=before;Favorite(favorite);
    CategoryClick(categoryButtons["Arrows"],new());checks["arrowsFilter"]=filtered.Count>0&&filtered.All(x=>x.Category=="Arrows");checks["fiveArrowBundle"]=filtered.Any(x=>x.UnitsPerPickup==5);ClearFiltersClick(this,new());searchTimer.Stop();

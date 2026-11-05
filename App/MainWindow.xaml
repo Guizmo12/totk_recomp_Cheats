@@ -379,72 +379,33 @@
         </ScrollViewer>
        </Grid>
        <Grid x:Name="TravelPage" Visibility="Collapsed">
-        <Grid.RowDefinitions>
-         <RowDefinition Height="Auto"/>
-         <RowDefinition Height="Auto"/>
-         <RowDefinition Height="*"/>
-         <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <StackPanel Margin="0,0,0,18">
-         <TextBlock Text="Your places in Hyrule" Style="{StaticResource Heading}"/>
-         <TextBlock Text="Save a spot. Return when you feel like it." Style="{StaticResource Caption}" Margin="0,7,0,0"/>
-        </StackPanel>
-        <local:OrnateFrame Grid.Row="1" Style="{StaticResource PanelFrame}" Padding="17" Margin="0,0,0,17">
-         <Grid>
-          <Grid.ColumnDefinitions>
-           <ColumnDefinition Width="*"/>
-           <ColumnDefinition Width="180"/>
-          </Grid.ColumnDefinitions>
-          <TextBox x:Name="PlaceNameBox" ToolTip="Name this place" AutomationProperties.Name="Saved place name"/>
-          <Button Grid.Column="1" Content="Save current place" Click="SavePlaceClick" Margin="13,0,0,0"/>
-         </Grid>
-        </local:OrnateFrame>
-        <Grid Grid.Row="2">
-         <ListBox x:Name="PlaceList" AutomationProperties.Name="Saved places">
-          <ListBox.ItemTemplate>
-           <DataTemplate>
-            <local:OrnateFrame Style="{StaticResource PanelFrame}" Padding="22,18" Margin="0,0,0,1">
-             <Grid>
-              <Grid.ColumnDefinitions>
-               <ColumnDefinition Width="45"/>
-               <ColumnDefinition Width="*"/>
-              </Grid.ColumnDefinitions>
-              <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="24" Foreground="{StaticResource CyanBrush}" VerticalAlignment="Center"/>
-              <StackPanel Grid.Column="1">
-               <TextBlock Text="{Binding Name}" FontFamily="Georgia" FontSize="21"/>
-               <TextBlock Text="{Binding Coordinates}" Style="{StaticResource Caption}" Margin="0,8,0,0"/>
-              </StackPanel>
-             </Grid>
-            </local:OrnateFrame>
-           </DataTemplate>
-          </ListBox.ItemTemplate>
-         </ListBox>
-         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" IsHitTestVisible="False">
-          <StackPanel.Style>
-           <Style TargetType="StackPanel">
-            <Setter Property="Visibility" Value="Collapsed"/>
-            <Style.Triggers>
-             <DataTrigger Binding="{Binding HasItems,ElementName=PlaceList}" Value="False">
-              <Setter Property="Visibility" Value="Visible"/>
-             </DataTrigger>
-            </Style.Triggers>
-           </Style>
-          </StackPanel.Style>
-          <local:SheikahSeal Width="138" Height="138" Opacity=".32"/>
-          <TextBlock Text="Your journey begins here" FontFamily="Georgia" FontSize="24" HorizontalAlignment="Center" Margin="0,15,0,0"/>
-          <TextBlock Text="Name your current location above to save your first place." Style="{StaticResource Caption}" HorizontalAlignment="Center" Margin="0,11,0,0"/>
-         </StackPanel>
-        </Grid>
-        <StackPanel Grid.Row="3" Margin="0,15,0,0">
-         <WrapPanel>
-          <Button x:Name="TravelButton" Content="Travel to selected place" Style="{StaticResource Primary}" Click="TravelClick" Margin="0,0,10,8"/>
-          <Button x:Name="UndoTravelButton" Content="Undo last teleport" Click="UndoTravelClick" IsEnabled="False" Margin="0,0,10,8"/>
-          <Button Content="Remove place" Click="RemovePlaceClick" Margin="0,0,0,8"/>
-         </WrapPanel>
-         <TextBlock Text="Nearby travel • within 2,000 meters • uses the current game world" Style="{StaticResource Caption}" Foreground="{StaticResource WarningBrush}" Margin="0,7,0,0"/>
-         <TextBlock Text="X and Z are horizontal coordinates. Height is the vertical position." Style="{StaticResource Caption}" Margin="0,7,0,0"/>
-        </StackPanel>
-       </Grid>
+ <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+ <Grid Margin="0,0,0,15"><StackPanel><TextBlock Text="Explore. Mark. Travel." Style="{StaticResource Heading}"/><TextBlock Text="Click to choose a destination • double-click to teleport • drag to pan" Style="{StaticResource Caption}" Margin="0,7,0,0"/></StackPanel><TextBlock x:Name="PlayerCoordinatesLabel" Text="Connect to locate Link" Style="{StaticResource Caption}" HorizontalAlignment="Right" VerticalAlignment="Center"/></Grid>
+ <Grid Grid.Row="1" Margin="0,0,0,12"><Grid.ColumnDefinitions><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/><ColumnDefinition Width="160"/></Grid.ColumnDefinitions>
+ <StackPanel Orientation="Horizontal"><Button x:Name="LayerSurface" Tag="Surface" Content="Surface" Click="MapLayerClick" Style="{StaticResource CategoryChip}"/><Button x:Name="LayerSky" Tag="Sky" Content="Sky" Click="MapLayerClick" Style="{StaticResource CategoryChip}"/><Button x:Name="LayerDepths" Tag="Depths" Content="Depths" Click="MapLayerClick" Style="{StaticResource CategoryChip}"/></StackPanel>
+ <TextBox Grid.Column="1" x:Name="MapSearch" TextChanged="MapFilterChanged" ToolTip="Search shrines, towers, lightroots or saved places" AutomationProperties.Name="Search map destinations" Margin="12,0,10,7" Padding="10,7"/>
+ <TextBlock Grid.Column="1" Text="Search map destinations…" Foreground="{StaticResource Muted}" FontSize="11" Margin="23,0,20,7" VerticalAlignment="Center" IsHitTestVisible="False"><TextBlock.Style><Style TargetType="TextBlock"><Setter Property="Visibility" Value="Collapsed"/><Style.Triggers><DataTrigger Binding="{Binding Text,ElementName=MapSearch}" Value=""><Setter Property="Visibility" Value="Visible"/></DataTrigger></Style.Triggers></Style></TextBlock.Style></TextBlock><ComboBox Grid.Column="2" x:Name="MapKindFilter" SelectionChanged="MapKindChanged" Margin="0,0,0,7" AutomationProperties.Name="Map marker filter"><ComboBoxItem Content="All landmarks" IsSelected="True"/><ComboBoxItem Content="Shrine"/><ComboBoxItem Content="Tower"/><ComboBoxItem Content="Lightroot"/><ComboBoxItem Content="Saved"/></ComboBox></Grid>
+ <Grid Grid.Row="2"><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="310"/></Grid.ColumnDefinitions>
+ <local:OrnateFrame Style="{StaticResource PanelFrame}" Padding="1" Margin="0,0,15,0"><Grid><local:HyruleMap x:Name="TravelMap" AutomationProperties.Name="Interactive Hyrule map"/>
+ <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,40,0,0"><Button Content="+" Click="MapZoomIn" ToolTip="Zoom in" Padding="12,7"/><Button Content="−" Click="MapZoomOut" ToolTip="Zoom out" Padding="12,7" Margin="0,5,0,0"/><Button Content="⌖" Click="MapLocatePlayer" ToolTip="Center on Link" Padding="12,7" Margin="0,5,0,0"/><Button Content="Fit" Click="MapFit" ToolTip="Show the whole map" Padding="8,7" Margin="0,5,0,0"/></StackPanel>
+ <Border Background="#D9071923" VerticalAlignment="Bottom" Padding="10,7"><Grid><TextBlock x:Name="MapPointerLabel" Text="Wheel to zoom • drag to explore" Foreground="{StaticResource GoldBrush}" FontSize="10"/><TextBlock Text="Basemap © Nintendo" FontSize="9" Foreground="{StaticResource Muted}" HorizontalAlignment="Right"/></Grid></Border>
+ </Grid></local:OrnateFrame>
+ <local:OrnateFrame Grid.Column="1" Style="{StaticResource PanelFrame}" Padding="17"><ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"><StackPanel>
+ <TextBlock Text="DESTINATION" Foreground="{StaticResource GoldBrush}" FontSize="11"/><TextBlock x:Name="DestinationName" Text="Choose your next stop" FontFamily="Georgia" FontSize="23" TextWrapping="Wrap" Margin="0,10,0,8"/>
+ <TextBlock x:Name="CoordinateExplanation" Text="World coordinates • X east / Z south / Y height" Style="{StaticResource Caption}" FontSize="10"/>
+ <ComboBox x:Name="CoordinateSpace" SelectionChanged="CoordinateSpaceChanged" Margin="0,10,0,0" AutomationProperties.Name="Coordinate format"><ComboBoxItem Content="Engine coordinates" IsSelected="True"/><ComboBoxItem Content="In-game HUD coordinates"/></ComboBox><Grid Margin="0,12,0,0"><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions><StackPanel Margin="0,0,8,0"><TextBlock Text="X (east / west)" Style="{StaticResource Caption}" FontSize="11"/><TextBox x:Name="TravelX" Text="0" TextChanged="TravelCoordinateChanged" AutomationProperties.Name="Destination X" Margin="0,6,0,0"/></StackPanel><StackPanel Grid.Column="1"><TextBlock x:Name="HorizontalCoordinateLabel" Text="Z (south / north)" Style="{StaticResource Caption}" FontSize="11"/><TextBox x:Name="TravelZ" Text="0" TextChanged="TravelCoordinateChanged" AutomationProperties.Name="Destination Z" Margin="0,6,0,0"/></StackPanel></Grid>
+ <TextBlock x:Name="AltitudeCoordinateLabel" Text="Y — altitude (meters)" Style="{StaticResource Caption}" Margin="0,12,0,6"/><TextBox x:Name="TravelY" Text="" TextChanged="TravelCoordinateChanged" ToolTip="Required for arbitrary map points; landmarks include their measured height" AutomationProperties.Name="Destination altitude Y"/>
+ <TextBlock x:Name="TravelCoordinateStatus" Text="Select a landmark or enter all three coordinates." Style="{StaticResource Caption}" Foreground="{StaticResource WarningBrush}" Margin="0,10,0,0"/>
+ <Button x:Name="CoordinateTravelButton" Content="Teleport here" Click="CoordinateTravelClick" Style="{StaticResource Primary}" IsEnabled="False" Margin="0,13,0,0"/><CheckBox x:Name="MapClickTeleport" Content="Teleport on single map click" FontSize="11" Margin="0,12,0,3" ToolTip="Uses the entered altitude for arbitrary map points"/><Button x:Name="UndoTravelButton" Content="Undo last teleport" Click="UndoTravelClick" IsEnabled="False" Margin="0,9,0,0"/>
+ <TextBlock x:Name="MapAltitudeHelp" Text="A map click sets X and Z. Set altitude before teleporting: the map does not measure terrain height. Long-distance travel is experimental." Style="{StaticResource Caption}" FontSize="11" Margin="0,13,0,0"/>
+ <Image Source="{StaticResource SeparatorImage}" Height="13" Stretch="Fill" Margin="0,18"/>
+ <TextBlock Text="Destinations" FontFamily="Georgia" FontSize="19" Foreground="{StaticResource GoldBrush}"/><ListBox x:Name="LandmarkList" Height="155" SelectionChanged="LandmarkSelected" Margin="0,10,0,0" AutomationProperties.Name="Map landmarks"><ListBox.ItemTemplate><DataTemplate><StackPanel Margin="7,6"><TextBlock Text="{Binding Name}" FontSize="12" TextTrimming="CharacterEllipsis"/><TextBlock Text="{Binding Kind}" Style="{StaticResource Caption}" FontSize="10" Margin="0,4,0,0"/></StackPanel></DataTemplate></ListBox.ItemTemplate></ListBox>
+ <TextBlock Text="Your saved places" FontFamily="Georgia" FontSize="19" Foreground="{StaticResource GoldBrush}" Margin="0,18,0,10"/>
+ <TextBox x:Name="PlaceNameBox" ToolTip="Name a saved destination or your current location" AutomationProperties.Name="Saved place name"/><WrapPanel Margin="0,8,0,0"><Button Content="Save current" Click="SavePlaceClick" Padding="9,8" FontSize="11" Margin="0,0,8,6"/><Button Content="Save destination" Click="SaveDestinationClick" Padding="9,8" FontSize="11" Margin="0,0,0,6"/></WrapPanel>
+ <ListBox x:Name="PlaceList" MaxHeight="160" SelectionChanged="SavedMapPlaceSelected" AutomationProperties.Name="Saved places"><ListBox.ItemTemplate><DataTemplate><StackPanel Margin="7,6"><TextBlock Text="{Binding Name}" FontSize="13"/><TextBlock Text="{Binding Coordinates}" Style="{StaticResource Caption}" FontSize="10" Margin="0,5,0,0"/></StackPanel></DataTemplate></ListBox.ItemTemplate></ListBox>
+ <WrapPanel Margin="0,9,0,0"><Button x:Name="TravelButton" Content="Travel to saved place" Click="TravelClick" Padding="9,8" FontSize="11" Margin="0,0,8,6"/><Button Content="Remove" Click="RemovePlaceClick" Padding="9,8" FontSize="11"/></WrapPanel>
+ </StackPanel></ScrollViewer></local:OrnateFrame></Grid>
+ </Grid>
        <Grid x:Name="SettingsPage" Visibility="Collapsed">
         <Grid.RowDefinitions>
          <RowDefinition Height="Auto"/>
@@ -509,7 +470,7 @@
             <CheckBox x:Name="ReturnToGameCheck" Content="Return to the game when spawning" Click="ReturnToGameClick" Margin="0,17,0,0"/>
             <CheckBox x:Name="ReduceMotionCheck" Content="Reduce interface animations" Click="ReduceMotionClick" Margin="0,17,0,0"/>
             <Button Content="Save connection report" Click="ReportClick" HorizontalAlignment="Left" Margin="0,22,0,0"/>
-            <TextBlock Text="Hyrule Companion • 0.2 visual edition" Foreground="{StaticResource GoldBrush}" FontSize="12" Margin="0,24,0,9"/>
+            <TextBlock Text="Hyrule Companion • 0.3 map edition" Foreground="{StaticResource GoldBrush}" FontSize="12" Margin="0,24,0,9"/>
             <TextBlock Text="Item names and icons: Marc Robledo’s TOTK save editor; names compiled by Echocolat, Exincracci, HylianLZ and Karlos007. Game assets belong to Nintendo. Cheat research: Eiffel2018 and the Switch cheats community. Source and license details are included with this app." Style="{StaticResource Caption}" FontSize="11"/>
            </StackPanel>
           </local:OrnateFrame>
@@ -530,7 +491,7 @@
       <Image Source="{StaticResource EyeImage}" Width="21" Height="19" Margin="0,0,10,0"/>
       <TextBlock x:Name="FooterStatus" Text="Ready to browse • cheats are off" TextTrimming="CharacterEllipsis" Foreground="{StaticResource Muted}" FontSize="11" VerticalAlignment="Center"/>
      </StackPanel>
-     <TextBlock Grid.Column="1" Margin="20,0,0,0" Text="TOTK 1.2.1  /  HYRULE COMPANION 0.2" Foreground="{StaticResource Muted}" FontSize="10" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+     <TextBlock Grid.Column="1" Margin="20,0,0,0" Text="TOTK 1.2.1  /  HYRULE COMPANION 0.3" Foreground="{StaticResource Muted}" FontSize="10" HorizontalAlignment="Right" VerticalAlignment="Center"/>
     </Grid>
    </Border>
   </Grid>

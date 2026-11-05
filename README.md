@@ -6,7 +6,7 @@ A native Windows companion for **The Legend of Zelda: Tears of the Kingdom PC re
 
 ## Download and run
 
-[**Download Hyrule Companion v0.2.1 for Windows**](https://github.com/Guizmo12/totk_recomp_Cheats/raw/refs/heads/main/downloads/HyruleCompanion-v0.2.1.zip)
+[**Download Hyrule Companion v0.3.0 for Windows**](https://github.com/Guizmo12/totk_recomp_Cheats/raw/refs/heads/main/downloads/HyruleCompanion-v0.3.0.zip)
 
 1. Extract the ZIP into a writable folder. Keep the `assets` folder beside `HyruleCompanion.exe`.
 2. Install the [.NET 8 Desktop Runtime for Windows](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) if it is not already installed.
@@ -20,11 +20,17 @@ The supported game is **TOTK 1.2.1, recomp release 0.1.1+701bd62**. Native item 
 ## 0.2.1 — spawn browser corrections
 Armor, all prepared Food entries (meals and elixirs), and Crystallized Charge are excluded from the item browser and blocked by the spawn action. The original catalog and saved favorite IDs remain intact. Raw ingredients and arrow bundles remain available. There are 568 browser entries after these exclusions. Pagination was replaced with a continuous, row-virtualized scrolling grid; wheel input over the cards scrolls the results. Verification: 22 logic tests, full-list/end-of-list selection, exclusion checks, favorites, filters, and layout checks on all four tabs. No game-memory writes were required for these checks.
 
+## Interactive Travel 0.3.0
+
+![Interactive Travel](docs/screenshots/travel.png)
+
+Pan and zoom the map; select or double-click a point to teleport, or enable **Teleport on single map click**. Landmarks supply their published position and altitude. Custom points need an altitude. The coordinate selector accepts engine or in-game HUD values. The old distance cap is removed. Read [TRAVEL.md](TRAVEL.md) for coordinate conventions, verification evidence and terrain limitations. A real ~2.8 km teleport and Undo were verified in the running game.
+
 ## Four working tabs
 
 - **Item browser:** 568 eligible browser entries with pictures; name/actor-ID search; category/type filters; favorites; recent selections; continuous scrolling; editable quantity and spawn distance.
 - **Cheats:** health, stamina, battery, equipped durability, arrows, rupees, movement speed and experimental high jump; individual switches and an exploration preset.
-- **Travel:** save named places, travel nearby (within 2,000 meters), undo the last teleport, and remove places.
+- **Travel:** offline interactive Surface/Sky/Depths map, 287 searchable landmarks, click-to-teleport, arbitrary coordinates in engine or HUD format, saved destinations, and Undo.
 - **Settings:** game path, customizable shortcuts, always-on-top, return-to-game behavior, reduced interface animations and connection reports.
 
 Spawning accepts **1–25 pickups** at **1–10 meters** in front of Link. **Arrows ×5** and **Arrows ×10** are separate entries; quantity counts bundles. Inventory-only entries without a world actor remain searchable with spawning unavailable. A save backup is created before the first native spawn/travel action.
@@ -58,7 +64,7 @@ Run the existing logic/native-callback checks:
 dotnet run --project Tests/Tests.csproj -c Release
 ```
 
-The 22 checks cover filtering, shortcut parsing, pointer validation, refusal of invalid writes, speed restoration, jump scaling, arrow aliases/bundles and preservation of guest CPU state. Test-process/fake-memory checks do not substitute for live gameplay testing.
+The 26 checks cover filtering, shortcut parsing, pointer validation, refusal of invalid writes, speed restoration, jump scaling, arrow aliases/bundles and preservation of guest CPU state. Test-process/fake-memory checks do not substitute for live gameplay testing.
 
 ### Project layout
 

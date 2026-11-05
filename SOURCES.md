@@ -16,3 +16,7 @@ Other recomp builds are deliberately not treated as compatible with the native c
 
 ## Interface 0.2
 Direction artistique et décor : HYRULE_COMPANION_CODEX_PACK fourni par l’utilisateur. Symboles SVG adaptés en dessins WPF, illustrations du bandeau embarquées. Polices système Georgia et Segoe UI. Les images d’objets réelles conservent leur attribution et leur licence existantes.
+
+
+## Interactive map 0.3.0
+Basemap artwork © Nintendo, sourced from vguzman812/totk-coordinates-map (MIT notice in MAP-RESOURCE-LICENSE.txt). Published landmark coordinates and game text: objmap-totk.zeldamods.org game_files. Native map renderer and UI written for this application; Zelda Dungeon supplied the visual reference. See TRAVEL.md.

@@ -1,0 +1,2298 @@
+[
+ {
+  "Name": "Lookout Landing Skyview Tower",
+  "Kind": "Tower",
+  "Layer": "Surface",
+  "X": -298.8500061035156,
+  "Y": 125.94050598144531,
+  "Z": -142.85000610351562
+ },
+ {
+  "Name": "Lindor's Brow Skyview Tower",
+  "Kind": "Tower",
+  "Layer": "Surface",
+  "X": -1909.58837890625,
+  "Y": 397.706298828125,
+  "Z": -1245.3046875
+ },
+ {
+  "Name": "Pikida Stonegrove Skyview Tower",
+  "Kind": "Tower",
+  "Layer": "Surface",
+  "X": -2311.494873046875,
+  "Y": 544.0,
+  "Z": -3062.494873046875
+ },
+ {
+  "Name": "Eldin Canyon Skyview Tower",
+  "Kind": "Tower",
+  "Layer": "Surface",
+  "X": 1641.8052978515625,
+  "Y": 326.4178161621094,
+  "Z": -1190.820068359375
+ },
+ {
+  "Name": "Ulri Mountain Skyview Tower",
+  "Kind": "Tower",
+  "Layer": "Surface",
+  "X": 3499.0,
+  "Y": 288.85943603515625,
+  "Z": -2026.0
+ },
+ {
+  "Name": "Sahasra Slope Skyview Tower",
+  "Kind": "Tower",
+  "Layer": "Surface",
+  "X": 1341.1092529296875,
+  "Y": 267.2558898925781,
+  "Z": 1177.857666015625
+ },
+ {
+  "Name": "Upland Zorana Skyview Tower",
+  "Kind": "Tower",
+  "Layer": "Surface",
+  "X": 2866.0615234375,
+  "Y": 480.3311462402344,
+  "Z": -581.1915283203125
+ },
+ {
+  "Name": "Hyrule Field Skyview Tower",
+  "Kind": "Tower",
+  "Layer": "Surface",
+  "X": -761.2765502929688,
+  "Y": 165.41574096679688,
+  "Z": 1019.2278442382812
+ },
+ {
+  "Name": "Gerudo Canyon Skyview Tower",
+  "Kind": "Tower",
+  "Layer": "Surface",
+  "X": -2438.8505859375,
+  "Y": 407.61883544921875,
+  "Z": 2182.764404296875
+ },
+ {
+  "Name": "Gerudo Highlands Skyview Tower",
+  "Kind": "Tower",
+  "Layer": "Surface",
+  "X": -3960.877197265625,
+  "Y": 523.369384765625,
+  "Z": 1305.5958251953125
+ },
+ {
+  "Name": "Rabella Wetlands Skyview Tower",
+  "Kind": "Tower",
+  "Layer": "Surface",
+  "X": 2420.0,
+  "Y": 323.0,
+  "Z": 2754.890625
+ },
+ {
+  "Name": "Thyphlo Ruins Skyview Tower",
+  "Kind": "Tower",
+  "Layer": "Surface",
+  "X": 343.6745300292969,
+  "Y": 280.56170654296875,
+  "Z": -3141.64794921875
+ },
+ {
+  "Name": "Popla Foothills Skyview Tower",
+  "Kind": "Tower",
+  "Layer": "Surface",
+  "X": 604.8388061523438,
+  "Y": 199.33265686035156,
+  "Z": 2126.875732421875
+ },
+ {
+  "Name": "Mount Lanayru Skyview Tower",
+  "Kind": "Tower",
+  "Layer": "Surface",
+  "X": 3847.638427734375,
+  "Y": 639.807861328125,
+  "Z": 1314.9110107421875
+ },
+ {
+  "Name": "Rospro Pass Skyview Tower",
+  "Kind": "Tower",
+  "Layer": "Surface",
+  "X": -3679.5849609375,
+  "Y": 333.7388000488281,
+  "Z": -2346.404296875
+ },
+ {
+  "Name": "Tajikats Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 343.85882568359375,
+  "Y": 137.69972229003906,
+  "Z": 1009.0260009765625
+ },
+ {
+  "Name": "Jochi-iu Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 4346.61669921875,
+  "Y": 286.1968078613281,
+  "Z": -2876.19140625
+ },
+ {
+  "Name": "Sitsum Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 2369.06787109375,
+  "Y": 911.4000244140625,
+  "Z": -2596.3544921875
+ },
+ {
+  "Name": "Oromuwak Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -3078.518310546875,
+  "Y": 363.96356201171875,
+  "Z": -1617.2672119140625
+ },
+ {
+  "Name": "Mayachin Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -705.5,
+  "Y": 152.614990234375,
+  "Z": 868.5
+ },
+ {
+  "Name": "Musanokir Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 407.758056640625,
+  "Y": 265.2350158691406,
+  "Z": -2133.729248046875
+ },
+ {
+  "Name": "Ren-iz Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 756.4642944335938,
+  "Y": 203.34524536132812,
+  "Z": -823.9371337890625
+ },
+ {
+  "Name": "Sahirow Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -3354.11572265625,
+  "Y": 481.8999938964844,
+  "Z": -2386.2880859375
+ },
+ {
+  "Name": "Rotsumamu Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -3407.007080078125,
+  "Y": 456.3999938964844,
+  "Z": 1363.142822265625
+ },
+ {
+  "Name": "Mayamats Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -4637.62109375,
+  "Y": 573.7835083007812,
+  "Z": 1513.2650146484375
+ },
+ {
+  "Name": "Serutabomac Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -178.7788848876953,
+  "Y": 401.0998229980469,
+  "Z": -1170.1190185546875
+ },
+ {
+  "Name": "Mogawak Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 3299.948974609375,
+  "Y": 233.25274658203125,
+  "Z": -423.7898864746094
+ },
+ {
+  "Name": "Zanmik Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 3469.5439453125,
+  "Y": 269.2472839355469,
+  "Z": 2180.77685546875
+ },
+ {
+  "Name": "Jiukoum Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 867.5,
+  "Y": 262.4997863769531,
+  "Z": 2278.39990234375
+ },
+ {
+  "Name": "Iun-orok Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -3538.89501953125,
+  "Y": -12.318613052368164,
+  "Z": -850.9972534179688
+ },
+ {
+  "Name": "Rakashog Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": -1715.4132080078125,
+  "Y": 1270.4658203125,
+  "Z": 2118.706298828125
+ },
+ {
+  "Name": "Soryotanog Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -3882.204833984375,
+  "Y": 244.19668579101562,
+  "Z": 2962.550537109375
+ },
+ {
+  "Name": "Mayak Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 1269.90478515625,
+  "Y": 226.85220336914062,
+  "Z": -3733.42578125
+ },
+ {
+  "Name": "Gemimik Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 4512.70703125,
+  "Y": 122.66590118408203,
+  "Z": -2115.70703125
+ },
+ {
+  "Name": "Orochium Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -1636.763916015625,
+  "Y": 360.2749938964844,
+  "Z": -2641.815185546875
+ },
+ {
+  "Name": "Sinakawak Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -1414.623779296875,
+  "Y": 210.04180908203125,
+  "Z": -756.8497924804688
+ },
+ {
+  "Name": "Tauyosipun Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -4538.60302734375,
+  "Y": 383.58099365234375,
+  "Z": -2880.473876953125
+ },
+ {
+  "Name": "Tukarok Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 915.4913940429688,
+  "Y": 154.95700073242188,
+  "Z": 251.00563049316406
+ },
+ {
+  "Name": "Sikukuu Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 698.5462036132812,
+  "Y": 346.9499816894531,
+  "Z": -2793.056396484375
+ },
+ {
+  "Name": "Siwakama Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -2445.699462890625,
+  "Y": 162.81900024414062,
+  "Z": 3344.31982421875
+ },
+ {
+  "Name": "Turakawak Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -3497.676513671875,
+  "Y": 186.99642944335938,
+  "Z": 197.19091796875
+ },
+ {
+  "Name": "Riogok Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -1441.397216796875,
+  "Y": 210.4410400390625,
+  "Z": 1616.0906982421875
+ },
+ {
+  "Name": "Anedamimik Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 4232.208984375,
+  "Y": 108.726806640625,
+  "Z": 2178.16796875
+ },
+ {
+  "Name": "Mayausiy Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -1166.910888671875,
+  "Y": 36.959999084472656,
+  "Z": -2602.4267578125
+ },
+ {
+  "Name": "Ishodag Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -879.3878784179688,
+  "Y": 170.39999389648438,
+  "Z": -422.5399169921875
+ },
+ {
+  "Name": "Kiuyoyou Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -1106.740478515625,
+  "Y": 225.45323181152344,
+  "Z": -2087.81396484375
+ },
+ {
+  "Name": "Ekochiu Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 1062.65087890625,
+  "Y": 166.77806091308594,
+  "Z": -1280.4586181640625
+ },
+ {
+  "Name": "Tadarok Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -1081.884521484375,
+  "Y": 250.05825805664062,
+  "Z": 2186.94189453125
+ },
+ {
+  "Name": "Karahatag Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -3727.70263671875,
+  "Y": 164.64599609375,
+  "Z": 3625.130126953125
+ },
+ {
+  "Name": "Tenbez Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": -970.1807250976562,
+  "Y": 1132.745849609375,
+  "Z": -3535.0
+ },
+ {
+  "Name": "Kisinona Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 2567.84814453125,
+  "Y": 294.0695495605469,
+  "Z": -1245.9383544921875
+ },
+ {
+  "Name": "Oshozan-u Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -1404.4962158203125,
+  "Y": 408.9044189453125,
+  "Z": -3677.912841796875
+ },
+ {
+  "Name": "Gasas Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -4153.1826171875,
+  "Y": 161.68544006347656,
+  "Z": -98.2994155883789
+ },
+ {
+  "Name": "Ijo-o Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": -3861.145751953125,
+  "Y": 823.7567138671875,
+  "Z": -2681.519775390625
+ },
+ {
+  "Name": "Turakamik Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -2657.25390625,
+  "Y": 188.78079223632812,
+  "Z": 2237.30078125
+ },
+ {
+  "Name": "Gatakis Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -3651.680908203125,
+  "Y": 289.5999755859375,
+  "Z": -1806.0263671875
+ },
+ {
+  "Name": "Ihen-a Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 3786.216552734375,
+  "Y": 606.86767578125,
+  "Z": -577.779541015625
+ },
+ {
+  "Name": "Tsutsu-um Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -1423.2503662109375,
+  "Y": 188.90106201171875,
+  "Z": 1350.7542724609375
+ },
+ {
+  "Name": "Mayaumekis Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": -2947.919677734375,
+  "Y": 1017.8729858398438,
+  "Z": -3050.674560546875
+ },
+ {
+  "Name": "Kamatukis Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 3431.066650390625,
+  "Y": 191.9747314453125,
+  "Z": -3356.71728515625
+ },
+ {
+  "Name": "Jirutagumac Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": 2915.877197265625,
+  "Y": 1072.28125,
+  "Z": -534.3213500976562
+ },
+ {
+  "Name": "Sepapa Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 221.74679565429688,
+  "Y": 149.02713012695312,
+  "Z": -1085.0509033203125
+ },
+ {
+  "Name": "Mayatat Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -3290.625,
+  "Y": 145.39999389648438,
+  "Z": 2512.205078125
+ },
+ {
+  "Name": "Susuyai Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -785.4137573242188,
+  "Y": 139.38156127929688,
+  "Z": 434.0478820800781
+ },
+ {
+  "Name": "Apogek Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 3886.691162109375,
+  "Y": 285.2000732421875,
+  "Z": 216.77188110351562
+ },
+ {
+  "Name": "Kadaunar Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": 1881.9716796875,
+  "Y": 1372.103271484375,
+  "Z": -1202.8160400390625
+ },
+ {
+  "Name": "Domizuin Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 3304.876220703125,
+  "Y": 547.1010131835938,
+  "Z": -1442.9820556640625
+ },
+ {
+  "Name": "Mogisari Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": 4655.0,
+  "Y": 1131.7711181640625,
+  "Z": -3499.5439453125
+ },
+ {
+  "Name": "Kikakin Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -395.86785888671875,
+  "Y": 408.61700439453125,
+  "Z": -2735.8486328125
+ },
+ {
+  "Name": "Sibajitak Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 2400.267822265625,
+  "Y": 523.6953125,
+  "Z": -3275.067138671875
+ },
+ {
+  "Name": "Siyamotsus Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": -1795.0,
+  "Y": 1132.2939453125,
+  "Z": 3294.6005859375
+ },
+ {
+  "Name": "Utsushok Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 669.9970092773438,
+  "Y": 192.92599487304688,
+  "Z": 3358.3935546875
+ },
+ {
+  "Name": "Jikais Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 4266.91845703125,
+  "Y": 303.0494384765625,
+  "Z": 1673.4398193359375
+ },
+ {
+  "Name": "Kitawak Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -1530.20068359375,
+  "Y": 442.3241882324219,
+  "Z": 2928.763916015625
+ },
+ {
+  "Name": "Sonapan Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -1921.5,
+  "Y": 349.5,
+  "Z": 358.5
+ },
+ {
+  "Name": "Ukouh Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": 274.9065856933594,
+  "Y": 1581.28173828125,
+  "Z": 912.7083740234375
+ },
+ {
+  "Name": "Gutanbac Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": 709.1300048828125,
+  "Y": 1705.6500244140625,
+  "Z": 1382.6861572265625
+ },
+ {
+  "Name": "In-isa Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": 26.06717872619629,
+  "Y": 1529.750244140625,
+  "Z": 1503.59814453125
+ },
+ {
+  "Name": "Nachoyah Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": 389.62921142578125,
+  "Y": 2419.9072265625,
+  "Z": 1661.45361328125
+ },
+ {
+  "Name": "Marakuguc Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 1762.48828125,
+  "Y": 557.9000244140625,
+  "Z": -2509.65478515625
+ },
+ {
+  "Name": "Runakit Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -2529.98486328125,
+  "Y": 298.8999938964844,
+  "Z": -1170.1737060546875
+ },
+ {
+  "Name": "Mayanas Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": 4613.31396484375,
+  "Y": 1910.9000244140625,
+  "Z": 947.1262817382812
+ },
+ {
+  "Name": "Wao-os Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -4058.43505859375,
+  "Y": 304.43743896484375,
+  "Z": -1990.004150390625
+ },
+ {
+  "Name": "Kyokugon Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -709.2454223632812,
+  "Y": 127.28495788574219,
+  "Z": 1551.04296875
+ },
+ {
+  "Name": "Igoshon Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": 3480.707763671875,
+  "Y": 1446.6328125,
+  "Z": -665.8784790039062
+ },
+ {
+  "Name": "Nouda Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -2318.20703125,
+  "Y": 294.6999816894531,
+  "Z": -2201.20703125
+ },
+ {
+  "Name": "Joku-usin Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": 1075.2755126953125,
+  "Y": 907.1223754882812,
+  "Z": 3347.772216796875
+ },
+ {
+  "Name": "Eutoum Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -3506.876708984375,
+  "Y": 508.1618957519531,
+  "Z": -3569.997802734375
+ },
+ {
+  "Name": "Isisim Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 1842.0225830078125,
+  "Y": 484.61553955078125,
+  "Z": -2842.03466796875
+ },
+ {
+  "Name": "Mayachideg Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 3061.00146484375,
+  "Y": 337.4775390625,
+  "Z": -1824.018798828125
+ },
+ {
+  "Name": "Otutsum Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -4469.005859375,
+  "Y": 630.5314331054688,
+  "Z": 671.4673461914062
+ },
+ {
+  "Name": "Utojis Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 1218.4420166015625,
+  "Y": 217.77993774414062,
+  "Z": 2543.1630859375
+ },
+ {
+  "Name": "Kamizun Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -177.7928924560547,
+  "Y": 143.89999389648438,
+  "Z": 1558.2928466796875
+ },
+ {
+  "Name": "Suariwak Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -2524.264404296875,
+  "Y": 252.5092315673828,
+  "Z": 1770.1156005859375
+ },
+ {
+  "Name": "Rakakudaj Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -2036.95654296875,
+  "Y": 185.89724731445312,
+  "Z": 1853.401123046875
+ },
+ {
+  "Name": "Rasitakiwak Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 4166.6982421875,
+  "Y": 350.4125671386719,
+  "Z": -1322.7413330078125
+ },
+ {
+  "Name": "Zakusu Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 3526.22314453125,
+  "Y": 288.859375,
+  "Z": 1482.2869873046875
+ },
+ {
+  "Name": "Simosiwak Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": 162.46710205078125,
+  "Y": 879.925048828125,
+  "Z": -1971.65478515625
+ },
+ {
+  "Name": "Yansamin Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": 2350.989501953125,
+  "Y": 1596.75634765625,
+  "Z": 1782.8067626953125
+ },
+ {
+  "Name": "Jojon Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 1202.0885009765625,
+  "Y": 147.99917602539062,
+  "Z": -329.73126220703125
+ },
+ {
+  "Name": "Sifumim Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 2825.828857421875,
+  "Y": 198.9720001220703,
+  "Z": 3270.348388671875
+ },
+ {
+  "Name": "Otak Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -4390.5673828125,
+  "Y": 333.5347900390625,
+  "Z": -3714.1005859375
+ },
+ {
+  "Name": "Miryotanog Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -4680.10009765625,
+  "Y": 175.72499084472656,
+  "Z": 3086.435791015625
+ },
+ {
+  "Name": "Kimayat Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 2864.04150390625,
+  "Y": 362.05279541015625,
+  "Z": -3638.216064453125
+ },
+ {
+  "Name": "Momosik Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 2960.006103515625,
+  "Y": 645.4724731445312,
+  "Z": -2758.110595703125
+ },
+ {
+  "Name": "Igashuk Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 4654.990234375,
+  "Y": 252.0,
+  "Z": -3713.8359375
+ },
+ {
+  "Name": "Taki-ihaban Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -1829.7000732421875,
+  "Y": 268.7751159667969,
+  "Z": -1195.26611328125
+ },
+ {
+  "Name": "En-oma Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 103.41429901123047,
+  "Y": 32.97360801696777,
+  "Z": 2518.05224609375
+ },
+ {
+  "Name": "Kumamayn Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": 2856.84814453125,
+  "Y": 1333.0250244140625,
+  "Z": 2856.47412109375
+ },
+ {
+  "Name": "Yomizuk Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 4413.22900390625,
+  "Y": 155.6455078125,
+  "Z": 613.1249389648438
+ },
+ {
+  "Name": "Mayahisik Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 3729.378662109375,
+  "Y": 310.0396728515625,
+  "Z": 2058.657958984375
+ },
+ {
+  "Name": "Motsusis Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -1795.009033203125,
+  "Y": 166.67620849609375,
+  "Z": 3486.5615234375
+ },
+ {
+  "Name": "Maoikes Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 2276.227783203125,
+  "Y": 199.88308715820312,
+  "Z": -147.35279846191406
+ },
+ {
+  "Name": "Moshapin Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 2679.243896484375,
+  "Y": 251.97744750976562,
+  "Z": -1904.451904296875
+ },
+ {
+  "Name": "Gikaku Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": 4505.9970703125,
+  "Y": 1276.021484375,
+  "Z": -2166.015869140625
+ },
+ {
+  "Name": "Usazum Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -2138.978515625,
+  "Y": 214.67611694335938,
+  "Z": 874.44140625
+ },
+ {
+  "Name": "Joniu Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 2918.25,
+  "Y": 276.1499938964844,
+  "Z": -507.0
+ },
+ {
+  "Name": "Jiotak Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 1834.4454345703125,
+  "Y": 378.785888671875,
+  "Z": -3180.345703125
+ },
+ {
+  "Name": "Ikatak Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -3951.059814453125,
+  "Y": 232.89999389648438,
+  "Z": -1139.0799560546875
+ },
+ {
+  "Name": "Chichim Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -3211.0,
+  "Y": 70.99971771240234,
+  "Z": 3006.5
+ },
+ {
+  "Name": "Kahatanaum Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": -3296.006103515625,
+  "Y": 1468.7486572265625,
+  "Z": -3431.505615234375
+ },
+ {
+  "Name": "Ninjis Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 354.65411376953125,
+  "Y": 299.7082214355469,
+  "Z": -1891.894287109375
+ },
+ {
+  "Name": "Tokiy Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 2304.06005859375,
+  "Y": 92.03803253173828,
+  "Z": 2377.931396484375
+ },
+ {
+  "Name": "Sakunbomar Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 166.66012573242188,
+  "Y": 300.1684875488281,
+  "Z": -2320.125732421875
+ },
+ {
+  "Name": "Joku-u Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": 1376.4083251953125,
+  "Y": 550.0138549804688,
+  "Z": 3339.8603515625
+ },
+ {
+  "Name": "Natak Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": 3670.700439453125,
+  "Y": 1278.900146484375,
+  "Z": -1483.6973876953125
+ },
+ {
+  "Name": "Rutafu-um Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -2997.81103515625,
+  "Y": 635.9293212890625,
+  "Z": -3101.62744140625
+ },
+ {
+  "Name": "O-ogim Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 2755.53271484375,
+  "Y": 221.2046356201172,
+  "Z": 1089.252685546875
+ },
+ {
+  "Name": "Jogou Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 3346.26708984375,
+  "Y": 178.63528442382812,
+  "Z": 1186.894287109375
+ },
+ {
+  "Name": "Marari-in Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 4631.171875,
+  "Y": 139.40127563476562,
+  "Z": 3712.00927734375
+ },
+ {
+  "Name": "Pupunke Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 621.09619140625,
+  "Y": 285.7709655761719,
+  "Z": -2211.410888671875
+ },
+ {
+  "Name": "Bamitok Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 3093.9755859375,
+  "Y": 203.29354858398438,
+  "Z": 3209.681884765625
+ },
+ {
+  "Name": "Ganos Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": -3369.644775390625,
+  "Y": 1816.4820556640625,
+  "Z": -467.49017333984375
+ },
+ {
+  "Name": "Irasak Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -4158.70703125,
+  "Y": 148.89999389648438,
+  "Z": 3825.29296875
+ },
+ {
+  "Name": "Kurakat Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 2361.23828125,
+  "Y": 277.3949890136719,
+  "Z": 510.7505187988281
+ },
+ {
+  "Name": "Susub Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 349.2830810546875,
+  "Y": 94.14628601074219,
+  "Z": 2051.544189453125
+ },
+ {
+  "Name": "Taunhiy Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": -2401.843994140625,
+  "Y": 736.3179321289062,
+  "Z": -825.2271118164062
+ },
+ {
+  "Name": "Eshos Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 1565.837890625,
+  "Y": 278.5646057128906,
+  "Z": 1944.8074951171875
+ },
+ {
+  "Name": "Yamiyo Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 333.1516418457031,
+  "Y": 150.0406494140625,
+  "Z": -470.0058898925781
+ },
+ {
+  "Name": "Teniten Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -74.91470336914062,
+  "Y": 142.08482360839844,
+  "Z": 1115.7230224609375
+ },
+ {
+  "Name": "Mayaotaki Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -824.818115234375,
+  "Y": 355.82598876953125,
+  "Z": -3535.034423828125
+ },
+ {
+  "Name": "Makurukis Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -2846.968505859375,
+  "Y": 354.52398681640625,
+  "Z": -629.7911376953125
+ },
+ {
+  "Name": "Josiu Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": 1758.48876953125,
+  "Y": 1044.9652099609375,
+  "Z": 1208.3843994140625
+ },
+ {
+  "Name": "Ga-ahisas Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": -3596.146728515625,
+  "Y": 1819.9693603515625,
+  "Z": -960.786865234375
+ },
+ {
+  "Name": "Sinatanika Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 3841.973388671875,
+  "Y": 169.39999389648438,
+  "Z": -2300.29248046875
+ },
+ {
+  "Name": "Jochisiu Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 930.890625,
+  "Y": 151.13925170898438,
+  "Z": 1903.416015625
+ },
+ {
+  "Name": "Ishokin Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -565.0,
+  "Y": 250.1999969482422,
+  "Z": 3524.0
+ },
+ {
+  "Name": "Sisuran Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -2559.443359375,
+  "Y": 366.0405578613281,
+  "Z": -3353.757080078125
+ },
+ {
+  "Name": "Tenmaten Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -594.510986328125,
+  "Y": 106.63793182373047,
+  "Z": -1550.6224365234375
+ },
+ {
+  "Name": "Jochi-ihiga Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 3810.516845703125,
+  "Y": 211.67332458496094,
+  "Z": -1219.11279296875
+ },
+ {
+  "Name": "Makasura Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 1769.8966064453125,
+  "Y": 287.045654296875,
+  "Z": 1051.932861328125
+ },
+ {
+  "Name": "Kyononis Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -205.1547088623047,
+  "Y": 141.89999389648438,
+  "Z": -451.4667053222656
+ },
+ {
+  "Name": "Timawak Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 1799.549072265625,
+  "Y": 432.7117004394531,
+  "Z": -1639.5355224609375
+ },
+ {
+  "Name": "Jonsau Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 1743.6605224609375,
+  "Y": 146.45498657226562,
+  "Z": -17.586030960083008
+ },
+ {
+  "Name": "Rasiwak Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 4664.12353515625,
+  "Y": 122.9463882446289,
+  "Z": -3263.21826171875
+ },
+ {
+  "Name": "Kudanisar Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -4167.10693359375,
+  "Y": 171.11154174804688,
+  "Z": 2143.19921875
+ },
+ {
+  "Name": "Joju-u-u Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 1515.1944580078125,
+  "Y": 263.1430969238281,
+  "Z": 3577.113525390625
+ },
+ {
+  "Name": "Jiosin Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": -240.74392700195312,
+  "Y": 147.89999389648438,
+  "Z": 371.0340881347656
+ },
+ {
+  "Name": "Gatanisis Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 4497.82177734375,
+  "Y": 216.59999084472656,
+  "Z": -826.4054565429688
+ },
+ {
+  "Name": "Morok Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 1181.582275390625,
+  "Y": 254.5315399169922,
+  "Z": 779.3939819335938
+ },
+ {
+  "Name": "Jinodok Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": -1257.24072265625,
+  "Y": 1129.168212890625,
+  "Z": 1486.95947265625
+ },
+ {
+  "Name": "Sihajog Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": 4545.81591796875,
+  "Y": 1241.9429931640625,
+  "Z": 846.0948486328125
+ },
+ {
+  "Name": "Minetak Shrine",
+  "Kind": "Shrine",
+  "Layer": "Surface",
+  "X": 393.8565368652344,
+  "Y": 189.54428100585938,
+  "Z": -3484.64453125
+ },
+ {
+  "Name": "Mayasiar Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": -3546.68212890625,
+  "Y": 2085.987060546875,
+  "Z": 320.6548156738281
+ },
+ {
+  "Name": "Mayam Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": 340.39373779296875,
+  "Y": 1941.9000244140625,
+  "Z": -2814.732421875
+ },
+ {
+  "Name": "Ukoojisi Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": 1468.6114501953125,
+  "Y": 706.813232421875,
+  "Z": 2168.892578125
+ },
+ {
+  "Name": "Taninoud Shrine",
+  "Kind": "Shrine",
+  "Layer": "Sky",
+  "X": -1802.0169677734375,
+  "Y": 1069.9000244140625,
+  "Z": -3406.80712890625
+ },
+ {
+  "Name": "Stakijat Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 343.38934326171875,
+  "Y": -381.813232421875,
+  "Z": 1008.14306640625
+ },
+ {
+  "Name": "Ui-ihcoj Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 4346.97607421875,
+  "Y": -521.6412963867188,
+  "Z": -2877.124755859375
+ },
+ {
+  "Name": "Mustis Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 2368.05322265625,
+  "Y": -862.341552734375,
+  "Z": -2596.931640625
+ },
+ {
+  "Name": "Kawumoro Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -3077.601318359375,
+  "Y": -600.5001220703125,
+  "Z": -1616.868408203125
+ },
+ {
+  "Name": "Nihcayam Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -705.5,
+  "Y": -394.4716491699219,
+  "Z": 867.5
+ },
+ {
+  "Name": "Rikonasum Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 406.8690185546875,
+  "Y": -505.6876220703125,
+  "Z": -2134.18701171875
+ },
+ {
+  "Name": "Zi-ner Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 757.4642333984375,
+  "Y": -445.30133056640625,
+  "Z": -823.9487915039062
+ },
+ {
+  "Name": "Worihas Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -3353.5,
+  "Y": -716.1251220703125,
+  "Z": -2385.5
+ },
+ {
+  "Name": "Umamustor Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -3406.300048828125,
+  "Y": -693.332275390625,
+  "Z": 1363.8499755859375
+ },
+ {
+  "Name": "Stamayam Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -4638.1875,
+  "Y": -804.2501220703125,
+  "Z": 1512.4407958984375
+ },
+ {
+  "Name": "Camobatures Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -177.85501098632812,
+  "Y": -428.8851318359375,
+  "Z": -1169.736328125
+ },
+ {
+  "Name": "Kawagom Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 3298.1875,
+  "Y": -662.754638671875,
+  "Z": -419.8524169921875
+ },
+ {
+  "Name": "Kimnaz Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 3469.765380859375,
+  "Y": -508.13580322265625,
+  "Z": 2181.751953125
+ },
+ {
+  "Name": "Muokuij Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 867.5,
+  "Y": -469.8482666015625,
+  "Z": 2277.39990234375
+ },
+ {
+  "Name": "Koro-nui Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -3538.89501953125,
+  "Y": -489.66363525390625,
+  "Z": -851.9972534179688
+ },
+ {
+  "Name": "Gonatoyros Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -3882.911865234375,
+  "Y": -347.8645935058594,
+  "Z": 2963.257568359375
+ },
+ {
+  "Name": "Kayam Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 1269.0,
+  "Y": -466.9376220703125,
+  "Z": -3733.0
+ },
+ {
+  "Name": "Kimimeg Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 4512.0,
+  "Y": -366.7876281738281,
+  "Z": -2115.0
+ },
+ {
+  "Name": "Muihcoro Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -1637.527587890625,
+  "Y": -599.184326171875,
+  "Z": -2642.4609375
+ },
+ {
+  "Name": "Kawakanis Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -1415.615234375,
+  "Y": -451.7501220703125,
+  "Z": -756.718994140625
+ },
+ {
+  "Name": "Nupisoyuat Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -4537.85986328125,
+  "Y": -621.1251220703125,
+  "Z": -2879.804931640625
+ },
+ {
+  "Name": "Korakut Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 915.7330322265625,
+  "Y": -395.07977294921875,
+  "Z": 251.9759979248047
+ },
+ {
+  "Name": "Uukukis Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 697.56103515625,
+  "Y": -584.9376220703125,
+  "Z": -2792.884765625
+ },
+ {
+  "Name": "Amakawis Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -2439.825927734375,
+  "Y": -378.5101013183594,
+  "Z": 3343.3349609375
+ },
+ {
+  "Name": "Kawakarut Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -3487.427001953125,
+  "Y": -429.43994140625,
+  "Z": 214.5279541015625
+ },
+ {
+  "Name": "Kogoir Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -1442.39501953125,
+  "Y": -451.70111083984375,
+  "Z": 1616.1563720703125
+ },
+ {
+  "Name": "Kimimadena Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 4232.81982421875,
+  "Y": -435.1090087890625,
+  "Z": 2177.37646484375
+ },
+ {
+  "Name": "Yisuayam Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -1167.905029296875,
+  "Y": -264.0193176269531,
+  "Z": -2602.319091796875
+ },
+ {
+  "Name": "Gadohsi Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -878.5,
+  "Y": -410.93218994140625,
+  "Z": -423.0
+ },
+ {
+  "Name": "Uoyoyuik Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -1106.739990234375,
+  "Y": -467.41705322265625,
+  "Z": -2088.81396484375
+ },
+ {
+  "Name": "Uihcoke Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 1063.057861328125,
+  "Y": -409.1251220703125,
+  "Z": -1281.3720703125
+ },
+ {
+  "Name": "Koradat Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -1080.70458984375,
+  "Y": -474.94927978515625,
+  "Z": 2186.450439453125
+ },
+ {
+  "Name": "Gataharak Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -3728.642333984375,
+  "Y": -407.9063720703125,
+  "Z": 3624.7880859375
+ },
+ {
+  "Name": "Anonisik Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 2568.267578125,
+  "Y": -514.0636596679688,
+  "Z": -1246.84619140625
+ },
+ {
+  "Name": "U-nazohso Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -1403.5,
+  "Y": -626.0883178710938,
+  "Z": -3678.0
+ },
+ {
+  "Name": "Sasag Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -4154.0888671875,
+  "Y": -403.0646057128906,
+  "Z": -97.87680053710938
+ },
+ {
+  "Name": "Kimakarut Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -2656.3310546875,
+  "Y": -401.6361389160156,
+  "Z": 2237.68603515625
+ },
+ {
+  "Name": "Sikatag Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -3652.5,
+  "Y": -330.6251220703125,
+  "Z": -1806.5999755859375
+ },
+ {
+  "Name": "A-nehi Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 3785.3505859375,
+  "Y": -839.7969970703125,
+  "Z": -578.279541015625
+ },
+ {
+  "Name": "Mu-ustust Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -1423.2503662109375,
+  "Y": -431.21533203125,
+  "Z": 1351.7542724609375
+ },
+ {
+  "Name": "Sikutamak Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 3431.066650390625,
+  "Y": -434.2279052734375,
+  "Z": -3357.71728515625
+ },
+ {
+  "Name": "Apapes Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 221.11514282226562,
+  "Y": -387.8751220703125,
+  "Z": -1084.275634765625
+ },
+ {
+  "Name": "Tatayam Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -3291.197998046875,
+  "Y": -389.2818603515625,
+  "Z": 2511.385986328125
+ },
+ {
+  "Name": "Iayusus Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -785.0,
+  "Y": -383.1251220703125,
+  "Z": 433.13751220703125
+ },
+ {
+  "Name": "Kegopa Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 3886.34912109375,
+  "Y": -522.2501220703125,
+  "Z": 215.83218383789062
+ },
+ {
+  "Name": "Niuzimod Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 3304.0,
+  "Y": -703.8200073242188,
+  "Z": -1442.5
+ },
+ {
+  "Name": "Nikakik Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -396.574951171875,
+  "Y": -638.7501220703125,
+  "Z": -2735.1416015625
+ },
+ {
+  "Name": "Katijabis Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 2400.5673828125,
+  "Y": -758.1919555664062,
+  "Z": -3276.021240234375
+ },
+ {
+  "Name": "Kohsustu Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 670.979736328125,
+  "Y": -397.30322265625,
+  "Z": 3358.20849609375
+ },
+ {
+  "Name": "Siakij Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 4267.4716796875,
+  "Y": -542.2003173828125,
+  "Z": 1672.606689453125
+ },
+ {
+  "Name": "Kawatik Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -1531.172119140625,
+  "Y": -644.6129760742188,
+  "Z": 2928.526611328125
+ },
+ {
+  "Name": "Napanos Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -1921.5,
+  "Y": -549.1822509765625,
+  "Z": 359.5
+ },
+ {
+  "Name": "Cugukaram Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 1763.0062255859375,
+  "Y": -632.802490234375,
+  "Z": -2510.51025390625
+ },
+ {
+  "Name": "Tikanur Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -2529.0,
+  "Y": -536.661376953125,
+  "Z": -1170.0
+ },
+ {
+  "Name": "So-oaw Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -4057.8349609375,
+  "Y": -588.2203369140625,
+  "Z": -1989.2039794921875
+ },
+ {
+  "Name": "Nogukoyk Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -708.25146484375,
+  "Y": -430.6876220703125,
+  "Z": 1551.152587890625
+ },
+ {
+  "Name": "Aduon Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -2317.5,
+  "Y": -694.485595703125,
+  "Z": -2200.5
+ },
+ {
+  "Name": "Muotue Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -3508.26416015625,
+  "Y": -740.2670288085938,
+  "Z": -3568.96435546875
+ },
+ {
+  "Name": "Misisi Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 1842.1773681640625,
+  "Y": -751.9501953125,
+  "Z": -2843.022705078125
+ },
+ {
+  "Name": "Gedihcayam Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 3060.808349609375,
+  "Y": -576.3973388671875,
+  "Z": -1825.0
+ },
+ {
+  "Name": "Mustuto Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -4469.55078125,
+  "Y": -862.4376220703125,
+  "Z": 672.3056640625
+ },
+ {
+  "Name": "Sijotu Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 1218.9189453125,
+  "Y": -525.5626220703125,
+  "Z": 2544.0419921875
+ },
+ {
+  "Name": "Nuzimak Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -178.50003051757812,
+  "Y": -387.1524658203125,
+  "Z": 1559.0
+ },
+ {
+  "Name": "Kawiraus Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -2525.126953125,
+  "Y": -627.0960693359375,
+  "Z": 1769.6094970703125
+ },
+ {
+  "Name": "Jadukakar Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -2037.1435546875,
+  "Y": -418.06103515625,
+  "Z": 1852.4188232421875
+ },
+ {
+  "Name": "Kawikatisar Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 4166.81640625,
+  "Y": -587.035888671875,
+  "Z": -1321.748291015625
+ },
+ {
+  "Name": "Usukaz Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 3525.235107421875,
+  "Y": -525.7839965820312,
+  "Z": 1482.4610595703125
+ },
+ {
+  "Name": "Nojoj Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 1201.3916015625,
+  "Y": -488.0626220703125,
+  "Z": -330.448486328125
+ },
+ {
+  "Name": "Mimufis Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 2825.329833984375,
+  "Y": -440.0626220703125,
+  "Z": 3269.481689453125
+ },
+ {
+  "Name": "Kato Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -4389.6015625,
+  "Y": -616.22216796875,
+  "Z": -3713.841796875
+ },
+ {
+  "Name": "Gonatoyrim Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -4681.0,
+  "Y": -417.22967529296875,
+  "Z": 3086.0
+ },
+ {
+  "Name": "Tayamik Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 2864.62451171875,
+  "Y": -598.6876220703125,
+  "Z": -3639.028564453125
+ },
+ {
+  "Name": "Kisomom Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 2961.0,
+  "Y": -876.9869384765625,
+  "Z": -2758.0
+ },
+ {
+  "Name": "Kuhsagi Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 4654.5,
+  "Y": -293.4698486328125,
+  "Z": -3732.0
+ },
+ {
+  "Name": "Nabahi-ikat Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -1829.348876953125,
+  "Y": -636.6251220703125,
+  "Z": -1196.202392578125
+ },
+ {
+  "Name": "Amo-ne Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 102.54653930664062,
+  "Y": -327.68212890625,
+  "Z": 2518.54931640625
+ },
+ {
+  "Name": "Kuzimoy Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 4413.19091796875,
+  "Y": -427.06219482421875,
+  "Z": 612.319580078125
+ },
+ {
+  "Name": "Kisihayam Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 3728.458740234375,
+  "Y": -579.0626220703125,
+  "Z": 2059.050048828125
+ },
+ {
+  "Name": "Sisustom Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -1795.0,
+  "Y": -370.5296936035156,
+  "Z": 3497.964111328125
+ },
+ {
+  "Name": "Sekioam Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 2276.458251953125,
+  "Y": -414.7847595214844,
+  "Z": -149.6903076171875
+ },
+ {
+  "Name": "Nipahsom Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 2679.827880859375,
+  "Y": -601.9634399414062,
+  "Z": -1903.6402587890625
+ },
+ {
+  "Name": "Muzasu Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -2138.110107421875,
+  "Y": -456.223388671875,
+  "Z": 874.9371337890625
+ },
+ {
+  "Name": "Uinoj Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 2918.25,
+  "Y": -708.8220825195312,
+  "Z": -508.0
+ },
+ {
+  "Name": "Katoij Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 1835.06787109375,
+  "Y": -751.4376220703125,
+  "Z": -3181.12841796875
+ },
+ {
+  "Name": "Kataki Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -3951.66015625,
+  "Y": -465.37762451171875,
+  "Z": -1139.8797607421875
+ },
+ {
+  "Name": "Mihcihc Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -3211.0,
+  "Y": -384.3505859375,
+  "Z": 3005.5
+ },
+ {
+  "Name": "Sijnin Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 355.42236328125,
+  "Y": -539.3563232421875,
+  "Z": -1892.534423828125
+ },
+ {
+  "Name": "Yikot Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 2303.24072265625,
+  "Y": -531.1004028320312,
+  "Z": 2378.5048828125
+ },
+ {
+  "Name": "Ramobnukas Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 166.84628295898438,
+  "Y": -539.2882080078125,
+  "Z": -2321.108154296875
+ },
+ {
+  "Name": "Mu-ufatur Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -2998.437744140625,
+  "Y": -919.895263671875,
+  "Z": -3100.826171875
+ },
+ {
+  "Name": "Migo-o Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 2755.968994140625,
+  "Y": -462.9376220703125,
+  "Z": 1088.3529052734375
+ },
+ {
+  "Name": "Uogoj Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 3346.26708984375,
+  "Y": -523.5001220703125,
+  "Z": 1185.894287109375
+ },
+ {
+  "Name": "Ni-iraram Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 4630.28466796875,
+  "Y": -419.4987487792969,
+  "Z": 3711.547607421875
+ },
+ {
+  "Name": "Eknupup Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 622.49169921875,
+  "Y": -525.1859130859375,
+  "Z": -2211.11279296875
+ },
+ {
+  "Name": "Kotimab Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 3092.997314453125,
+  "Y": -537.9376220703125,
+  "Z": 3209.474365234375
+ },
+ {
+  "Name": "Kasari Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -4158.0,
+  "Y": -392.0626220703125,
+  "Z": 3826.0
+ },
+ {
+  "Name": "Takaruk Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 2360.324951171875,
+  "Y": -502.7992248535156,
+  "Z": 510.343994140625
+ },
+ {
+  "Name": "Busus Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 350.1213684082031,
+  "Y": -384.96929931640625,
+  "Z": 2052.08935546875
+ },
+ {
+  "Name": "Sohse Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 1563.4151611328125,
+  "Y": -377.5281677246094,
+  "Z": 1944.99365234375
+ },
+ {
+  "Name": "Oyimay Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 333.7629699707031,
+  "Y": -393.1470642089844,
+  "Z": -469.2145080566406
+ },
+ {
+  "Name": "Netinet Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -73.91613006591797,
+  "Y": -385.33880615234375,
+  "Z": 1115.66943359375
+ },
+ {
+  "Name": "Ikatoayam Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -849.8231201171875,
+  "Y": -529.78125,
+  "Z": -3534.5
+ },
+ {
+  "Name": "Sikurukam Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -2846.070068359375,
+  "Y": -535.3751220703125,
+  "Z": -630.22998046875
+ },
+ {
+  "Name": "Akinatanis Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 3840.99365234375,
+  "Y": -401.36541748046875,
+  "Z": -2300.4931640625
+ },
+ {
+  "Name": "Uisihcoj Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 930.0714721679688,
+  "Y": -373.6878662109375,
+  "Z": 1903.9896240234375
+ },
+ {
+  "Name": "Nikohsi Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -564.0,
+  "Y": -488.0626220703125,
+  "Z": 3524.0
+ },
+ {
+  "Name": "Narusis Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -2558.531982421875,
+  "Y": -603.6251220703125,
+  "Z": -3354.1689453125
+ },
+ {
+  "Name": "Netamnet Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -595.1559448242188,
+  "Y": -512.7493896484375,
+  "Z": -1549.8582763671875
+ },
+ {
+  "Name": "Agihi-ihcoj Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 3811.512939453125,
+  "Y": -450.1876220703125,
+  "Z": -1219.199951171875
+ },
+ {
+  "Name": "Arusakam Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 1769.3126220703125,
+  "Y": -522.0667724609375,
+  "Z": 1052.74462890625
+ },
+ {
+  "Name": "Sinonoyk Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -204.28298950195312,
+  "Y": -385.94384765625,
+  "Z": -450.97601318359375
+ },
+ {
+  "Name": "Kawamit Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 1799.97265625,
+  "Y": -662.9334106445312,
+  "Z": -1640.44140625
+ },
+ {
+  "Name": "Uasnoj Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 1742.84130859375,
+  "Y": -373.2787780761719,
+  "Z": -18.159637451171875
+ },
+ {
+  "Name": "Kawisar Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 4663.5,
+  "Y": -366.8126220703125,
+  "Z": -3264.0
+ },
+ {
+  "Name": "Rasinaduk Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -4168.9599609375,
+  "Y": -401.252197265625,
+  "Z": 2142.153076171875
+ },
+ {
+  "Name": "U-u-ujoj Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 1514.2879638671875,
+  "Y": -443.35498046875,
+  "Z": 3577.535888671875
+ },
+ {
+  "Name": "Nisoij Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": -240.485107421875,
+  "Y": -391.6240539550781,
+  "Z": 372.0
+ },
+ {
+  "Name": "Sisinatag Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 4497.35107421875,
+  "Y": -449.1356201171875,
+  "Z": -827.2879638671875
+ },
+ {
+  "Name": "Korom Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 1180.710693359375,
+  "Y": -413.5902099609375,
+  "Z": 778.9037475585938
+ },
+ {
+  "Name": "Katenim Lightroot",
+  "Kind": "Lightroot",
+  "Layer": "Depths",
+  "X": 394.1523132324219,
+  "Y": -508.2501220703125,
+  "Z": -3483.689208984375
+ }
+]
