@@ -428,7 +428,7 @@
           <local:OrnateFrame Style="{StaticResource PanelFrame}">
            <StackPanel>
             <TextBlock Text="Game connection" FontFamily="Georgia" FontSize="21" Foreground="{StaticResource GoldBrush}"/>
-            <TextBlock Text="TOTK 1.2.1 • Windows recomp" Style="{StaticResource Caption}" Margin="0,8,0,14"/>
+            <TextBlock Text="TOTK 1.2.1 • recomp 0.1.1 or 0.3.11" Style="{StaticResource Caption}" Margin="0,8,0,14"/>
             <Grid>
              <Grid.ColumnDefinitions>
               <ColumnDefinition Width="*"/>
@@ -478,7 +478,7 @@
             <CheckBox x:Name="ReturnToGameCheck" Content="Return to the game when spawning" Click="ReturnToGameClick" Margin="0,17,0,0"/>
             <CheckBox x:Name="ReduceMotionCheck" Content="Reduce interface animations" Click="ReduceMotionClick" Margin="0,17,0,0"/>
             <Button Content="Save connection report" Click="ReportClick" HorizontalAlignment="Left" Margin="0,22,0,0"/>
-            <TextBlock Text="Hyrule Companion • 0.4.1 exploration edition" Foreground="{StaticResource GoldBrush}" FontSize="12" Margin="0,24,0,9"/>
+            <TextBlock Text="Hyrule Companion • 0.5.0" Foreground="{StaticResource GoldBrush}" FontSize="12" Margin="0,24,0,9"/>
             <TextBlock Text="Item names and icons: Marc Robledo’s TOTK save editor; names compiled by Echocolat, Exincracci, HylianLZ and Karlos007. Game assets belong to Nintendo. Cheat research: Eiffel2018 and the Switch cheats community. Source and license details are included with this app." Style="{StaticResource Caption}" FontSize="11"/>
            </StackPanel>
           </local:OrnateFrame>
@@ -499,7 +499,7 @@
       <Image Source="{StaticResource EyeImage}" Width="21" Height="19" Margin="0,0,10,0"/>
       <TextBlock x:Name="FooterStatus" Text="Ready to browse • cheats are off" TextTrimming="CharacterEllipsis" Foreground="{StaticResource Muted}" FontSize="11" VerticalAlignment="Center"/>
      </StackPanel>
-     <TextBlock Grid.Column="1" Margin="20,0,0,0" Text="TOTK 1.2.1  /  HYRULE COMPANION 0.4.1" Foreground="{StaticResource Muted}" FontSize="10" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+     <TextBlock Grid.Column="1" Margin="20,0,0,0" Text="TOTK 1.2.1  /  HYRULE COMPANION 0.5.0" Foreground="{StaticResource Muted}" FontSize="10" HorizontalAlignment="Right" VerticalAlignment="Center"/>
     </Grid>
    </Border>
   </Grid>

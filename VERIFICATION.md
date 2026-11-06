@@ -25,3 +25,7 @@ Release build and 30 logic/native-callback checks passed. New checks cover multi
 
 ## Simplified reference categories — v0.4.1
 32 logic/native-callback checks passed, including the exact seven-group, 49-category taxonomy and reference zoom thresholds. Native WPF checks cover hidden compendium entries in the normal panel, separate compendium search, and fewer than 100 drawn overview markers with all main categories enabled. All four screens were reviewed at the existing window sizes. No gameplay memory writes were required.
+
+
+## Dual recomp profiles — v0.5.0
+36 logic/native-callback checks passed. Both profiles validate all three native entry signatures; altered signatures and unknown hashes are refused. On the running v0.3.11 / game 1.2.1 build, all cheat pointer checks passed; speed changed and restored exactly, a short teleport returned Link to his starting position, and one verified apple displayed a collectible pickup prompt (baked by Fire Temple heat). Clean disconnect/reconnect revalidated the restored native entry bytes. Original-build gameplay evidence remains historical; its hash, native addresses and callback regression checks are retained. See COMPATIBILITY.md.

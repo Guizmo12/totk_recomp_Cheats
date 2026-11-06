@@ -15,6 +15,7 @@ public sealed class NativeMemory : IGameMemory, IDisposable {
  internal ulong ImageBase=>(ulong)process.MainModule!.BaseAddress;
  public bool FocusGame()=>SetForegroundWindow(process.MainWindowHandle);
  public string GamePath{get;}
+ public RecompBuild Build{get;}
  readonly SafeProcessHandle handle;
  readonly Process process;
  public bool Alive {get{try{return !process.HasExited;}catch{return false;}}}
@@ -25,6 +26,7 @@ public sealed class NativeMemory : IGameMemory, IDisposable {
   if(candidates.Length!=1)throw new InvalidOperationException(candidates.Length==0?"Start TOTK and load your save, then connect.":"More than one matching game is running. Close the extra copy before connecting.");
   var nso=Path.Combine(Path.GetDirectoryName(exe)!,"exefs","main");
   using(var stream=File.OpenRead(nso)) {var head=new byte[0x48];stream.ReadExactly(head);if(System.Text.Encoding.ASCII.GetString(head,0,4)!="NSO0"||Convert.ToHexString(head.AsSpan(0x40,8))!=BuildId)throw new InvalidOperationException("This trainer currently supports TOTK 1.2.1 only. No changes were made.");}
+  Build=RecompBuild.Detect(exe)??throw new InvalidOperationException("This executable has no verified compatibility profile. Supported recomp builds: 0.1.1 and 0.3.11 with TOTK 1.2.1. No changes were made.");
   process=candidates[0];Pid=process.Id;
   handle=OpenProcess(0x438,false,Pid);
   if(handle.IsInvalid)throw new InvalidOperationException("Windows could not open the game. Run both apps with the same permissions.");

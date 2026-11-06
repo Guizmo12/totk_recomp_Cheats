@@ -6,14 +6,14 @@ A native Windows companion for **The Legend of Zelda: Tears of the Kingdom PC re
 
 ## Download and run
 
-[**Download Hyrule Companion v0.4.1 for Windows**](https://github.com/Guizmo12/totk_recomp_Cheats/raw/refs/heads/main/downloads/HyruleCompanion-v0.4.1.zip)
+[**Download Hyrule Companion v0.5.0 for Windows**](https://github.com/Guizmo12/totk_recomp_Cheats/raw/refs/heads/main/downloads/HyruleCompanion-v0.5.0.zip)
 
 1. Extract the ZIP into a writable folder. Keep the `assets` folder beside `HyruleCompanion.exe`.
 2. Install the [.NET 8 Desktop Runtime for Windows](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) if it is not already installed.
 3. Open `HyruleCompanion.exe`. Choose your `totk.exe` in **Settings → Browse** if the saved/default path is different.
 4. Start the game, load your save, then click **Connect to game**. Every cheat starts off.
 
-The supported game is **TOTK 1.2.1, recomp release 0.1.1+701bd62**. Native item spawning and travel validate the exact executable before attaching. The game, ROM, keys and saves are not included. The ZIP's SHA-256 is in [downloads/SHA256SUMS.txt](downloads/SHA256SUMS.txt).
+The supported game is **TOTK 1.2.1, recomp releases 0.1.1+701bd62 and 0.3.11+0ae47a5**. Native item spawning and travel validate the exact executable before attaching. The game, ROM, keys and saves are not included. The ZIP's SHA-256 is in [downloads/SHA256SUMS.txt](downloads/SHA256SUMS.txt).
 
 
 
@@ -108,3 +108,7 @@ Independent companion for the [TOTK PC recomp](https://github.com/valentderah/to
 
 ## Map filters 0.4.1
 The main filter panel follows Zelda Dungeon’s 49 categories and seven groups: Travel Gates, Quests, Collectibles, Locations, Services, Other and Bosses. Individual resources are in a separate optional Compendium section. All/None and grouped checkboxes control visibility; finer markers appear as you zoom in. Existing custom-coordinate travel, saved places and Undo remain available. Release build, 32 checks and the native four-screen review passed. See TRAVEL.md.
+
+
+## Recomp 0.3.11 and original-build support — 0.5.0
+Automatic compatibility profiles support the original 0.1.1 and installed 0.3.11 Windows builds with TOTK game update 1.2.1. Spawning and travel select the correct native addresses; cheat data checks and preferences are preserved. The connection badge shows the detected recomp version. Release build, 36 checks, a live speed write/restore, one collectible apple and a short teleport/return passed on v0.3.11. See [COMPATIBILITY.md](COMPATIBILITY.md) for exact executable profiles and verification limits.

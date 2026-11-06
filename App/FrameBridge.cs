@@ -13,7 +13,7 @@ namespace HyruleCompanion;
 public sealed class FrameBridge:IDisposable {
  public const string SupportedExeHash="650ac3c2653a54d80fee0b8f69d58bc1f985ac2cfa81ea22b8ee8bafee69f052";
  static readonly byte[] Prologue=Convert.FromHexString("4157415641554154565755534883EC28");
- const ulong HookRva=0x44C55F0,SpawnRva=0x3FB0AA0,MatrixRva=0x2F39DE0;
+ readonly RecompBuild build;
  readonly NativeMemory memory;
  public ulong Mailbox{get;}
  readonly ulong hook,trampoline;
@@ -23,10 +23,10 @@ public sealed class FrameBridge:IDisposable {
  public bool Result=>BitConverter.ToUInt64(memory.Read(Mailbox+8,8))%0x100000000!=0;
  public uint ResultCode=>BitConverter.ToUInt32(memory.Read(Mailbox+0x500,4));
  public ulong PreActor=>BitConverter.ToUInt64(memory.Read(Mailbox+0x508,8));
- public static bool IsCompatible(string path){using var f=File.OpenRead(path);return Convert.ToHexString(SHA256.HashData(f)).Equals(SupportedExeHash,StringComparison.OrdinalIgnoreCase);}
+ public static bool IsCompatible(string path)=>RecompBuild.Detect(path)!=null;
  public FrameBridge(NativeMemory game){
-  memory=game;if(!IsCompatible(game.GamePath))throw new InvalidOperationException("The item-spawning extension is currently verified only for your original 0.1.1 build.");
-  hook=game.ImageBase+HookRva;if(!game.ReadNative(hook,16).SequenceEqual(Prologue))throw new InvalidOperationException("The game’s frame callback is already modified. Restart the game before connecting the item spawner.");
+  memory=game;build=game.Build;build.ValidateFunctions(game.ReadNative,game.ImageBase);
+  hook=game.ImageBase+build.HookRva;if(!game.ReadNative(hook,16).SequenceEqual(Prologue))throw new InvalidOperationException("The game’s frame callback is already modified. Restart the game before connecting the item spawner.");
   PlayerLocator.Read(game);
   for(ulong address=0x6000000000;address<0x6100000000;address+=0x10000){var p=VirtualAllocEx(game.Handle,(nint)address,0x10000,0x3000,0x04);if(p!=0){Mailbox=(ulong)p;break;}}
   if(Mailbox==0)throw new InvalidOperationException("A compatible game-address buffer could not be allocated.");
@@ -58,12 +58,12 @@ public sealed class FrameBridge:IDisposable {
   BitConverter.GetBytes(Mailbox+0x190).CopyTo(arg,0x40);BitConverter.GetBytes(Mailbox+0x2000).CopyTo(arg,0x58);arg[0x90]=7;RawWrite(Mailbox+0x200,arg);
   var blackboard=new byte[0x1918];BitConverter.GetBytes(32).CopyTo(blackboard,0);BitConverter.GetBytes(Mailbox+0x2018).CopyTo(blackboard,8);RawWrite(Mailbox+0x2000,blackboard);
   var mgr=BitConverter.ToUInt64(memory.Read(NativeMemory.Main+0x4722920,8));if(mgr<0x10000||mgr>0x7FFFFFFFFF)throw new InvalidOperationException("The actor manager is not ready.");
-  var regs=new ulong[]{mgr,Mailbox+0x80,Mailbox+0x200,0,1,0,0,0};SetArguments(regs,NativeMemory.Main+0xAB92CC,memory.ImageBase+SpawnRva);
+  var regs=new ulong[]{mgr,Mailbox+0x80,Mailbox+0x200,0,1,0,0,0};SetArguments(regs,NativeMemory.Main+0xAB92CC,memory.ImageBase+build.SpawnRva);
  }
  public void QueueTeleport(PlayerPose destination){
   if(State is 1 or 2)throw new InvalidOperationException("The previous game action is still running.");var current=PlayerLocator.Read(memory);
   if(new[]{destination.X,destination.Y,destination.Z}.Any(x=>!float.IsFinite(x)||Math.Abs(x)>100000)||destination.Rotation.Length!=9)throw new InvalidOperationException("The saved position is invalid.");
-  var matrix=new byte[48];for(var row=0;row<3;row++){for(var col=0;col<3;col++)F(matrix,row*16+col*4,destination.Rotation[row*3+col]);F(matrix,row*16+12,row==0?destination.X:row==1?destination.Y:destination.Z);}RawWrite(Mailbox+0x900,matrix);SetArguments([current.Actor,Mailbox+0x900,0,0,0,0,0,0],NativeMemory.Main+0x6BA86C,memory.ImageBase+MatrixRva);
+  var matrix=new byte[48];for(var row=0;row<3;row++){for(var col=0;col<3;col++)F(matrix,row*16+col*4,destination.Rotation[row*3+col]);F(matrix,row*16+12,row==0?destination.X:row==1?destination.Y:destination.Z);}RawWrite(Mailbox+0x900,matrix);SetArguments([current.Actor,Mailbox+0x900,0,0,0,0,0,0],NativeMemory.Main+0x6BA86C,memory.ImageBase+build.MatrixRva);
  }
  void SetArguments(ulong[] regs,ulong guest,ulong native){RawWrite(Mailbox+0x800,regs.SelectMany(BitConverter.GetBytes).ToArray());RawWrite(Mailbox+0x500,new byte[16]);Q(Mailbox+0x20,native);Q(Mailbox+0x28,guest);RawWrite(Mailbox,new byte[]{1,0,0,0});}
  static void F(byte[] data,int offset,float value)=>BitConverter.GetBytes(value).CopyTo(data,offset);
