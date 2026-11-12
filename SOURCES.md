@@ -28,3 +28,7 @@ Factual point names, coordinates and category coverage: Zelda Dungeon, https://w
 
 ## Recomp 0.3.11 compatibility
 Official release: https://github.com/valentderah/totk-pc-recomp/releases/tag/v0.3.11. Guest CPU layout and native calling convention checked against the release’s runtime/cpu.h and the user’s installed setup. Native function addresses and entry bytes were inspected in the installed executable’s symbols; independent profiles retain the original 0.1.1 mapping. Profile definitions are in RecompBuild.cs. No runtime source code is copied into the trainer.
+
+## Recomp 0.4.0 compatibility
+
+The v0.4.0 profile uses the Windows v3 executable symbols and matching entry bytes. The guest CPU layout was checked against the [official runtime header](https://github.com/valentderah/totk-pc-recomp/blob/v0.4.0/runtime/cpu.h).

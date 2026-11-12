@@ -29,3 +29,7 @@ Release build and 30 logic/native-callback checks passed. New checks cover multi
 
 ## Dual recomp profiles — v0.5.0
 36 logic/native-callback checks passed. Both profiles validate all three native entry signatures; altered signatures and unknown hashes are refused. On the running v0.3.11 / game 1.2.1 build, all cheat pointer checks passed; speed changed and restored exactly, a short teleport returned Link to his starting position, and one verified apple displayed a collectible pickup prompt (baked by Fire Temple heat). Clean disconnect/reconnect revalidated the restored native entry bytes. Original-build gameplay evidence remains historical; its hash, native addresses and callback regression checks are retained. See COMPATIBILITY.md.
+
+## Recomp 0.4.0 — v0.5.1
+
+All 37 automated checks passed. In live gameplay on recomp 0.4.0 with TOTK 1.2.1, the app read all eight supported cheat values. Movement speed changed and restored exactly. A short teleport moved Link and returned him to his starting position. One apple spawned with a Take prompt. The app reconnected after closing, verified all three restored native function signatures, and left every cheat off. The four-tab interface checks passed. The older profiles passed regression checks and their gameplay verification is historical.

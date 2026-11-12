@@ -14,8 +14,14 @@ public sealed record RecompBuild(string Release,string ExeHash,ulong HookRva,ulo
   new RecompBuild("0.3.11+0ae47a5","4aec5cd94e9deb7ffd9b3cbe714a8f56a01ea28af845bfef531c0ab1ba8196fe",0x4866D10,0x4334B20,0x3210EE0,
    "4157415641554154565755534883ec284889ce488b05563ba8098338000f85d5",
    "4157415641554154565755534883ec284889ce488b05465dfb098338000f855e",
-   "41565657534883ec284889ce488b058d990d0b8338000f8537020000488b8ea0")
+   "41565657534883ec284889ce488b058d990d0b8338000f8537020000488b8ea0"),
+  new RecompBuild("0.4.0+7a37fc3c","313be5bc2c0aad4fbf9688047ef43e91782b8e62c014924923e2b955584904a9",0x4557B10,0x40C9490,0x31A2F20,
+   "4157415641554154565755534883ec284889ce488b05b60c50098338000f85d5",
+   "4157415641554154565755534883ec284889ce488b0536f398098338000f8561",
+   "41565657534883ec284889ce488b05ad588b0a8338000f8533020000488b8ea0")
  };
+ public static string SupportedReleases {get;}=string.Join(", ",Supported.Select(build=>build.Release.Split('+')[0]));
+ public static string CompatibilityLabel => $"TOTK {GameVersion} • recomp {SupportedReleases}";
  public static RecompBuild? FromHash(string hash)=>Supported.FirstOrDefault(p=>p.ExeHash.Equals(hash,StringComparison.OrdinalIgnoreCase));
  public static RecompBuild? Detect(string path){using var stream=File.OpenRead(path);return FromHash(Convert.ToHexString(SHA256.HashData(stream)));}
  public void ValidateFunctions(Func<ulong,int,byte[]> read,ulong imageBase){
