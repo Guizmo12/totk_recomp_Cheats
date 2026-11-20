@@ -6,14 +6,14 @@ A native Windows companion for **The Legend of Zelda: Tears of the Kingdom PC re
 
 ## Download and run
 
-[**Download Hyrule Companion v0.5.1 for Windows**](https://github.com/Guizmo12/totk_recomp_Cheats/raw/refs/heads/main/downloads/HyruleCompanion-v0.5.1.zip)
+[**Download Hyrule Companion v0.5.2 for Windows**](https://github.com/Guizmo12/totk_recomp_Cheats/raw/refs/heads/main/downloads/HyruleCompanion-v0.5.2.zip)
 
 1. Extract the ZIP into a writable folder. Keep the `assets` folder beside `HyruleCompanion.exe`.
 2. Install the [.NET 8 Desktop Runtime for Windows](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) if it is not already installed.
 3. Open `HyruleCompanion.exe`. Choose your `totk.exe` in **Settings → Browse** if the saved/default path is different.
 4. Start the game, load your save, then click **Connect to game**. Every cheat starts off.
 
-The supported game is **TOTK 1.2.1, recomp releases 0.1.1+701bd62, 0.3.11+0ae47a5, and 0.4.0+7a37fc3c**. Native item spawning and travel validate the exact executable before attaching. The game, ROM, keys and saves are not included. The ZIP's SHA-256 is in [downloads/SHA256SUMS.txt](downloads/SHA256SUMS.txt).
+The supported game is **TOTK 1.2.1, recomp releases 0.1.1+701bd62, 0.3.11+0ae47a5, 0.4.0+7a37fc3c, and 0.4.1+6151ac4f**. Native item spawning and travel validate the exact executable before attaching. The game, ROM, keys and saves are not included. The ZIP's SHA-256 is in [downloads/SHA256SUMS.txt](downloads/SHA256SUMS.txt).
 
 
 
