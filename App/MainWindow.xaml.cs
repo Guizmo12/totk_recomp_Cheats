@@ -47,7 +47,7 @@ public partial class MainWindow:Window {
    var b=new Button{Content=c,Tag=c,Style=(Style)FindResource("CategoryChip")};b.Click+=CategoryClick;CategoryChips.Children.Add(b);categoryButtons[c]=b;
   }
   GroupFilter.Items.Add("All types");GroupFilter.SelectedIndex=0;
-  GamePathBox.Text=settings.GamePath;TopmostCheck.IsChecked=settings.AlwaysOnTop;Topmost=settings.AlwaysOnTop;ReturnToGameCheck.IsChecked=settings.ReturnToGame;SpawnShortcutBox.Text=settings.SpawnHotkey;
+  GamePathBox.Text=settings.GamePath;AutobuildSwitch.IsChecked=FreeAutobuild.Installed(settings.GamePath);TopmostCheck.IsChecked=settings.AlwaysOnTop;Topmost=settings.AlwaysOnTop;ReturnToGameCheck.IsChecked=settings.ReturnToGame;SpawnShortcutBox.Text=settings.SpawnHotkey;
   CatalogCaption.Text=$"{catalog.Count:N0} entries. Search, select, and scroll to explore.";
   PlaceList.ItemsSource=settings.Places;
   searchTimer.Tick+=(_,_)=>{searchTimer.Stop();RefreshItems();};
@@ -91,6 +91,16 @@ public partial class MainWindow:Window {
  void Favorite(Item item){item.Favorite=!item.Favorite;if(item.Favorite)settings.Favorites.Add(item.Id);else settings.Favorites.Remove(item.Id);if(selected==item)DetailFavorite.Content=item.Star;SaveSettings();if(favoritesOnly)RefreshItems();}
  void ClearFiltersClick(object sender,RoutedEventArgs e){SearchBox.Clear();category="All items";group="All types";favoritesOnly=false;GroupFilter.SelectedIndex=0;RefreshItems();}
  void CopyIdClick(object sender,RoutedEventArgs e){if(selected==null)return;try{Clipboard.SetText(SpawnCatalog.WorldActor(selected.Id));FooterStatus.Text="Copied "+SpawnCatalog.WorldActor(selected.Id);}catch{ShowNotice("The clipboard is busy. Try copying again.");}}
+ async void AutobuildClick(object sender,RoutedEventArgs e){
+  var path=settings.GamePath;
+  var enable=AutobuildSwitch.IsChecked==true;
+  AutobuildSwitch.IsEnabled=false;
+  try {
+   await Task.Run(()=>FreeAutobuild.Set(path,enable));
+   ShowNotice("Restart TOTK to apply the Autobuild cost change.");
+  } catch(Exception ex){ShowNotice(ex.Message);}
+  finally{AutobuildSwitch.IsChecked=FreeAutobuild.Installed(settings.GamePath);AutobuildSwitch.IsEnabled=true;}
+ }
  void ConnectClick(object sender,RoutedEventArgs e){if(memory!=null)Disconnect();else Connect();}
  void Connect(){
   try{memory=new(settings.GamePath);engine=new(memory);memory.Build.ValidateFunctions(memory.ReadNative,memory.ImageBase);advancedCompatible=true;LoadWorldActors();ConnectionStatus.Text="Connected • recomp "+memory.Build.Release.Split('+')[0];StatusDot.Fill=Brush("#73E3B7");ConnectButton.Content="Disconnect";foreach(var c in cheats){c.Available=c.Supported;c.Note=c.Supported?"Ready • off":"Not supported by this build";}NoticeBorder.Visibility=Visibility.Collapsed;FooterStatus.Text="Game connected • every cheat is off";UpdateSpawnControl();gameTimer.Start();WriteReport("connection-report.json");}
@@ -116,7 +126,7 @@ public partial class MainWindow:Window {
  void PresetClick(object sender,RoutedEventArgs e){if(engine==null){ShowNotice("Connect to the game before enabling a preset.");return;}var set=cheats.Where(c=>c.Id is "health" or "stamina" or "battery").ToArray();try{foreach(var c in set)engine.Plan(c.Id);foreach(var c in set)if(!c.Active)Toggle(c);}catch(Exception ex){ShowNotice("The exploration preset is not ready: "+ex.Message);}}
  void SpeedChanged(object sender,RoutedPropertyChangedEventArgs<double> e){if(SpeedLabel!=null)SpeedLabel.Text=e.NewValue.ToString("0.00",CultureInfo.InvariantCulture)+"×";}
  void JumpChanged(object sender,RoutedPropertyChangedEventArgs<double> e){if(JumpLabel!=null)JumpLabel.Text=e.NewValue.ToString("0.0",CultureInfo.InvariantCulture)+"×";var c=cheats.FirstOrDefault(c=>c.Id=="jump");if(c!=null)c.Value=e.NewValue;}
- void BrowseClick(object sender,RoutedEventArgs e){var dialog=new OpenFileDialog{Title="Choose your TOTK recomp",Filter="TOTK executable (totk.exe)|totk.exe",CheckFileExists=true};if(dialog.ShowDialog(this)!=true)return;Disconnect();settings.GamePath=dialog.FileName;GamePathBox.Text=settings.GamePath;SaveSettings();}
+ void BrowseClick(object sender,RoutedEventArgs e){var dialog=new OpenFileDialog{Title="Choose your TOTK recomp",Filter="TOTK executable (totk.exe)|totk.exe",CheckFileExists=true};if(dialog.ShowDialog(this)!=true)return;Disconnect();settings.GamePath=dialog.FileName;GamePathBox.Text=settings.GamePath;AutobuildSwitch.IsChecked=FreeAutobuild.Installed(settings.GamePath);SaveSettings();}
  void TopmostClick(object sender,RoutedEventArgs e){Topmost=settings.AlwaysOnTop=TopmostCheck.IsChecked==true;SaveSettings();}
  void CaptureHotkey(object sender,KeyEventArgs e){
   e.Handled=true;if(hotkeys==null)return;var c=(Cheat)((TextBox)sender).Tag;var key=e.Key==Key.System?e.SystemKey:e.Key;

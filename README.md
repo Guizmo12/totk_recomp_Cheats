@@ -6,7 +6,7 @@ A native Windows companion for **The Legend of Zelda: Tears of the Kingdom PC re
 
 ## Download and run
 
-[**Download Hyrule Companion v0.5.2 for Windows**](https://github.com/Guizmo12/totk_recomp_Cheats/raw/refs/heads/main/downloads/HyruleCompanion-v0.5.2.zip)
+[**Download Hyrule Companion v0.6.0 for Windows**](https://github.com/Guizmo12/totk_recomp_Cheats/raw/refs/heads/main/downloads/HyruleCompanion-v0.6.0.zip)
 
 1. Extract the ZIP into a writable folder. Keep the `assets` folder beside `HyruleCompanion.exe`.
 2. Install the [.NET 8 Desktop Runtime for Windows](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) if it is not already installed.
@@ -116,3 +116,7 @@ Automatic compatibility profiles support the original 0.1.1 and installed 0.3.11
 ## Recomp 0.4.0 support — 0.5.1
 
 All 37 automated checks passed. In live gameplay on recomp 0.4.0 with TOTK 1.2.1, the app read all eight supported cheat values. Movement speed changed and restored exactly. A short teleport moved Link and returned him to his starting position. One apple spawned with a Take prompt. The app reconnected after closing, verified all three restored native function signatures, and left every cheat off. The four-tab interface checks passed. The older profiles passed regression checks and their gameplay verification is historical. See [COMPATIBILITY.md](COMPATIBILITY.md) for the exact Windows executable profiles.
+
+## Free Autobuild
+
+On the supported Windows v3 recomp 0.4.1 build with TOTK 1.2.1, open Cheats and toggle **Free Autobuild**. Restart the game after either change. The switch installs or removes a local mod in the default mods folder. It generates a replacement actor table from your game files and sets only the Autobuild replacement cost to zero. Keep the mod enabled in the recomp mod menu. The companion checks for conflicting actor tables before installing. All 15,369 generated rows were compared with the original. In-game spending still needs a gameplay check.
