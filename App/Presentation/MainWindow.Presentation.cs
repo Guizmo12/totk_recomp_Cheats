@@ -35,7 +35,13 @@ public partial class MainWindow {
    Width=1280;Height=720;foreach(var name in new[]{"items","cheats","travel","settings"}){Navigate(name);await LayoutReady();SaveVisual(name+"-125percent",1.25);}checks["dpiReview"]="125% offscreen rasterization of native WPF tree; Windows DPI setting unchanged";
    Width=1440;Height=920;Navigate("items");SearchBox.Text="no such hyrule item 947";searchTimer.Stop();RefreshItems();await LayoutReady();checks["emptyState"]=EmptyResults.IsVisible;SaveVisual("items-empty");ClearFiltersClick(this,new());searchTimer.Stop();
    foreach(var name in new[]{"cheats","settings"}){Navigate(name);await LayoutReady();var scroller=Descendants<ScrollViewer>(name=="cheats"?CheatsPage:SettingsPage).First();scroller.ScrollToEnd();await LayoutReady();SaveVisual(name+"-bottom");checks[name+"-scrollReachesBottom"]=scroller.VerticalOffset>0&&scroller.ScrollableHeight-scroller.VerticalOffset<1;scroller.ScrollToTop();}
-   Navigate("cheats");ActiveOnly.IsChecked=true;ActiveOnlyClick(this,new());checks["activeOnly"]=CheatList.Items.Count==0;ActiveOnly.IsChecked=false;ActiveOnlyClick(this,new());
+   Navigate("cheats");ActiveOnly.IsChecked=true;ActiveOnlyClick(this,new());checks["activeOnly"]=CheatList.Items.Count==(autobuild.Active?1:0);ActiveOnly.IsChecked=false;ActiveOnlyClick(this,new());
+   await LayoutReady();
+   var autobuildToggle=Descendants<CheckBox>(CheatList).Single(control=>ReferenceEquals(control.Tag,autobuild));
+   checks["autobuildToggle"]=autobuildToggle.Style==FindResource("Toggle")&&autobuild.Category=="Inventory"&&autobuildToggle.IsChecked==autobuild.Active;
+   autobuildToggle.BringIntoView();
+   await LayoutReady();
+   SaveVisual("cheats-autobuild");
    ShowNotice("Connect to a supported game before enabling this control.");await LayoutReady();SaveVisual("cheats-validation");NoticeBorder.Visibility=Visibility.Collapsed;
   }catch(Exception ex){checks["error"]=ex.ToString();}
   finally{settings.Recent=oldRecent;settings.Favorites=oldFavorites;foreach(var item in catalog)item.Favorite=oldFavorites.Contains(item.Id);if(oldSelected!=null){SelectItem(oldSelected);settings.Recent=oldRecent;}SaveSettings();Width=oldWidth;Height=oldHeight;Navigate("items");Chrome.ReduceMotion=motion;await LayoutReady();SaveVisual("final");File.WriteAllText(Path.Combine(dir,"checks.json"),JsonSerializer.Serialize(checks,new JsonSerializerOptions{WriteIndented=true}));}

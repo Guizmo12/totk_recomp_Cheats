@@ -18,6 +18,11 @@ public partial class MainWindow:Window {
  readonly Settings settings=Settings.Load();
  readonly List<Item> catalog;
  readonly List<Cheat> cheats=[];
+ readonly Cheat autobuild=new(){
+  Id="autobuild", Name="Free Autobuild", Category="Inventory", Hotkey="—",
+  Description="Recreate missing parts for zero Zonaite.",
+  Note="Restart TOTK to apply changes • recomp 0.4.1", Available=true
+ };
  readonly DispatcherTimer searchTimer=new(){Interval=TimeSpan.FromMilliseconds(160)};
  readonly DispatcherTimer gameTimer=new(){Interval=TimeSpan.FromMilliseconds(30)};
  readonly Dictionary<string,Button> categoryButtons=[];
@@ -47,7 +52,7 @@ public partial class MainWindow:Window {
    var b=new Button{Content=c,Tag=c,Style=(Style)FindResource("CategoryChip")};b.Click+=CategoryClick;CategoryChips.Children.Add(b);categoryButtons[c]=b;
   }
   GroupFilter.Items.Add("All types");GroupFilter.SelectedIndex=0;
-  GamePathBox.Text=settings.GamePath;AutobuildSwitch.IsChecked=FreeAutobuild.Installed(settings.GamePath);TopmostCheck.IsChecked=settings.AlwaysOnTop;Topmost=settings.AlwaysOnTop;ReturnToGameCheck.IsChecked=settings.ReturnToGame;SpawnShortcutBox.Text=settings.SpawnHotkey;
+  GamePathBox.Text=settings.GamePath;RefreshAutobuildState();TopmostCheck.IsChecked=settings.AlwaysOnTop;Topmost=settings.AlwaysOnTop;ReturnToGameCheck.IsChecked=settings.ReturnToGame;SpawnShortcutBox.Text=settings.SpawnHotkey;
   CatalogCaption.Text=$"{catalog.Count:N0} entries. Search, select, and scroll to explore.";
   PlaceList.ItemsSource=settings.Places;
   searchTimer.Tick+=(_,_)=>{searchTimer.Stop();RefreshItems();};
@@ -91,15 +96,19 @@ public partial class MainWindow:Window {
  void Favorite(Item item){item.Favorite=!item.Favorite;if(item.Favorite)settings.Favorites.Add(item.Id);else settings.Favorites.Remove(item.Id);if(selected==item)DetailFavorite.Content=item.Star;SaveSettings();if(favoritesOnly)RefreshItems();}
  void ClearFiltersClick(object sender,RoutedEventArgs e){SearchBox.Clear();category="All items";group="All types";favoritesOnly=false;GroupFilter.SelectedIndex=0;RefreshItems();}
  void CopyIdClick(object sender,RoutedEventArgs e){if(selected==null)return;try{Clipboard.SetText(SpawnCatalog.WorldActor(selected.Id));FooterStatus.Text="Copied "+SpawnCatalog.WorldActor(selected.Id);}catch{ShowNotice("The clipboard is busy. Try copying again.");}}
- async void AutobuildClick(object sender,RoutedEventArgs e){
+ void RefreshAutobuildState(){
+  autobuild.Active=FreeAutobuild.Installed(settings.GamePath);
+  UpdateActive();
+ }
+ async Task ToggleAutobuild(bool enable){
   var path=settings.GamePath;
-  var enable=AutobuildSwitch.IsChecked==true;
-  AutobuildSwitch.IsEnabled=false;
+  if(!autobuild.Available)return;
+  autobuild.Available=false;
   try {
    await Task.Run(()=>FreeAutobuild.Set(path,enable));
    ShowNotice("Restart TOTK to apply the Autobuild cost change.");
   } catch(Exception ex){ShowNotice(ex.Message);}
-  finally{AutobuildSwitch.IsChecked=FreeAutobuild.Installed(settings.GamePath);AutobuildSwitch.IsEnabled=true;}
+  finally{RefreshAutobuildState();autobuild.Available=true;}
  }
  void ConnectClick(object sender,RoutedEventArgs e){if(memory!=null)Disconnect();else Connect();}
  void Connect(){
@@ -107,7 +116,14 @@ public partial class MainWindow:Window {
   catch(Exception e){memory?.Dispose();memory=null;engine=null;ShowNotice(e.Message);ConnectionStatus.Text="Connection unavailable";StatusDot.Fill=Brush("#C9AE70");}
  }
  void Disconnect(){gameTimer.Stop();DisableAll();try{bridge?.Dispose();bridge=null;}catch(Exception e){ShowNotice("The game extension could not disconnect cleanly: "+e.Message);}memory?.Dispose();memory=null;engine=null;advancedCompatible=false;ConnectionStatus.Text="Not connected";StatusDot.Fill=Brush("#C9AE70");ConnectButton.Content="Connect to game";foreach(var c in cheats){c.Available=false;if(c.Supported)c.Note="Connect to the game";}UpdateSpawnControl();FooterStatus.Text="Disconnected • cheats are off";}
- void CheatClick(object sender,RoutedEventArgs e){Toggle((Cheat)((CheckBox)sender).Tag);e.Handled=true;}
+ async void CheatClick(object sender,RoutedEventArgs e){
+  var control=(CheckBox)sender;
+  var cheat=(Cheat)control.Tag;
+  e.Handled=true;
+  if(!ReferenceEquals(cheat,autobuild)){Toggle(cheat);return;}
+  await ToggleAutobuild(control.IsChecked==true);
+  control.GetBindingExpression(CheckBox.IsCheckedProperty)?.UpdateTarget();
+ }
  void Toggle(Cheat c){
   if(c.Active){try{engine?.Stop(c.Id);c.Active=false;c.Note="Off";}catch(Exception e){c.Active=false;c.Note="Off • restoration failed";ShowNotice(e.Message);}UpdateActive();return;}
   if(engine==null||memory==null||!memory.Alive||!c.Supported){ShowNotice("Connect to a supported game before enabling this control.");return;}
@@ -118,15 +134,15 @@ public partial class MainWindow:Window {
   if(memory==null)return;if(!memory.Alive){Disconnect();ShowNotice("The game closed. Every cheat has been switched off.");return;}
   foreach(var c in cheats.Where(x=>x.Active).ToArray())try{if(c.Id=="jump"){if(!JumpInput.Pressed(memory.Pid)){jumpBoosted=false;continue;}if(jumpBoosted)continue;var v=engine!.JumpVelocity();if(v<=0.3f||v>25)continue;engine.Apply(c.Id,c.Value);jumpBoosted=true;}else engine!.Apply(c.Id,c.Id=="speed"?SpeedSlider.Value:c.Value);}catch(Exception ex){try{engine!.Stop(c.Id);}catch{}c.Active=false;c.Note="Stopped: "+ex.Message;ShowNotice(c.Name+" stopped because its game data is unavailable.");}UpdateActive();
  }
- void ShowCheats(IEnumerable<Cheat> source){var view=CollectionViewSource.GetDefaultView(source.ToList());view.GroupDescriptions.Add(new PropertyGroupDescription(nameof(Cheat.Category)));CheatList.ItemsSource=view;}
- void UpdateActive(){var active=cheats.Where(c=>c.Active).ToList();var n=active.Count;ActiveCount.Text=$"{n} active";if(memory!=null)FooterStatus.Text=$"Connected • {n} cheat{(n==1?"":"s")} active";var ids=string.Join("|",active.Select(c=>c.Id));if(ActiveOnly.IsChecked==true&&renderedActive!=ids){ShowCheats(active);renderedActive=ids;}}
- void ActiveOnlyClick(object sender,RoutedEventArgs e){renderedActive=string.Join("|",cheats.Where(c=>c.Active).Select(c=>c.Id));ShowCheats(ActiveOnly.IsChecked==true?cheats.Where(c=>c.Active):cheats);}
+ void ShowCheats(IEnumerable<Cheat> source){var rows=ActiveOnly.IsChecked!=true||autobuild.Active?source.Append(autobuild):source;var view=CollectionViewSource.GetDefaultView(rows.ToList());view.GroupDescriptions.Add(new PropertyGroupDescription(nameof(Cheat.Category)));CheatList.ItemsSource=view;}
+ void UpdateActive(){var active=cheats.Where(c=>c.Active).ToList();var n=active.Count;ActiveCount.Text=$"{n} active";if(memory!=null)FooterStatus.Text=$"Connected • {n} cheat{(n==1?"":"s")} active";var ids=string.Join("|",active.Select(c=>c.Id))+"|"+autobuild.Active;if(ActiveOnly.IsChecked==true&&renderedActive!=ids){ShowCheats(active);renderedActive=ids;}}
+ void ActiveOnlyClick(object sender,RoutedEventArgs e){renderedActive=string.Join("|",cheats.Where(c=>c.Active).Select(c=>c.Id))+"|"+autobuild.Active;ShowCheats(ActiveOnly.IsChecked==true?cheats.Where(c=>c.Active):cheats);}
  void DisableAllClick(object sender,RoutedEventArgs e)=>DisableAll();
  void DisableAll(){var errors=new List<string>();foreach(var c in cheats.Where(c=>c.Active)){try{if(memory?.Alive==true)engine?.Stop(c.Id);}catch(Exception e){errors.Add(e.Message);}c.Active=false;c.Note="Off";}UpdateActive();if(errors.Count>0)ShowNotice("Cheats stopped, but a value could not be restored: "+errors[0]);}
  void PresetClick(object sender,RoutedEventArgs e){if(engine==null){ShowNotice("Connect to the game before enabling a preset.");return;}var set=cheats.Where(c=>c.Id is "health" or "stamina" or "battery").ToArray();try{foreach(var c in set)engine.Plan(c.Id);foreach(var c in set)if(!c.Active)Toggle(c);}catch(Exception ex){ShowNotice("The exploration preset is not ready: "+ex.Message);}}
  void SpeedChanged(object sender,RoutedPropertyChangedEventArgs<double> e){if(SpeedLabel!=null)SpeedLabel.Text=e.NewValue.ToString("0.00",CultureInfo.InvariantCulture)+"×";}
  void JumpChanged(object sender,RoutedPropertyChangedEventArgs<double> e){if(JumpLabel!=null)JumpLabel.Text=e.NewValue.ToString("0.0",CultureInfo.InvariantCulture)+"×";var c=cheats.FirstOrDefault(c=>c.Id=="jump");if(c!=null)c.Value=e.NewValue;}
- void BrowseClick(object sender,RoutedEventArgs e){var dialog=new OpenFileDialog{Title="Choose your TOTK recomp",Filter="TOTK executable (totk.exe)|totk.exe",CheckFileExists=true};if(dialog.ShowDialog(this)!=true)return;Disconnect();settings.GamePath=dialog.FileName;GamePathBox.Text=settings.GamePath;AutobuildSwitch.IsChecked=FreeAutobuild.Installed(settings.GamePath);SaveSettings();}
+ void BrowseClick(object sender,RoutedEventArgs e){var dialog=new OpenFileDialog{Title="Choose your TOTK recomp",Filter="TOTK executable (totk.exe)|totk.exe",CheckFileExists=true};if(dialog.ShowDialog(this)!=true)return;Disconnect();settings.GamePath=dialog.FileName;GamePathBox.Text=settings.GamePath;RefreshAutobuildState();SaveSettings();}
  void TopmostClick(object sender,RoutedEventArgs e){Topmost=settings.AlwaysOnTop=TopmostCheck.IsChecked==true;SaveSettings();}
  void CaptureHotkey(object sender,KeyEventArgs e){
   e.Handled=true;if(hotkeys==null)return;var c=(Cheat)((TextBox)sender).Tag;var key=e.Key==Key.System?e.SystemKey:e.Key;
