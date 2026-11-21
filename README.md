@@ -6,7 +6,7 @@ A native Windows companion for **The Legend of Zelda: Tears of the Kingdom PC re
 
 ## Download and run
 
-[**Download Hyrule Companion v0.6.1 for Windows**](https://github.com/Guizmo12/totk_recomp_Cheats/raw/refs/heads/main/downloads/HyruleCompanion-v0.6.1.zip)
+[**Download Hyrule Companion v0.6.2 for Windows**](https://github.com/Guizmo12/totk_recomp_Cheats/raw/refs/heads/main/downloads/HyruleCompanion-v0.6.2.zip)
 
 1. Extract the ZIP into a writable folder. Keep the `assets` folder beside `HyruleCompanion.exe`.
 2. Install the [.NET 8 Desktop Runtime for Windows](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) if it is not already installed.
