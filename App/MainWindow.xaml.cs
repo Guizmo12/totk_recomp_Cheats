@@ -21,7 +21,7 @@ public partial class MainWindow:Window {
  readonly Cheat autobuild=new(){
   Id="autobuild", Name="Free Autobuild", Category="Inventory", Hotkey="—",
   Description="Recreate missing parts for zero Zonaite.",
-  Note="Restart TOTK to apply changes • recomp 0.4.1", Available=true
+  Note="Restart TOTK to apply changes • recomp 0.4.1 or 0.5.0", Available=true
  };
  readonly DispatcherTimer searchTimer=new(){Interval=TimeSpan.FromMilliseconds(160)};
  readonly DispatcherTimer gameTimer=new(){Interval=TimeSpan.FromMilliseconds(30)};

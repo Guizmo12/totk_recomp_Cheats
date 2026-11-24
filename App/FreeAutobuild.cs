@@ -29,8 +29,8 @@ internal static class FreeAutobuild
         }
         if (File.Exists(target)) return;
         var profile = RecompBuild.Detect(exe);
-        if (profile?.Release != "0.4.1+6151ac4f")
-            throw new InvalidOperationException("Free Autobuild requires the supported recomp 0.4.1 build with TOTK 1.2.1.");
+        if (profile?.Release is not ("0.4.1+6151ac4f" or "0.5.0+afae80c9"))
+            throw new InvalidOperationException("Free Autobuild requires a supported recomp 0.4.1 or 0.5.0 build with TOTK 1.2.1.");
         string mods = Path.GetDirectoryName(folder)!;
         if (Directory.Exists(mods) && Directory.EnumerateFiles(mods, Path.GetFileName(Table), SearchOption.AllDirectories).Any())
             throw new IOException("Another mod supplies GameActorInfo. Merge the mods before enabling Free Autobuild.");

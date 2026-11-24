@@ -1,6 +1,6 @@
-# Recomp compatibility — Hyrule Companion 0.5.2
+# Recomp compatibility — Hyrule Companion 0.6.3
 
-Hyrule Companion supports the Windows executable profiles below. All four profiles use **TOTK game update 1.2.1**, build ID `9B4E43650501A4D4`. Recomp releases and Nintendo game updates are separate version numbers.
+Hyrule Companion supports the Windows executable profiles below. All five profiles use **TOTK game update 1.2.1**, build ID `9B4E43650501A4D4`. Recomp releases and Nintendo game updates are separate version numbers.
 
 Choose the game executable in Settings and connect. The app identifies its SHA-256 automatically, selects the matching native addresses, and shows the recomp version in the connection badge. Favorites, shortcuts, saved places, map filters and other preferences continue to use the same settings file.
 
@@ -12,6 +12,7 @@ Choose the game executable in Settings and connect. The app identifies its SHA-2
 | 0.3.11+0ae47a5 (installed v3 build) | `4aec5cd94e9deb7ffd9b3cbe714a8f56a01ea28af845bfef531c0ab1ba8196fe` |
 | 0.4.0+7a37fc3c (tested v3 build) | `313be5bc2c0aad4fbf9688047ef43e91782b8e62c014924923e2b955584904a9` |
 | 0.4.1+6151ac4f (tested v3 build) | `161cdd4c029a50d636cb46f7f295762bc52ed7c2dfd66b9990ff68e0a2aa8132` |
+| 0.5.0+afae80c9 (tested v3 build) | `3dc3c334ac1143c27bcc3debc5fb78090ae4c5f69a61542957c04c34ebe89250` |
 
 The installer compiles the executable locally. Other compiler/CPU variants or rebuilt executables can have different hashes and need their own verified profile. Unknown builds are refused; the app never falls back to another release’s native addresses. Game update 1.4.3 is outside these profiles.
 
@@ -40,3 +41,7 @@ Source reference: [official v0.3.11 release](https://github.com/valentderah/totk
 ## Recomp 0.4.1 verification
 
 Hyrule Companion 0.5.2 connected to the running Windows v3 build with TOTK 1.2.1 and validated all three native function signatures. It read 15,062 actor catalog entries with every cheat off. All 37 automated checks passed. Gameplay writes, item spawning and teleportation were last exercised live on recomp 0.4.0.
+
+## Recomp 0.5.0 verification
+
+Version 0.6.3 connected to the running Windows v3 build with TOTK 1.2.1. All three native signatures, eight cheat readbacks, the item catalog and the four-tab visual review passed. The recomp log confirmed that the existing Free Autobuild mod loaded. Installing and removing the mod passed using a test copy of the new build and matching assets. The live check used read-only access. All 38 automated checks passed.

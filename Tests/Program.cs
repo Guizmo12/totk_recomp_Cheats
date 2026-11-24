@@ -47,6 +47,10 @@ internal class Program {
   var build=RecompBuild.FromHash("313be5bc2c0aad4fbf9688047ef43e91782b8e62c014924923e2b955584904a9")!;
   Assert(build.Release=="0.4.0+7a37fc3c"&&build.HookRva==0x4557b10&&build.SpawnRva==0x40c9490&&build.MatrixRva==0x31a2f20);
  });
+ Test("recomp 0.5.0 selects its own native addresses",()=>{
+  var build=RecompBuild.FromHash("3dc3c334ac1143c27bcc3debc5fb78090ae4c5f69a61542957c04c34ebe89250")!;
+  Assert(build.Release=="0.5.0+afae80c9"&&build.HookRva==0x3e16ee0&&build.SpawnRva==0x39c6420&&build.MatrixRva==0x2a7b0d0);
+ });
  Test("unknown executable hashes never reuse a supported profile",()=>Assert(RecompBuild.FromHash(new string('0',64))==null));
  Test("all native profiles validate all three functions before writes",()=>{foreach(var build in RecompBuild.Supported){var functions=new Dictionary<ulong,byte[]>{{build.HookRva,Convert.FromHexString(build.HookSignature)},{build.SpawnRva,Convert.FromHexString(build.SpawnSignature)},{build.MatrixRva,Convert.FromHexString(build.MatrixSignature)}};var reads=0;build.ValidateFunctions((address,count)=>{reads++;return functions[address-0x140000000].Take(count).ToArray();},0x140000000);Assert(reads==3);foreach(var key in functions.Keys){var original=functions[key][0];functions[key][0]^=1;var rejected=false;try{build.ValidateFunctions((address,count)=>functions[address-0x140000000].Take(count).ToArray(),0x140000000);}catch(InvalidOperationException){rejected=true;}Assert(rejected);functions[key][0]=original;}}});
  Console.WriteLine($"{passed} checks passed. Fake-memory checks validate logic, not live gameplay.");return 0;

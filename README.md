@@ -6,14 +6,14 @@ A native Windows companion for **The Legend of Zelda: Tears of the Kingdom PC re
 
 ## Download and run
 
-[**Download Hyrule Companion v0.6.2 for Windows**](https://github.com/Guizmo12/totk_recomp_Cheats/raw/refs/heads/main/downloads/HyruleCompanion-v0.6.2.zip)
+[**Download Hyrule Companion v0.6.3 for Windows**](https://github.com/Guizmo12/totk_recomp_Cheats/raw/refs/heads/main/downloads/HyruleCompanion-v0.6.3.zip)
 
 1. Extract the ZIP into a writable folder. Keep the `assets` folder beside `HyruleCompanion.exe`.
 2. Install the [.NET 8 Desktop Runtime for Windows](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) if it is not already installed.
 3. Open `HyruleCompanion.exe`. Choose your `totk.exe` in **Settings → Browse** if the saved/default path is different.
 4. Start the game, load your save, then click **Connect to game**. Every cheat starts off.
 
-The supported game is **TOTK 1.2.1, recomp releases 0.1.1+701bd62, 0.3.11+0ae47a5, 0.4.0+7a37fc3c, and 0.4.1+6151ac4f**. Native item spawning and travel validate the exact executable before attaching. The game, ROM, keys and saves are not included. The ZIP's SHA-256 is in [downloads/SHA256SUMS.txt](downloads/SHA256SUMS.txt).
+The supported game is **TOTK 1.2.1, recomp releases 0.1.1+701bd62, 0.3.11+0ae47a5, 0.4.0+7a37fc3c, 0.4.1+6151ac4f, and 0.5.0+afae80c9**. Native item spawning and travel validate the exact executable before attaching. The game, ROM, keys and saves are not included. The ZIP's SHA-256 is in [downloads/SHA256SUMS.txt](downloads/SHA256SUMS.txt).
 
 
 
@@ -119,4 +119,4 @@ All 37 automated checks passed. In live gameplay on recomp 0.4.0 with TOTK 1.2.1
 
 ## Free Autobuild
 
-On the supported Windows v3 recomp 0.4.1 build with TOTK 1.2.1, open **Cheats → Inventory** and switch on **Free Autobuild**. Restart the game after either change. The switch installs or removes a local mod in the default mods folder. It generates a replacement actor table from your game files and sets only the Autobuild replacement cost to zero. Keep the mod enabled in the recomp mod menu. The companion checks for conflicting actor tables before installing. All 15,369 generated rows were compared with the original. In-game spending still needs a gameplay check.
+On the supported Windows v3 recomp 0.4.1 and 0.5.0 builds with TOTK 1.2.1, open **Cheats → Inventory** and switch on **Free Autobuild**. Restart the game after either change. The switch installs or removes a local mod in the default mods folder. It generates a replacement actor table from your game files and sets only the Autobuild replacement cost to zero. Keep the mod enabled in the recomp mod menu. The companion checks for conflicting actor tables before installing. All 15,369 generated rows were compared with the original. In-game spending still needs a gameplay check.
