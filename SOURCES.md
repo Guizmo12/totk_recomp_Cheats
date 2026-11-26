@@ -32,3 +32,5 @@ Official release: https://github.com/valentderah/totk-pc-recomp/releases/tag/v0.
 ## Recomp 0.4.0 compatibility
 
 The v0.4.0 profile uses the Windows v3 executable symbols and matching entry bytes. The guest CPU layout was checked against the [official runtime header](https://github.com/valentderah/totk-pc-recomp/blob/v0.4.0/runtime/cpu.h).
+
+- The key-item save layout was checked against [Marc Robledo’s TOTK save editor](https://github.com/marcrobledo/savegame-editors/tree/master/zelda-totk).
