@@ -11,7 +11,7 @@ public partial class MainWindow
 {
     string? keyItemSave;
     byte[]? keyItemOriginal;
-    bool EditingSeeds => KeyItemChoice.SelectedIndex == 1;
+    KeyItem SelectedKeyItem => (KeyItem)KeyItemChoice.SelectedIndex;
 
     void ChooseKeyItemSave(object sender, RoutedEventArgs e)
     {
@@ -31,7 +31,7 @@ public partial class MainWindow
             };
             if (dialog.ShowDialog(this) != true) return;
             var bytes = File.ReadAllBytes(dialog.FileName);
-            KeyItemAmounts.Read(bytes, EditingSeeds);
+            KeyItemAmounts.Read(bytes, SelectedKeyItem);
             keyItemSave = dialog.FileName;
             keyItemOriginal = bytes;
             RefreshKeyItemAmount();
@@ -47,7 +47,7 @@ public partial class MainWindow
     void RefreshKeyItemAmount()
     {
         if (keyItemOriginal is null || keyItemSave is null) return;
-        int current = KeyItemAmounts.Read(keyItemOriginal, EditingSeeds);
+        int current = KeyItemAmounts.Read(keyItemOriginal, SelectedKeyItem);
         KeyItemAmount.Text = current.ToString(CultureInfo.InvariantCulture);
         KeyItemStatus.Text = $"{Path.GetFileName(Path.GetDirectoryName(keyItemSave))} • current amount {current}";
         KeyItemStatus.ToolTip = keyItemSave;
@@ -70,14 +70,14 @@ public partial class MainWindow
             var latest = File.ReadAllBytes(keyItemSave);
             if (!latest.AsSpan().SequenceEqual(keyItemOriginal))
             {
-                KeyItemAmounts.Read(latest, EditingSeeds);
+                KeyItemAmounts.Read(latest, SelectedKeyItem);
                 keyItemOriginal = latest;
                 RefreshKeyItemAmount();
                 ShowNotice("This save changed since you selected it. Review the refreshed amount and try again.");
                 return;
             }
             var updated = (byte[])latest.Clone();
-            KeyItemAmounts.Set(updated, EditingSeeds, amount);
+            KeyItemAmounts.Set(updated, SelectedKeyItem, amount);
             if (updated.AsSpan().SequenceEqual(latest)) return;
 
             var backupFolder = Path.Combine(AppContext.BaseDirectory, "backups", "inventory");

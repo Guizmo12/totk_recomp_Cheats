@@ -6,7 +6,7 @@ A native Windows companion for **The Legend of Zelda: Tears of the Kingdom PC re
 
 ## Download and run
 
-[**Download Hyrule Companion v0.6.4 for Windows**](https://github.com/Guizmo12/totk_recomp_Cheats/raw/refs/heads/main/downloads/HyruleCompanion-v0.6.4.zip)
+[**Download Hyrule Companion v0.6.5 for Windows**](https://github.com/Guizmo12/totk_recomp_Cheats/raw/refs/heads/main/downloads/HyruleCompanion-v0.6.5.zip)
 
 1. Extract the ZIP into a writable folder. Keep the `assets` folder beside `HyruleCompanion.exe`.
 2. Install the [.NET 8 Desktop Runtime for Windows](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) if it is not already installed.
@@ -123,4 +123,4 @@ On the supported Windows v3 recomp 0.4.1 and 0.5.0 builds with TOTK 1.2.1, open 
 
 ## Key item amounts
 
-Close TOTK and open **Cheats → Key item amounts**. Choose **Crystallized Charge** or **Korok Seeds**, select a TOTK 1.2.1 slot’s `progress.sav`, and enter a whole number from 0 to 999. Click **Apply amount**, then load that same slot in TOTK. A copy of the original goes into `backups/inventory` beside the app. The Korok Seeds editor changes the spendable inventory count.
+Close TOTK and open **Cheats → Key item amounts**. Choose **Crystallized Charge**, **Korok Seeds**, or **Lights of Blessing**, select a TOTK 1.2.1 slot’s `progress.sav`, and enter a whole number from 0 to 999. Click **Apply amount**, then load that same slot in TOTK. A copy of the original goes into `backups/inventory` beside the app. The Korok Seeds editor changes the spendable inventory count.

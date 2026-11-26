@@ -3,6 +3,8 @@ using System.IO;
 
 namespace HyruleCompanion;
 
+internal enum KeyItem { CrystallizedCharge, KorokSeeds, LightOfBlessing }
+
 internal static class KeyItemAmounts
 {
     internal const int Maximum = 999;
@@ -11,11 +13,17 @@ internal static class KeyItemAmounts
     const int Slots = 200;
     const int NameSize = 64;
 
-    static ReadOnlySpan<byte> Actor(bool seeds) => seeds ? "Obj_KorokNuts"u8 : "Energy_Material_01"u8;
+    static ReadOnlySpan<byte> Actor(KeyItem item) => item switch
+    {
+        KeyItem.CrystallizedCharge => "Energy_Material_01"u8,
+        KeyItem.KorokSeeds => "Obj_KorokNuts"u8,
+        KeyItem.LightOfBlessing => "Obj_DungeonClearSeal"u8,
+        _ => throw new ArgumentOutOfRangeException(nameof(item))
+    };
     static int ReadInt(byte[] data, int offset) => BinaryPrimitives.ReadInt32LittleEndian(data.AsSpan(offset, 4));
     static void WriteInt(byte[] data, int offset, int value) => BinaryPrimitives.WriteInt32LittleEndian(data.AsSpan(offset, 4), value);
 
-    static (int Names, int Counts, int Item, int Free) Locate(byte[] data, bool seeds)
+    static (int Names, int Counts, int Item, int Free) Locate(byte[] data, KeyItem keyItem)
     {
         if (data.Length != Size || ReadInt(data, 0) != 0x01020304 ||
             ReadInt(data, 4) != 0x0047e0f4 || ReadInt(data, 8) != TableEnd + 8 ||
@@ -49,7 +57,7 @@ internal static class KeyItemAmounts
             if (end < 0) throw new InvalidDataException("The save has an invalid key-item name.");
             int count = ReadInt(data, counts + i * sizeof(int));
             if (end == 0 && count == -1 && free < 0) free = i;
-            if (!name[..end].SequenceEqual(Actor(seeds))) continue;
+            if (!name[..end].SequenceEqual(Actor(keyItem))) continue;
             if (item >= 0 || count < 0)
                 throw new InvalidDataException("The save has an invalid stack for this item.");
             item = i;
@@ -57,16 +65,16 @@ internal static class KeyItemAmounts
         return (names, counts, item, free);
     }
 
-    internal static int Read(byte[] data, bool seeds)
+    internal static int Read(byte[] data, KeyItem keyItem)
     {
-        var (_, counts, item, _) = Locate(data, seeds);
+        var (_, counts, item, _) = Locate(data, keyItem);
         return item < 0 ? 0 : ReadInt(data, counts + item * sizeof(int));
     }
 
-    internal static void Set(byte[] data, bool seeds, int amount)
+    internal static void Set(byte[] data, KeyItem keyItem, int amount)
     {
         if (amount is < 0 or > Maximum) throw new ArgumentOutOfRangeException(nameof(amount));
-        var (names, counts, item, free) = Locate(data, seeds);
+        var (names, counts, item, free) = Locate(data, keyItem);
         if (item < 0 && amount == 0) return;
         if (item < 0)
         {
@@ -74,7 +82,7 @@ internal static class KeyItemAmounts
             item = free;
             var name = data.AsSpan(names + item * NameSize, NameSize);
             name.Clear();
-            Actor(seeds).CopyTo(name);
+            Actor(keyItem).CopyTo(name);
         }
         if (amount == 0)
         {
